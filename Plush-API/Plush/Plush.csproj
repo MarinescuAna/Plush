@@ -9,8 +9,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Plush.DataAccessLayer.Domain\Plush.DataAccessLayer.Domain.csproj" />
+    <ProjectReference Include="..\Plush.DataAccessLayer.Repository\Plush.DataAccessLayer.Repository.csproj" />
   </ItemGroup>
 
 </Project>
