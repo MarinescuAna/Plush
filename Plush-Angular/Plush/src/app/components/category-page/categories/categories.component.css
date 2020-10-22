@@ -1,0 +1,30 @@
+.input-style{
+    width: 700px;
+    margin: 15px;
+    font-size: small;
+   color:crimson;
+}
+
+.title-style{
+    margin: 30px;
+    margin-top: 5%;
+    text-align: center;
+    color: crimson;
+}
+
+.color-text{
+    color: crimson;
+}
+
+.btn-size{
+    width: 200px;
+    height: 50px;
+    margin-bottom: 5%;
+    background-color: crimson;
+}
+
+.card-size{
+    padding: 10px;
+    margin-top: 15%;
+    width: 100%;
+}

@@ -1,1 +1,35 @@
-<p>categories works!</p>
+<div  fxLayoutAlign="center center">
+    <mat-card class="card-size">
+        <mat-card-title>
+            <h1 class="title-style"><strong>Add a new category</strong></h1>
+        </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="formCategory" (ngSubmit)="onSubmit()">
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <mat-form-field class="input-style">
+                        <mat-label>Category name</mat-label>
+                        <input matInput [type]="'text'" formControlName='name' placeholder="Ex. Plush" required>
+                        <mat-icon matSuffix class="color-text">edit</mat-icon>
+                        <mat-error *ngIf="formCategory.controls['name'].hasError('required')">
+                            Name is <strong>required</strong>!
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="input-style">
+                        <mat-label>Ages</mat-label>
+                        <input matInput placeholder="Ex. 3-2 ani" formControlName='ages' required>
+                        <mat-icon matSuffix class="color-text">email</mat-icon>
+                        <mat-error *ngIf="formCategory.controls['ages'].hasError('required')">
+                            Ages are <strong>required</strong>!
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+
+            <div fxLayoutAlign="center center">
+                <button class="btn-size" mat-raised-button color="accent" (click)="onSubmit()" [disabled]="formCategory.controls['ages'].hasError('required') || 
+                formCategory.controls['name'].hasError('required')">Create</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
