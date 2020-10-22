@@ -6,6 +6,7 @@ import { DataService } from './data.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GroupService extends DataService {
   constructor(injector: Injector,private route: Router) {
     super(injector, 'Category');

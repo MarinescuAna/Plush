@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  url="/src/app/images/logo.png";
   title = 'Plush';
 
   constructor() { }

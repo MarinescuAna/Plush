@@ -18,7 +18,7 @@
                     <mat-form-field class="input-style">
                         <mat-label>Ages</mat-label>
                         <input matInput placeholder="Ex. 3-2 ani" formControlName='ages' required>
-                        <mat-icon matSuffix class="color-text">email</mat-icon>
+                        <mat-icon matSuffix class="color-text">access_time</mat-icon>
                         <mat-error *ngIf="formCategory.controls['ages'].hasError('required')">
                             Ages are <strong>required</strong>!
                         </mat-error>
@@ -33,3 +33,4 @@
         </mat-card-content>
     </mat-card>
 </div>
+

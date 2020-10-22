@@ -17,8 +17,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
-import { CategoryModule } from 'src/app/modules/category.module'
+import { CategoryModule } from 'src/app/modules/category.module';
+import { ViewCategoryComponent } from './components/category-page/view-category/view-category.component';
+import { MainPageComponent } from './components/category-page/main-page/main-page.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { CategoryModule } from 'src/app/modules/category.module'
     ProductsComponent,
     ProductComponent,
     CategoriesComponent,
-    InsertProductComponent
+    InsertProductComponent,
+    ViewCategoryComponent,
+    MainPageComponent
   ],
   imports: [
     MatButtonModule,
@@ -42,7 +47,8 @@ import { CategoryModule } from 'src/app/modules/category.module'
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
