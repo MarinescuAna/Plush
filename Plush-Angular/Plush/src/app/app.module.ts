@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { CategoryModule } from 'src/app/modules/category.module';
 import { ViewCategoryComponent } from './components/category-page/view-category/view-category.component';
@@ -35,6 +36,7 @@ import { MainPageComponent } from './components/category-page/main-page/main-pag
     MainPageComponent
   ],
   imports: [
+    MatPaginatorModule,
     MatButtonModule,
     CategoryModule,
     BrowserModule,

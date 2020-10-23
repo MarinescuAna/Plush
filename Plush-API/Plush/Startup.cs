@@ -8,6 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Plush.BusinessLogicLayer.Repository.Implementation;
+using Plush.BusinessLogicLayer.Repository.Interface;
+using Plush.BusinessLogicLayer.Service.Implementation;
+using Plush.BusinessLogicLayer.Service.Interface;
 using Plush.DataAccessLayer.Repository;
 using Plush.Utils;
 using System.Linq;
@@ -30,13 +34,23 @@ namespace Plush
 
             services.AddDbContext<PlushDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(ConstantString.DefaultConnection)));
-
+            services.AddScoped<ICategoryService, CategoryService>();
             //For SWAGGER
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc(ConstantString.V1, new OpenApiInfo { Title = ConstantString.CoreApi, Description = ConstantString.SwaggerCoreApi });
                 c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
+
+            //For Angular Consumer
+            services.AddCors(o => o.AddPolicy(ConstantString.CORSPolicy, builder => {
+                builder.WithOrigins(Configuration.GetValue<string>(ConstantString.CORSOrigin))
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials();
+            }));
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +66,11 @@ namespace Plush
                 app.UseHsts();
             }
 
+            //For Angular Consumer
+            app.UseCors(ConstantString.CORSPolicy);
+
+            app.UseRouting();
+
             //For Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -60,6 +79,11 @@ namespace Plush
             });
 
             app.UseHttpsRedirection();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
