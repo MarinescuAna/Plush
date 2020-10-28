@@ -35,6 +35,8 @@ namespace Plush
             services.AddDbContext<PlushDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(ConstantString.DefaultConnection)));
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProviderDeliveryService, ProviderDeliveryService>();
+
             //For SWAGGER
             services.AddSwaggerGen(c =>
             {

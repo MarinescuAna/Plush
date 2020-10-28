@@ -1,0 +1,17 @@
+table {
+    width: 150%;
+    padding: 5px;
+    margin-left: -24%;
+    margin-top: 10%;
+  }
+
+  .paginator{
+    width: 150%;
+    color:crimson;
+    margin-left: -24%;
+  }
+
+  .color{
+    color:crimson;
+    font-size: large;
+  }

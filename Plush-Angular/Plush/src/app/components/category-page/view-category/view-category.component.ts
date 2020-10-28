@@ -1,47 +1,38 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { CategoryViewModule } from 'src/app/modules/category-view.module';
+import { CategoryService } from 'src/app/services/category-service';
 
-export interface PeriodicElement {
-  name: string;
-  ages: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { name: 'Hydrogen', ages: '1.0079'},
-  { name: 'Helium', ages: '4.0026'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-  { name: 'Lithium', ages: '6.94'},
-];
 
 @Component({
   selector: 'app-view-category',
   templateUrl: './view-category.component.html',
   styleUrls: ['./view-category.component.css']
 })
-export class ViewCategoryComponent implements OnInit, AfterViewInit  {
+export class ViewCategoryComponent implements AfterViewInit  {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  displayedColumns: string[] = [ 'categoryId','name', 'ages', 'symbol'];
+  dataSource : any;
+  index: any;
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    this.categoryService.getCategories().subscribe( cr =>
+      {
+        debugger
+        this.dataSource=new MatTableDataSource<CategoryViewModule>(cr as CategoryViewModule[]);
+        this.dataSource.paginator = this.paginator;
+      }
+    ); 
+   
+    
   }
-  constructor() { }
+  constructor(private categoryService: CategoryService) {
+   
+   }
 
-  ngOnInit(): void {
-  }
-  displayedColumns: string[] = [ 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+   deleteCategory(i: any, id: any):void {
+   
+    debugger
+   }
 }

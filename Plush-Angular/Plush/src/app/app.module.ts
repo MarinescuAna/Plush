@@ -19,10 +19,21 @@ import { ToastrModule } from 'ngx-toastr';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
 
 import { CategoryModule } from 'src/app/modules/category.module';
+import { CategoryViewModule } from 'src/app/modules/category-view.module';
 import { ViewCategoryComponent } from './components/category-page/view-category/view-category.component';
 import { MainPageComponent } from './components/category-page/main-page/main-page.component'
+
+import{ AlertService } from './services/alert.service';
+import { HttpClientModule } from '@angular/common/http';
+import {AppErrorHandler} from 'src/app/handler-error/app-error-handler';
+import { DeliveryComponentComponent } from './components/delivery-provider-page/delivery-component/delivery-component.component';
+import { ProviderComponentComponent } from './components/delivery-provider-page/provider-component/provider-component.component';
+import { ProviderDeliveryViewComponent } from './components/delivery-provider-page/provider-delivery-view/provider-delivery-view.component';
+import { ProviderDeliveryTableComponent } from './components/delivery-provider-page/provider-delivery-table/provider-delivery-table.component';
+import { ProviderDeliveryComponentComponent } from './components/delivery-provider-page/provider-delivery-component/provider-delivery-component.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +44,17 @@ import { MainPageComponent } from './components/category-page/main-page/main-pag
     CategoriesComponent,
     InsertProductComponent,
     ViewCategoryComponent,
-    MainPageComponent
+    MainPageComponent,
+    DeliveryComponentComponent,
+    ProviderComponentComponent,
+    ProviderDeliveryViewComponent,
+    ProviderDeliveryTableComponent,
+    ProviderDeliveryComponentComponent
   ],
   imports: [
+    
+    HttpClientModule,
+    CategoryViewModule,
     MatPaginatorModule,
     MatButtonModule,
     CategoryModule,
@@ -49,10 +68,14 @@ import { MainPageComponent } from './components/category-page/main-page/main-pag
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatSelectModule,
     ToastrModule.forRoot(),
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    AppErrorHandler,
+    AlertService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

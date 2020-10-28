@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { environment }  from 'src\environments\environment.ts';
+import {environment} from 'src/environments/environment';
 import {  Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AlertService } from './alert.service';
@@ -11,6 +11,7 @@ import { NotFoundError } from '../handler-error/not-found-error';
 import { ConflictError } from '../handler-error/conflict-error';
 import { ForbiddenError } from '../handler-error/forbidden-error';
 import { UnauthorizedError } from '../handler-error/unauthorized-error';
+import { CreatedMessage } from '../handler-error/created-message';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -90,8 +91,8 @@ export class DataService {
       }));
   }
 
-  delete(id: number): Observable<any> {
-    const url = `${this.url}/${id}`;
+  delete(id: number, path: string): Observable<any> {
+    const url = `${this.url}/${path}/${id}`;
     return this.http.delete<any>(url, httpOptions).pipe(map((response) => {
       return response;
     })).pipe(catchError(
@@ -102,6 +103,9 @@ export class DataService {
 
    public handleError(error: any){
     switch (error.status) {
+      case 201 || 200: {
+        throw this.appHandler.handleError(new CreatedMessage(error.error));
+      }
       case 400: {
         throw this.appHandler.handleError(new BadRequestError(error.error));
       }

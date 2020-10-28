@@ -47,7 +47,7 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
 
-            return StatusCode(Codes.Number_200,Messages.Success_200Ok);
+            return Ok();
         }
 
         [Route("GetCategories")]
@@ -78,7 +78,7 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
 
-            return StatusCode(Codes.Number_200, Messages.Success_200Ok);
+            return Ok();
         }
     }
 }

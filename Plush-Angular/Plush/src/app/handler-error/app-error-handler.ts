@@ -7,6 +7,7 @@ import { ForbiddenError } from "./forbidden-error";
 import { MethodNotAllowedError } from "./method-not-allowed-error";
 import { NotFoundError } from "./not-found-error";
 import { UnauthorizedError } from "./unauthorized-error";
+import{CreatedMessage} from './created-message';
 
 @Injectable()
 export class AppErrorHandler implements ErrorHandler{
@@ -15,7 +16,7 @@ export class AppErrorHandler implements ErrorHandler{
 
     handleError(error: any): void{
         const as=this.injector.get(AlertService);
-
+        debugger
         if(error instanceof  NotFoundError){
             as.showWarning(error.originalError || 'Record not found!');
             return;
@@ -39,11 +40,16 @@ export class AppErrorHandler implements ErrorHandler{
           if (error instanceof MethodNotAllowedError) {
             as.showWarning(error.originalErr || 'Method Not Allowed!');
             return;
+          } 
+          if(error instanceof CreatedMessage){
+            as.showSucces(error.originalErr || 'Success!');
+            return;
           }
           if (error instanceof AppError) {
             as.showWarning(error.originalErr || 'Internal Server Error!');
             return;
           }
+
           as.showError(error.message);
     }
     

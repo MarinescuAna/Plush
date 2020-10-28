@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
 import {ProductsComponent} from './components/product-page/products/products.component';
 import {MainPageComponent} from './components/category-page/main-page/main-page.component';
+import { ProviderDeliveryViewComponent } from './components/delivery-provider-page/provider-delivery-view/provider-delivery-view.component';
 const routes: Routes = [
   {
     path: 'category',
@@ -15,6 +16,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/products',
     pathMatch: 'full'
+  },
+  {
+    path:'deliveryProvider',
+    component: ProviderDeliveryViewComponent
   }
 ]
 

@@ -15,6 +15,7 @@ namespace Plush.Utils
         public static readonly string AlreadyCreated_409Conflict = "You already create this item!";
         public static readonly string AlreadyExist_409Conflict = "This item has already been created using this name!";
         public static readonly string Success_200Ok = "Success!";
+        public static readonly string Created_201Ok = "Created!";
 
     }
 }
