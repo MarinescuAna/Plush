@@ -22,8 +22,8 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             deliveryRepository = new DeliveryRepository(context);
         }
 
-        public async Task<Provider> GetProviderByNameAsync(string providerName) => await providerRepository.GetItemAsync(u => u.Name == providerName);
-        public async Task<Delivery> GetDeliveryByNameAsync(string deliveryName) => await deliveryRepository.GetItemAsync(u => u.Name == deliveryName);
+        public async Task<Provider> GetProviderByNameAsync(string providerName) => await providerRepository.GetItemAsync(u => u.Name.ToUpper() == providerName.ToUpper());
+        public async Task<Delivery> GetDeliveryByNameAsync(string deliveryName) => await deliveryRepository.GetItemAsync(u => u.Name.ToUpper() == deliveryName.ToUpper());
         public async Task<ProviderDelivery> GetProviderDeliveryByIdAsync(int id) => await providerDeliveryRepository.GetItemAsync(u => u.ProviderDeliveryID == id);
         public async Task<bool> InsertProvider(Provider provider)
         {

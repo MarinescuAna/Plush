@@ -22,8 +22,9 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
                 if (await _context.SaveChangesAsync() > 0)
                     return true;
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine("!!!!!!!!!Inner Exception"+ex.InnerException.ToString());
                 await _context.DisposeAsync();
             }
             return false;

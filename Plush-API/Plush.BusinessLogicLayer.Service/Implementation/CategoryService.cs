@@ -23,7 +23,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             return categoryRepository.CommitAsync();
         }
         public Task<Category> GetCategoryByIdAsync(Category category) => categoryRepository.GetItemAsync(u => u.CategoryID == category.CategoryID);
-        public Task<Category> GetCategoryByNameAsync(Category category) => categoryRepository.GetItemAsync(u => u.Name == category.Name);
+        public Task<Category> GetCategoryByNameAsync(Category category) => categoryRepository.GetItemAsync(u => u.Name.ToUpper() == category.Name.ToUpper());
         public Task<IEnumerable<Category>> GetCategoriesAsync() => categoryRepository.GetItemsAsync();
         public Task<Boolean> DeleteCategoryAsync(int categoryID)
         {

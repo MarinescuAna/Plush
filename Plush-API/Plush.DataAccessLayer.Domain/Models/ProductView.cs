@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Plush.DataAccessLayer.Domain.Domain
+namespace Plush.DataAccessLayer.Domain.Models
 {
-    public enum Status
-    {
-        Public,
-        Hide
-    };
-    public class Product
+    public class ProductView
     {
         public int ProductID { get; set; }
         public string Name { get; set; }
@@ -17,9 +12,11 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public string Specification { get; set; }
         public float Price { get; set; }
         public int Stock { get; set; }
-        public Category Category { get; set; }
-        public Provider Provider{ get; set; }
-        public DateTime? PostDatetime { get; set; }
-        public Status Status { get; set; }
+        public string CategoryName { get; set; }
+        public string CategorySpecification { get; set; }
+        public string ProviderName { get; set; }
+        public string ProviderSpecification { get; set; }
+        public DateTime Datetime { get; set; }
+
     }
 }
