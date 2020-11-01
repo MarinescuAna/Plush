@@ -1,0 +1,27 @@
+<mat-dialog-content class="mat-typography">
+        <mat-card-header>
+            <mat-card-title><strong>{{product.name}}</strong> </mat-card-title>
+        </mat-card-header>
+        <div fxLayoutAlign="center center" class="position-div-img">
+            <img mat-card-image src="assets/images/no-img.jpg"> 
+        </div>
+        <mat-card-content>
+            <p *ngIf='product.description!=null'>
+                <strong>Description: </strong>{{product.description}} 
+            </p>
+            <p *ngIf='product.specification!=null'>
+                <strong>Specification: </strong>{{product.specification}} 
+            </p>
+            <p>
+                <strong>Price: {{product.price}} RON</strong>
+            </p>
+            <p *ngIf='product.categoryName!=null'>
+                <strong>Category: </strong> {{product.categoryName}}
+                <br>
+                <strong>Ages: </strong>{{product.categorySpecification}}
+            </p>
+            <p *ngIf='product.providerName!=null'>
+                <strong>Provider: </strong> {{product.providerName}}
+            </p>
+        </mat-card-content>
+</mat-dialog-content>

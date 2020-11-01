@@ -72,22 +72,58 @@ namespace Plush.Controllers
 
             foreach(var prduct in products)
             {
-                prods.Add(new ProductView { 
-                    CategoryName=prduct.Category?.Name,
-                    CategorySpecification=prduct.Category?.Ages,
-                    Description=prduct.Description,
-                    Name=prduct.Name,
-                    Price=prduct.Price,
-                    ProviderName=prduct.Provider?.Name,
-                    ProviderSpecification=prduct.Provider?.ContactData,
-                    Specification=prduct.Specification,
-                    Stock=prduct.Stock,
-                    ProductID=prduct.ProductID,
-                    Datetime = (DateTime)prduct.PostDatetime
+                prods.Add(new ProductView
+                {
+                    CategoryName = prduct.Category?.Name,
+                    CategorySpecification = prduct.Category?.Ages,
+                    Description = prduct.Description,
+                    Name = prduct.Name.ToUpper(),
+                    Price = prduct.Price,
+                    ProviderName = prduct.Provider?.Name,
+                    ProviderSpecification = prduct.Provider?.ContactData,
+                    Specification = prduct.Specification,
+                    ProductID = prduct.ProductID,
+                    Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0]
                 });
             }
 
-            prods.Sort((x,y)=> x.Datetime.CompareTo(y.Datetime));
+
+            return StatusCode(Codes.Number_201, prods);
+        }
+
+        [Route("GetProducts")]
+        [HttpGet]
+        public async Task<IActionResult> GetProducts()
+        {
+            var products = await productService.GetProductsAsync();
+
+            if (products == null || products?.Count() == 0)
+            {
+                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
+
+            var prods = new List<ProductViewAdmin>();
+
+            foreach (var prduct in products)
+            {
+                prods.Add(new ProductViewAdmin
+                {
+                    CategoryName = prduct.Category?.Name,
+                    CategorySpecification = prduct.Category?.Ages,
+                    Description = prduct.Description,
+                    Name = prduct.Name.ToUpper(),
+                    Price = prduct.Price,
+                    ProviderName = prduct.Provider?.Name,
+                    ProviderSpecification = prduct.Provider?.ContactData,
+                    Specification = prduct.Specification,
+                    Stock = prduct.Stock,
+                    ProductID = prduct.ProductID,
+                    Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0],
+                    Public = prduct.Status==Status.Public?"1":"0"
+                });
+            }
+
+            prods.Sort((x, y) => x.Datetime.CompareTo(y.Datetime));
 
             return StatusCode(Codes.Number_201, prods);
         }
@@ -96,7 +132,7 @@ namespace Plush.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
@@ -114,33 +150,54 @@ namespace Plush.Controllers
             return Ok();
         }
 
+
+        [Route("PublishProduct")]
+        [HttpPut]
+        public async Task<IActionResult> PublishProduct(int id)
+        {
+            if (id == 0)
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            if (await productService.GetProductByIdAsync(id) == null)
+            {
+                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
+            }
+
+            if (await productService.PublishProduct(id) == false)
+            {
+                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
+
+            return Ok();
+        }
+
         [Route("UpdateProduct")]
         [HttpPut]
-        public async Task<IActionResult> UpdateProduct(ProductView product)
+        public async Task<IActionResult> UpdateProduct(ProductUpdate product)
         {
             if (product == null)
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            
-            //var request = new Product
-            //{
-            //    Description = product.Description,
-            //    Specification = product.Specification,
-            //    Stock = product.Stock,
-            //    Price = product.Price,
-            //    Name = product.Name,
-            //    Provider = await providerDeliveryService.GetProviderByNameAsync(product.Provider),
-            //    Category = await categoryService.GetCategoryByNameAsync(new Category { Name = product.Category }),
-            //    PostDatetime = DateTime.Now,
-            //    Status = product.Status == 0 ? Status.Public : Status.Hide
-            //};
+            var request = new Product
+            {
+                ProductID=product.ProductID,
+                Description = product.Description,
+                Specification = product.Specification,
+                Stock = !string.IsNullOrEmpty(product.Stock)?Int32.Parse(product.Stock):0,
+                Price = !string.IsNullOrEmpty(product.Price)?float.Parse(product.Price):0,
+                Name = product.Name,
+                Provider = !string.IsNullOrEmpty(product.ProviderName) ? await providerDeliveryService.GetProviderByNameAsync(product.ProviderName) : null,
+                Category = !string.IsNullOrEmpty(product.CategoryName) ? await categoryService.GetCategoryByNameAsync(new Category { Name = product.CategoryName }): null
+            };
 
-            //if (await productService.InsertProductAsync(request) == false)
-            //{
-            //    return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
-            //}
+            if (await productService.UpdateProductAsync(request) == false)
+            {
+                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
 
             return Ok();
         }

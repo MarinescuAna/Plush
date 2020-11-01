@@ -63,7 +63,7 @@ namespace Plush.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }

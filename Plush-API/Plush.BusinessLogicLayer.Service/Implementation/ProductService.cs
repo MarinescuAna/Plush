@@ -26,11 +26,66 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             return await productRepository.CommitAsync();
         }
         public async Task<IEnumerable<Product>> GetPublicProductsAsync() => (await productRepository.GetItemsAsync()).Where(u => u.Status == Status.Public);
+        public async Task<IEnumerable<Product>> GetProductsAsync() => await productRepository.GetItemsAsync();
         public async Task<Product> GetProductByIdAsync(int id) => await productRepository.GetItemAsync(u => u.ProductID == id);
 
         public async Task<bool> DeleteProduct(int id)
         {
-            productRepository.DeleteItemAsync(u => u.ProductID == id);
+            await productRepository.DeleteItemAsync(u => u.ProductID == id);
+
+            return await productRepository.CommitAsync();
+        }
+
+        public async Task<bool> PublishProduct(int id)
+        {
+            var product = await productRepository.GetItemAsync(u => u.ProductID == id);
+
+            product.Status = product.Status == Status.Public ? Status.Hide : Status.Public;
+
+            await productRepository.UpdateItemAsync(u=>u.ProductID==id,product);
+
+            return await productRepository.CommitAsync();
+        }
+        public async Task<bool> UpdateProductAsync(Product productNew)
+        {
+            var product = await productRepository.GetItemAsync(u => u.ProductID == productNew.ProductID);
+
+            if(!string.IsNullOrEmpty(productNew.Name))
+            {
+                product.Name = productNew.Name;
+            }
+
+            if (!string.IsNullOrEmpty(productNew.Description))
+            {
+                product.Description = productNew.Description;
+            }
+
+            if (!string.IsNullOrEmpty(productNew.Specification))
+            {
+                product.Specification = productNew.Specification;
+            }
+
+            if (productNew.Stock!= product.Stock && productNew.Stock!=0)
+            {
+                product.Stock = productNew.Stock;
+            }
+
+            if (productNew.Price != product.Price && productNew.Price != 0)
+            {
+                product.Price = productNew.Price;
+            }
+
+            if (productNew.Provider != product.Provider)
+            {
+                product.Provider = productNew.Provider;
+            }
+
+            if (productNew.Category != product.Category)
+            {
+                product.Category = productNew.Category;
+            }
+
+            await productRepository.UpdateItemAsync(u => u.ProductID == product.ProductID, product);
 
             return await productRepository.CommitAsync();
         }

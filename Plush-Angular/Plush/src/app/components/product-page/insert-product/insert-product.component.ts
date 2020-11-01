@@ -47,7 +47,7 @@ export class InsertProductComponent implements OnInit {
     newRecord.category=this.formProduct.value.category;
     newRecord.description=this.formProduct.value.description;
     newRecord.price=this.formProduct.value.price+'';
-    newRecord.stock=this.formProduct.value.stock;
+    newRecord.stock=this.formProduct.value.stock+'';
     newRecord.status=this.isChecked==true? '0':'1';
     newRecord.provider=this.formProduct.value.provider;
     debugger

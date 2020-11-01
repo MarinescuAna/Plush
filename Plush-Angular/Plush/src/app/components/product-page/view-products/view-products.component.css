@@ -1,0 +1,17 @@
+.size-position{
+    margin-top: 5%;
+    margin-left: 20%;
+    width: 200%;
+}
+
+.size-position-progress{
+    margin-top: 10%;
+    margin-left: 20%;
+    width: 160%;
+    height: 20px;
+    background-color: black;
+    border-radius: 37%;
+}
+.progress-b{
+    margin-top: 0.6%;
+}

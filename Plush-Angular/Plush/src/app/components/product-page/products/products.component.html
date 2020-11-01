@@ -1,2 +1,5 @@
-<app-insert-product></app-insert-product>
-<p>products works!</p>
+<div fxLayoutAlign="center center" fxLayout="row wrap"  class="size-position">
+    <div *ngFor="let product of products">
+        <app-product [product]='product'></app-product>
+    </div>
+</div>

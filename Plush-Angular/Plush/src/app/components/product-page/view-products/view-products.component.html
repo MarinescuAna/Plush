@@ -1,0 +1,10 @@
+<div fxLayoutAlign="center center" fxLayout="column" >
+    <app-insert-product></app-insert-product>
+    <div class="size-position-progress"><mat-progress-bar class="progress-b" mode="buffer"></mat-progress-bar></div>
+    <div fxLayoutAlign="center center" fxLayout="row wrap" class="size-position">
+        <div *ngFor="let product of products">
+            <app-view-product [product]='product'></app-view-product>
+        </div>
+    </div>
+</div>
+

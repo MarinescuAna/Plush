@@ -12,5 +12,8 @@ namespace Plush.BusinessLogicLayer.Service.Interface
         Task<IEnumerable<Product>> GetPublicProductsAsync();
         Task<Product> GetProductByIdAsync(int id);
         Task<bool> DeleteProduct(int id);
+        Task<IEnumerable<Product>> GetProductsAsync();
+        Task<bool> PublishProduct(int id);
+        Task<bool> UpdateProductAsync(Product productNew);
     }
 }

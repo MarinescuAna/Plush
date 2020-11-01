@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router'
 import {ProductsComponent} from './components/product-page/products/products.component';
 import {MainPageComponent} from './components/category-page/main-page/main-page.component';
 import { ProviderDeliveryViewComponent } from './components/delivery-provider-page/provider-delivery-view/provider-delivery-view.component';
-import { InsertProductComponent } from './components/product-page/insert-product/insert-product.component';
+import { ViewProductsComponent } from './components/product-page/view-products/view-products.component';
+
 const routes: Routes = [
   {
     path: 'category',
@@ -24,7 +25,7 @@ const routes: Routes = [
   },
   {
     path:'insertProduct',
-    component:InsertProductComponent
+    component:ViewProductsComponent
   }
 ]
 

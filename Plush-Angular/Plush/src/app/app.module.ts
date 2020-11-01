@@ -21,6 +21,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { CategoryModule } from 'src/app/modules/category.module';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
@@ -35,6 +37,12 @@ import { ProviderComponentComponent } from './components/delivery-provider-page/
 import { ProviderDeliveryViewComponent } from './components/delivery-provider-page/provider-delivery-view/provider-delivery-view.component';
 import { ProviderDeliveryTableComponent } from './components/delivery-provider-page/provider-delivery-table/provider-delivery-table.component';
 import { ProviderDeliveryComponentComponent } from './components/delivery-provider-page/provider-delivery-component/provider-delivery-component.component';
+import { ProductAboutComponent } from './components/product-page/product-about/product-about.component';
+import { ProductImageViewComponent } from './components/product-page/product-image-view/product-image-view.component';
+import { ViewProductsComponent } from './components/product-page/view-products/view-products.component';
+import { ViewProductComponent } from './components/product-page/view-product/view-product.component';
+import { DialogAboutProductComponent } from './components/product-page/dialog-about-product/dialog-about-product.component';
+import { DialogUpdateProductComponent } from './components/product-page/dialog-update-product/dialog-update-product.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +58,13 @@ import { ProviderDeliveryComponentComponent } from './components/delivery-provid
     ProviderComponentComponent,
     ProviderDeliveryViewComponent,
     ProviderDeliveryTableComponent,
-    ProviderDeliveryComponentComponent
+    ProviderDeliveryComponentComponent,
+    ProductAboutComponent,
+    ProductImageViewComponent,
+    ViewProductsComponent,
+    ViewProductComponent,
+    DialogAboutProductComponent,
+    DialogUpdateProductComponent
   ],
   imports: [
 
@@ -72,7 +86,9 @@ import { ProviderDeliveryComponentComponent } from './components/delivery-provid
     MatSelectModule,
     ToastrModule.forRoot(),
     MatTableModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatProgressBarModule
   ],
   providers: [
     AppErrorHandler,

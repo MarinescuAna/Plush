@@ -69,7 +69,7 @@ export class DataService {
    }
 
    // tslint:disable-next-line: typedef
-  update(id: number, entity: any) {
+  update(id: any, entity: any) {
     const body = JSON.stringify(entity);
     const url = `${this.url}/${id}`;
     return this.http.put(url, body, httpOptions).pipe(map((response) => {
@@ -91,8 +91,8 @@ export class DataService {
       }));
   }
 
-  delete(id: number, path: string): Observable<any> {
-    const url = `${this.url}/${path}/${id}`;
+  delete(id: string, path: string): Observable<any> {
+    const url = `${this.url}/${path}?${id}`;
     return this.http.delete<any>(url, httpOptions).pipe(map((response) => {
       return response;
     })).pipe(catchError(
