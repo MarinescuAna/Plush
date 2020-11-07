@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,12 +9,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using NLog;
+using Plush.ApplicationLogger;
 using Plush.BusinessLogicLayer.Repository.Implementation;
 using Plush.BusinessLogicLayer.Repository.Interface;
+using Plush.BusinessLogicLayer.Repository.UnitOfWork;
 using Plush.BusinessLogicLayer.Service.Implementation;
 using Plush.BusinessLogicLayer.Service.Interface;
 using Plush.DataAccessLayer.Repository;
 using Plush.Utils;
+using System.IO;
 using System.Linq;
 
 namespace Plush
@@ -22,6 +27,7 @@ namespace Plush
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), ConstantString.nlogConfig));
             Configuration = configuration;
         }
 
@@ -37,6 +43,8 @@ namespace Plush
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProviderDeliveryService, ProviderDeliveryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<ILoggerService, LoggerService>();
 
             //For SWAGGER
             services.AddSwaggerGen(c =>

@@ -19,4 +19,8 @@ export class ProductUpdateModule {
     stock: string;
     categoryName: string;
     providerName: string;
+    document: string;
+    extension: string;
+    fileName: string;
+    imageID:string;
 }

@@ -1,10 +1,11 @@
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, Inject, Injector, OnInit, Optional } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
-import{ProductUpdateModule} from 'src/app/modules/product-update.module';
+import { ProductUpdateModule } from 'src/app/modules/product-update.module';
 import { ProductViewAdminModule } from 'src/app/modules/product-view-admin.module';
 import { ProviderDDLModule } from 'src/app/modules/provider-ddl.module';
+import { AlertService } from 'src/app/services/alert.service';
 import { CategoryService } from 'src/app/services/category-service';
 import { ProductService } from 'src/app/services/product.service';
 import { ProviderDeliveryService } from 'src/app/services/provider-delivery-service';
@@ -16,20 +17,22 @@ import { ProviderDeliveryService } from 'src/app/services/provider-delivery-serv
 })
 export class DialogUpdateProductComponent implements OnInit {
 
-  product:ProductViewAdminModule;
+  product: ProductViewAdminModule;
   providers: ProviderDDLModule[];
-  categories:CategoryViewModule[];
-  formProduct :FormGroup;
+  categories: CategoryViewModule[];
+  formProduct: FormGroup;
+  newProduct = new ProductUpdateModule();
+  fileName: string;
 
   ngOnInit(): void {
     this.providerService.getProviders().subscribe(cr => {
-      this.providers=cr as ProviderDDLModule[];
+      this.providers = cr as ProviderDDLModule[];
     });
     this.categoryService.getCategories().subscribe(cr => {
-      this.categories=cr as CategoryViewModule[];
+      this.categories = cr as CategoryViewModule[];
     });
   }
-  constructor( @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+  constructor(@Optional() @Inject(MAT_DIALOG_DATA) public data: any,
     private providerService: ProviderDeliveryService,
     private categoryService: CategoryService,
     private productService: ProductService) {
@@ -45,42 +48,66 @@ export class DialogUpdateProductComponent implements OnInit {
     });
   }
 
-  onSubmit():void{
-    var changes=0;
-    let newProduct=new ProductUpdateModule();
-    newProduct.productID=this.product.productID;
+  onSubmit(): void {
+    var changes = 0;
+    this.newProduct.productID = this.product.productID+"";
+    this.newProduct.imageID = this.newProduct.imageID==null? this.newGuid():this.newProduct.imageID;
 
-    if(this.formProduct.value.name!="" && this.formProduct.value.name!=this.product.name){
+    if (this.newProduct.fileName != "" && this.newProduct.fileName != this.product.name) {
       changes++;
-      newProduct.name=this.formProduct.value.name;
     }
-    if(this.formProduct.value.description!="" && this.formProduct.value.description!=this.product.description){
+    if (this.formProduct.value.name != "" && this.formProduct.value.name != this.product.name) {
       changes++;
-      newProduct.description=this.formProduct.value.description;
+      this.newProduct.name = this.formProduct.value.name;
     }
-    if(this.formProduct.value.specifications!="" && this.formProduct.value.specifications!=this.product.specification){
+    if (this.formProduct.value.description != "" && this.formProduct.value.description != this.product.description) {
       changes++;
-      newProduct.specification=this.formProduct.value.specifications;
+      this.newProduct.description = this.formProduct.value.description;
     }
-    if(this.formProduct.value.price!="" && this.formProduct.value.price!=this.product.price){
+    if (this.formProduct.value.specifications != "" && this.formProduct.value.specifications != this.product.specification) {
       changes++;
-      newProduct.price=this.formProduct.value.price+'';
+      this.newProduct.specification = this.formProduct.value.specifications;
     }
-    if(this.formProduct.value.stock!="" && this.formProduct.value.stock!=this.product.stock){
+    if (this.formProduct.value.price != "" && this.formProduct.value.price != this.product.price) {
       changes++;
-      newProduct.stock=this.formProduct.value.stock+'';
+      this.newProduct.price = this.formProduct.value.price + '';
     }
-    if(this.formProduct.value.category!="" && this.formProduct.value.category!=this.product.categoryName){
+    if (this.formProduct.value.stock != "" && this.formProduct.value.stock != this.product.stock) {
       changes++;
-      newProduct.categoryName=this.formProduct.value.category;
+      this.newProduct.stock = this.formProduct.value.stock + '';
     }
-    if(this.formProduct.value.provider!="" && this.formProduct.value.provider!=this.product.providerName){
+    if (this.formProduct.value.category != "" && this.formProduct.value.category != this.product.categoryName) {
       changes++;
-      newProduct.providerName=this.formProduct.value.provider;
+      this.newProduct.categoryName = this.formProduct.value.category;
     }
- 
-    if(changes>0){
-      this.productService.updateProduct(newProduct);
+    if (this.formProduct.value.provider != "" && this.formProduct.value.provider != this.product.providerName) {
+      changes++;
+      this.newProduct.providerName = this.formProduct.value.provider;
+    }
+
+    if (changes > 0) {
+      this.productService.updateProduct(this.newProduct);
+    }
+  }
+  private newGuid(): string {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+  onFileChange(event): void {
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      this.fileName = event.target.files[0].name;
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.newProduct.extension = this.fileName.split('.')[1];
+        this.newProduct.fileName = this.fileName.split('.')[0];
+        this.newProduct.document = reader.result.toString().split(',')[1];
+        this.newProduct.imageID = this.product.imageID==null? this.newGuid():this.product.imageID;
+      };
     }
   }
 

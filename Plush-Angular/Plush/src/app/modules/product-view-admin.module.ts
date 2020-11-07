@@ -23,4 +23,8 @@ export class ProductViewAdminModule {
     providerSpecification: string;
     datetime: string;
     public:string;
+    document: string;
+    extension: string;
+    fileName: string;
+    imageID:string;
 }

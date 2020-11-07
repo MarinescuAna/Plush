@@ -19,4 +19,7 @@ export class ProductInsertModule {
     category: string;
     provider: string;
     status: string;
+    document: string;
+    extension: string;
+    fileName: string;
 }

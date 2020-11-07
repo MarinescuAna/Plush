@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plush.DataAccessLayer.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plush.DataAccessLayer.Repository", "..\Plush.DataAccessLayer.Repository\Plush.DataAccessLayer.Repository.csproj", "{2F5DB124-298B-475C-AA6B-72BEEE6FD1B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plush.BusinessLogicLayer.Repository", "..\Plush.BusinessLogicLayer.Repository\Plush.BusinessLogicLayer.Repository.csproj", "{40CA38F5-D818-42C8-8B2D-1021E98CC5F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plush.BusinessLogicLayer.Repository", "..\Plush.BusinessLogicLayer.Repository\Plush.BusinessLogicLayer.Repository.csproj", "{40CA38F5-D818-42C8-8B2D-1021E98CC5F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plush.BusinessLogicLayer.Service", "..\Plush.BusinessLogicLayer.Service\Plush.BusinessLogicLayer.Service.csproj", "{9BDDB98F-1C32-4E26-8A72-366BB32C1069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plush.BusinessLogicLayer.Service", "..\Plush.BusinessLogicLayer.Service\Plush.BusinessLogicLayer.Service.csproj", "{9BDDB98F-1C32-4E26-8A72-366BB32C1069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plush.ApplicationLogger", "..\Plush.ApplicationLogger\Plush.ApplicationLogger.csproj", "{B1659B64-4F75-47D1-A1A0-E69DAD0D3E9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9BDDB98F-1C32-4E26-8A72-366BB32C1069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BDDB98F-1C32-4E26-8A72-366BB32C1069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BDDB98F-1C32-4E26-8A72-366BB32C1069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1659B64-4F75-47D1-A1A0-E69DAD0D3E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1659B64-4F75-47D1-A1A0-E69DAD0D3E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1659B64-4F75-47D1-A1A0-E69DAD0D3E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1659B64-4F75-47D1-A1A0-E69DAD0D3E9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Plush.ApplicationLogger\Plush.ApplicationLogger.csproj" />
     <ProjectReference Include="..\Plush.DataAccessLayer.Repository\Plush.DataAccessLayer.Repository.csproj" />
   </ItemGroup>
 

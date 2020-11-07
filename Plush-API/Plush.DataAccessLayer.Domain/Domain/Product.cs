@@ -21,5 +21,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public Provider Provider{ get; set; }
         public DateTime? PostDatetime { get; set; }
         public Status Status { get; set; }
+        public Image Image { get; set; }
     }
 }

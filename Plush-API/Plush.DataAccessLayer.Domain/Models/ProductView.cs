@@ -16,6 +16,9 @@ namespace Plush.DataAccessLayer.Domain.Models
         public string ProviderName { get; set; }
         public string ProviderSpecification { get; set; }
         public string Datetime { get; set; }
-
+        public string Extension { get; set; }
+        public string FileName { get; set; }
+        public string Document { get; set; }
+        public string ImageID { get; set; }
     }
 }

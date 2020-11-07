@@ -6,7 +6,7 @@ namespace Plush.DataAccessLayer.Domain.Models
 {
     public class ProviderDeliveryView
     {
-        public int ProviderDeliveryID { get; set; }
+        public string ProviderDeliveryID { get; set; }
         public string ProviderName { get; set; }
         public string ProviderContactData { get; set; }
         public string DeliveryName { get; set; }

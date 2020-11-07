@@ -11,11 +11,17 @@ import { ProductImageViewComponent } from '../product-image-view/product-image-v
 })
 export class ProductComponent implements OnInit {
 
-  src="assets/images/no-img.jpg";
+  src: string;
   @Input() product: ProductViewModule;
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    debugger
+    if(this.product.document!=null && this.product.document!=""){
+      this.src='data:image/' + this.product.extension + ';base64,' + this.product.document;
+    }else{
+      this.src ="assets/images/no-img.jpg"
+    }
   }
   openDialog(): void {
     const diagRef = this.dialog.open(ProductImageViewComponent, { data: { src: this.src } });

@@ -1,4 +1,5 @@
-﻿using Plush.BusinessLogicLayer.Repository.Interface;
+﻿using Plush.ApplicationLogger;
+using Plush.BusinessLogicLayer.Repository.Interface;
 using Plush.DataAccessLayer.Domain.Domain;
 using Plush.DataAccessLayer.Repository;
 using System;
@@ -9,7 +10,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
 {
     public class CategoryRepository: RepositoryBase<Category>, ICategoryRepository
     {
-        public CategoryRepository(PlushDbContext context):base(context)
+        public CategoryRepository(PlushDbContext context, ILoggerService loggerService):base(context,loggerService)
         {
                 
         }

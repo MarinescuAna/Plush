@@ -46,7 +46,14 @@ namespace Plush.Controllers
                 Provider = await providerDeliveryService.GetProviderByNameAsync(product.Provider),
                 Category = await categoryService.GetCategoryByNameAsync(new Category { Name = product.Category }),
                 PostDatetime = DateTime.Now,
-                Status = product.Status == "0" ? Status.Public : Status.Hide
+                Status = product.Status == "0" ? Status.Public : Status.Hide,
+                Image=new Image
+                {
+                    ImageID=Guid.NewGuid(),
+                    Document=product.Document,
+                    Extension=product.Extension,
+                    FileName=product.FileName
+                }
             };
 
             if (await productService.InsertProductAsync(request) == false)
@@ -83,7 +90,11 @@ namespace Plush.Controllers
                     ProviderSpecification = prduct.Provider?.ContactData,
                     Specification = prduct.Specification,
                     ProductID = prduct.ProductID,
-                    Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0]
+                    Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0],
+                    Document=prduct.Image?.Document,
+                    Extension=prduct.Image?.Extension,
+                    FileName=prduct.Image?.FileName,
+                    ImageID=prduct.Image?.ImageID.ToString()
                 });
             }
 
@@ -119,7 +130,11 @@ namespace Plush.Controllers
                     Stock = prduct.Stock,
                     ProductID = prduct.ProductID,
                     Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0],
-                    Public = prduct.Status==Status.Public?"1":"0"
+                    Public = prduct.Status==Status.Public?"1":"0",
+                    Document = prduct.Image?.Document,
+                    Extension = prduct.Image?.Extension,
+                    FileName = prduct.Image?.FileName,
+                    ImageID = prduct.Image?.ImageID.ToString()
                 });
             }
 
@@ -177,21 +192,28 @@ namespace Plush.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateProduct(ProductUpdate product)
         {
-            if (product == null)
+            if (product == null || String.IsNullOrEmpty(product.ProductID))
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
             var request = new Product
             {
-                ProductID=product.ProductID,
+                ProductID=Int32.Parse(product.ProductID),
                 Description = product.Description,
                 Specification = product.Specification,
                 Stock = !string.IsNullOrEmpty(product.Stock)?Int32.Parse(product.Stock):0,
                 Price = !string.IsNullOrEmpty(product.Price)?float.Parse(product.Price):0,
                 Name = product.Name,
                 Provider = !string.IsNullOrEmpty(product.ProviderName) ? await providerDeliveryService.GetProviderByNameAsync(product.ProviderName) : null,
-                Category = !string.IsNullOrEmpty(product.CategoryName) ? await categoryService.GetCategoryByNameAsync(new Category { Name = product.CategoryName }): null
+                Category = !string.IsNullOrEmpty(product.CategoryName) ? await categoryService.GetCategoryByNameAsync(new Category { Name = product.CategoryName }): null,
+                Image=new Image
+                {
+                    Document=product.Document,
+                    ImageID=Guid.Parse(product.ImageID),
+                    FileName=product.FileName,
+                    Extension=product.Extension
+                }
             };
 
             if (await productService.UpdateProductAsync(request) == false)

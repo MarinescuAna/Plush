@@ -5,6 +5,7 @@
         <h1 class="title-style"><strong>Add a new product</strong></h1>
       </mat-card-title>
       <mat-slide-toggle class="text-style" [(ngModel)]="isChecked">Publish the product</mat-slide-toggle>
+      <input type="file" (change)="onFileChange($event)">
     </div>
     <mat-card-content>
       <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">

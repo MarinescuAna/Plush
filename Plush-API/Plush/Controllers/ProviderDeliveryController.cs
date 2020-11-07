@@ -96,7 +96,7 @@ namespace Plush.Controllers
                 Specification = providerDeliveryInsert.Specification
             };
 
-            if (newProviderDelivery.Provider==null || newProviderDelivery.Delivery==null)
+           if (newProviderDelivery.Provider==null || newProviderDelivery.Delivery==null)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
@@ -160,7 +160,7 @@ namespace Plush.Controllers
                     Specification=provdeliver?.Specification,
                     Price=provdeliver.Price,
                     ProviderContactData=provdeliver?.Provider?.ContactData,
-                    ProviderDeliveryID=provdeliver.ProviderDeliveryID,
+                    ProviderDeliveryID=provdeliver.ID.ToString(),
                     ProviderName=provdeliver?.Provider?.Name
                 }) ;
             }
@@ -170,19 +170,19 @@ namespace Plush.Controllers
 
         [Route("DeleteProviderDelivery")]
         [HttpDelete]
-        public async Task<IActionResult> DeleteProviderDelivery(int id)
+        public async Task<IActionResult> DeleteProviderDelivery(String id)
         {
-            if (id == 0)
+            if (string.IsNullOrEmpty(id))
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await providerDeliveryService.GetProviderDeliveryByIdAsync(id) == null)
+            if (await providerDeliveryService.GetProviderDeliveryByIdAsync(Int32.Parse(id)) == null)
             {
                 return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
             }
 
-            if (await providerDeliveryService.DeleteProviderDeliveryByIdAsync(id) == false)
+            if (await providerDeliveryService.DeleteProviderDeliveryByIdAsync(Int32.Parse(id)) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }

@@ -36,11 +36,8 @@ export class ProductService extends DataService {
     });;
   }
 
-  publishProduct(id: any): void{
-    super.update('PublishProduct?id='+id, '').subscribe(cr => {
-        this.alertService.showSucces('The product was change!');
-        this.route.navigateByUrl('/insertProduct');
-      });
+  publishProduct(id: any): Observable<any>{
+    return super.update('PublishProduct?id='+id, '');
   }
   updateProduct(data: any): void{
     debugger

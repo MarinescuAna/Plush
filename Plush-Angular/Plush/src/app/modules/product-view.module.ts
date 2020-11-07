@@ -20,5 +20,9 @@ export class ProductViewModule {
     categorySpecification: string;
     providerName: string;
     providerSpecification: string;
-    datetime: string;
+    datetime: string;   
+    document: string;
+    extension: string;
+    fileName: string;
+    imageID:string;
 }
