@@ -17,16 +17,15 @@ export class CategoryService extends DataService {
   createCategory(module: CategoryModule): void{
     super.post<any>('InsertCategory', module).subscribe(cr => {
         this.alertService.showSucces('The category was created!');
-        this.route.navigateByUrl['\products'];
+        window.location.reload();
       });
   }
 
   getCategories(): Observable<CategoryViewModule[]>{
-    debugger;
     return super.getMany<CategoryViewModule>('GetCategories');
   }
 
-  deleteCategory(id: any):void{
-    super.delete(id,'DeleteCategory');
+  deleteCategory(id: any):any{
+    return super.delete(id,'DeleteCategory?id=');
   }
 }

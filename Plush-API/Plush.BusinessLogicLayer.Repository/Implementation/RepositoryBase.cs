@@ -59,7 +59,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             catch (Exception ex)
             {
                 _loggerService.LogError(loggDetails, ex.Message);
-                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
                     _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
@@ -122,10 +122,12 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             catch (Exception ex)
             {
                 _loggerService.LogError(loggDetails + ConstantsText.UpdateItemAsync_Text, ex.Message);
+
                 if (!string.IsNullOrEmpty(ex.InnerException.Message))
                 {
                     _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
+
                 return false;
             }
 

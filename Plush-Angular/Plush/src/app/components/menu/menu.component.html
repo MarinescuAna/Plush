@@ -1,19 +1,28 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-    <div  fxLayoutAlign="space-around start">
-        <img src="assets/images/logo.jpg" width="50px"/>
-        <a  mat-button [routerLink]="'/products'">{{title}}</a>
-        <a mat-button [routerLink]="'/insertProduct'">
-            ManageProducts
+<div class="toolbar" >
+    <div fxLayoutAlign="space-between  start">
+        <img src="assets/images/logo.jpg" width="70px" />
+        <a mat-fab class="btn-color" [routerLink]="'/products'">{{title}}</a>
+        <a mat-fab class="btn-color" [routerLink]="'/login'" *ngIf="!isLogged">
+            Login
         </a>
-<!--         <a mat-button [routerLink]="'/'">
-            History
-        </a> -->
-        <a mat-button [routerLink]="'/category'">
+        <a mat-fab class="btn-color" [routerLink]="'/register'" *ngIf="!isLogged">
+            Register
+        </a>
+        <a mat-fab class="btn-color" [routerLink]="'/insertProduct'" *ngIf="isLogged && isAdmin">
+            Products
+        </a>
+        <a mat-fab class="btn-color" [routerLink]="'/category'" *ngIf="isLogged && isAdmin">
             Categories
         </a>
-        <a mat-button [routerLink]="'/deliveryProvider'">
+        <a mat-fab class="btn-color" [routerLink]="'/deliveryProvider'" *ngIf="isLogged && isAdmin">
             Providers
+        </a>
+        <a mat-fab class="btn-color" [routerLink]="'/wishlist'" *ngIf="isLogged && !isAdmin">
+            <mat-icon>favorite</mat-icon>
+        </a>
+        <a mat-fab class="btn-color" (click)="logout()" *ngIf="isLogged">
+            Logout
         </a>
     </div>
 </div>

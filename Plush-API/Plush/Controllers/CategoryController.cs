@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Plush.BusinessLogicLayer.Service.Interface;
@@ -12,6 +13,7 @@ using Plush.Utils;
 
 namespace Plush.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -22,6 +24,7 @@ namespace Plush.Controllers
             this.categoryService = categoryService;
         }
 
+        [Authorize(Roles = "admin")]
         [Route("InsertCategory")]
         [HttpPost]
         public async Task<IActionResult> InsertCategory(CategoryInsert categoryInsert)
@@ -34,7 +37,8 @@ namespace Plush.Controllers
             var request = new Category
             {
                 Ages=categoryInsert.Ages,
-                Name=categoryInsert.Name
+                Name=categoryInsert.Name,
+                CategoryID=Guid.NewGuid()
             };
 
             if(await categoryService.GetCategoryByNameAsync(request) != null)
@@ -59,21 +63,22 @@ namespace Plush.Controllers
             return StatusCode(Codes.Number_200, categories);
         }
 
+        [Authorize(Roles = "admin")]
         [Route("DeleteCategory")]
         [HttpDelete]
-        public async Task<IActionResult> DeleteCategory(int id)
+        public async Task<IActionResult> DeleteCategory(string id)
         {
-            if (id == 0)
+            if (string.IsNullOrEmpty(id))
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await categoryService.GetCategoryByIdAsync(new Category { CategoryID=id}) == null)
+            if (await categoryService.GetCategoryByIdAsync(new Category { CategoryID=Guid.Parse(id)}) == null)
             {
                 return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
             }
 
-            if (await categoryService.DeleteCategoryAsync(id) == false)
+            if (await categoryService.DeleteCategoryAsync(Guid.Parse(id)) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }

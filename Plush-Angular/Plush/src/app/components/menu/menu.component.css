@@ -27,21 +27,15 @@
   .toolbar {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: #000000;
     color: #E91E63;
-    font-weight: 600;
-    align-items: center;
-    justify-content: center;
   }
 
   .toolbar img {
     margin: 0 16px;
+    border-radius: 40px;
   }
 
   .toolbar #twitter-logo {
@@ -53,3 +47,7 @@
     opacity: 0.8;
   }
 
+  .btn-color{
+    color: black;
+    width: 200px;
+  }

@@ -13,6 +13,6 @@ namespace Plush.BusinessLogicLayer.Service.Interface
         Task<Category> GetCategoryByNameAsync(Category category);
         Task<Category> GetCategoryByIdAsync(Category category);
         Task<IEnumerable<Category>> GetCategoriesAsync();
-        Task<Boolean> DeleteCategoryAsync(int categoryID);
+        Task<Boolean> DeleteCategoryAsync(Guid categoryID);
     }
 }

@@ -12,8 +12,9 @@ namespace Plush.DataAccessLayer.Domain.Models
         public string Specification { get; set; }
         public string Price { get; set; }
         public string Stock { get; set; }
-        public string Category { get; set; }
-        public string Provider { get; set; }
+        public string CategoryID { get; set; }
+        public string ProviderID { get; set; }
+        public string ImageID { get; set; }
         public string Status { get; set; }
         public string Extension { get; set; }
         public string FileName { get; set; }

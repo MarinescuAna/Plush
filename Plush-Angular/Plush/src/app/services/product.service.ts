@@ -18,21 +18,25 @@ export class ProductService extends DataService {
   createProduct(module: ProductInsertModule): void{
     super.post<any>('InsertProduct', module).subscribe(cr => {
         this.alertService.showSucces('The product was created!');
-        //this.route.navigateByUrl['\products'];
+        window.location.reload();
       });
   }
 
   getPublicProducts(): Observable<ProductViewModule[]>{
     return super.getMany<ProductViewModule>('GetPublicProducts');
   }
+  getPublicProductsLogged(): Observable<ProductViewModule[]>{
+    return super.getMany<ProductViewModule>('GetPublicProductsLogged');
+  }
+
   getProducts(): Observable<ProductViewAdminModule[]>{
     return super.getMany<ProductViewAdminModule>('GetProducts');
   }
 
   deleteProduct(id: any):void{
-    super.delete("id="+id,'DeleteProduct').subscribe(cr => {
+    super.delete(id,'DeleteProduct?id=').subscribe(cr => {
       this.alertService.showSucces('The product was successfully deleted!');
-      //this.route.navigateByUrl['\products'];
+      window.location.reload();
     });;
   }
 
@@ -40,10 +44,9 @@ export class ProductService extends DataService {
     return super.update('PublishProduct?id='+id, '');
   }
   updateProduct(data: any): void{
-    debugger
     super.update('UpdateProduct', data).subscribe(cr => {
         this.alertService.showSucces('The product was change!');
-        this.route.navigateByUrl('/insertProduct');
+        window.location.reload();
       });
   }
 }

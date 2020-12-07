@@ -33,13 +33,14 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             }
             catch (Exception ex)
             {
-                _loggerService.LogError(loggDetails+ConstantsText.GetItemsAsync_Text, ex.Message);
+                _loggerService.LogError(loggDetails + ConstantsText.GetItemsAsync_Text, ex.Message);
                 if (!string.IsNullOrEmpty(ex.InnerException.Message))
                 {
-                    _loggerService.LogError(loggDetails+ConstantsText.Inner_Text, ex.InnerException.Message);
+                    _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
                 return null;
             }
         }
+
     }
 }

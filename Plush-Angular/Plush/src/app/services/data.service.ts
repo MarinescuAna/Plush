@@ -92,7 +92,7 @@ export class DataService {
   }
 
   delete(id: string, path: string): Observable<any> {
-    const url = `${this.url}/${path}?${id}`;
+    const url = `${this.url}/${path}${id}`;
     return this.http.delete<any>(url, httpOptions).pipe(map((response) => {
       return response;
     })).pipe(catchError(

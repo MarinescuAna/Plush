@@ -30,6 +30,15 @@ namespace Plush.BusinessLogicLayer.Service.Utils
         public const string GetProvidersAsync_text = "(ProviderDeliveryService)GetProvidersAsync ";
         public const string GetProvidersDeliveriesAsync_text = "(ProviderDeliveryService)GetProvidersDeliveriesAsync ";
         public const string DeleteProviderDeliveryByIdAsync_text = "(ProviderDeliveryService)DeleteProviderDeliveryByIdAsync ";
+        public const string GetProviderDeliveryByNameAsync_text = "(ProviderDeliveryService)GetProviderDeliveryByNameAsync ";
 
+        public const string GetUserByEmailAsync_text = "(UserService)GetUserByEmailAsync ";
+        public const string InsertUserAsync_text = "(UserService)InsertUserAsync ";
+        public const string UpdateUserInformationAsync_text = "(UserService)UpdateUserInformationAsync ";
+
+        public const string InsertProductToWishlistAsync_text = "(WishlistService)InsertProductToWishlistAsync ";
+        public const string GetFavoriteProductsAsync_text = "(WishlistService)GetFavoriteProductsAsync ";
+        public const string DeleteProductFromWishlistAsync_text = "(WishlistService)DeleteProductFromWishlistAsync ";
+        public const string GetWishlistAsync_text = "(WishlistService)GetWishlistAsync ";
     }
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -28,9 +29,10 @@ import { CategoryModule } from 'src/app/modules/category.module';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
 import { ViewCategoryComponent } from './components/category-page/view-category/view-category.component';
 import { MainPageComponent } from './components/category-page/main-page/main-page.component'
+import {AuthconfigInterceptor} from 'src/app/shared/authconfig.interceptor';
 
 import { AlertService } from './services/alert.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppErrorHandler } from 'src/app/handler-error/app-error-handler';
 import { DeliveryComponentComponent } from './components/delivery-provider-page/delivery-component/delivery-component.component';
 import { ProviderComponentComponent } from './components/delivery-provider-page/provider-component/provider-component.component';
@@ -43,6 +45,14 @@ import { ViewProductsComponent } from './components/product-page/view-products/v
 import { ViewProductComponent } from './components/product-page/view-product/view-product.component';
 import { DialogAboutProductComponent } from './components/product-page/dialog-about-product/dialog-about-product.component';
 import { DialogUpdateProductComponent } from './components/product-page/dialog-update-product/dialog-update-product.component';
+import { LoginComponent } from './components/account-page/login/login.component';
+import { RegisterComponent } from './components/account-page/register/register.component';
+import { config } from 'rxjs';
+import { WishlistComponent } from './components/product-page/wishlist/wishlist.component';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -64,7 +74,10 @@ import { DialogUpdateProductComponent } from './components/product-page/dialog-u
     ViewProductsComponent,
     ViewProductComponent,
     DialogAboutProductComponent,
-    DialogUpdateProductComponent
+    DialogUpdateProductComponent,
+    LoginComponent,
+    RegisterComponent,
+    WishlistComponent
   ],
   imports: [
 
@@ -85,6 +98,10 @@ import { DialogUpdateProductComponent } from './components/product-page/dialog-u
     MatInputModule,
     MatSelectModule,
     ToastrModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+      tokenGetter: tokenGetter
+    }}),
     MatTableModule,
     MatSlideToggleModule,
     MatDialogModule,
@@ -92,6 +109,11 @@ import { DialogUpdateProductComponent } from './components/product-page/dialog-u
   ],
   providers: [
     AppErrorHandler,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthconfigInterceptor,
+      multi: true
+    },
     AlertService
   ],
   bootstrap: [AppComponent]

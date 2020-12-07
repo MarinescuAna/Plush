@@ -1,8 +1,4 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container matColumnDef="categoryId">
-    <th mat-header-cell *matHeaderCellDef class="color"> <strong>Id</strong></th>
-    <td mat-cell *matCellDef="let element"> {{element.categoryID}} </td>
-  </ng-container>
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef class="color"> <strong>Name</strong></th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
@@ -13,8 +9,8 @@
   </ng-container>
   <ng-container matColumnDef="symbol">
     <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element;let i = index;">
-      <button mat-icon-button [click]='deleteCategory(i,element)'>
+    <td mat-cell *matCellDef="let element;">
+      <button mat-icon-button (click)='deleteCategory(element.categoryID)'>
         <mat-icon matSuffix>delete_forever</mat-icon>
       </button> </td>
   </ng-container>

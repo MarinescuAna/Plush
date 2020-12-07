@@ -6,12 +6,12 @@ namespace Plush.DataAccessLayer.Domain.Domain
 {
     public enum Role
     {
-        User,
-        Admin
+        user,
+        admin
     };
     public class User
     {
-        public int UserID { get; set; }
+        public Guid UserID { get; set; }
         public string Fullname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -21,5 +21,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public DateTime? AccessTokenExp{ get; set; }
         public DateTime? Birthdate { get; set; }
         public Role Role { get; set; }
+        public ICollection<Wishlist> Wishlists { get; set; }
     }
 }

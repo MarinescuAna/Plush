@@ -1,25 +1,24 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog;
 using Plush.ApplicationLogger;
-using Plush.BusinessLogicLayer.Repository.Implementation;
-using Plush.BusinessLogicLayer.Repository.Interface;
 using Plush.BusinessLogicLayer.Repository.UnitOfWork;
 using Plush.BusinessLogicLayer.Service.Implementation;
 using Plush.BusinessLogicLayer.Service.Interface;
 using Plush.DataAccessLayer.Repository;
 using Plush.Utils;
+using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace Plush
 {
@@ -44,7 +43,39 @@ namespace Plush
             services.AddScoped<IProviderDeliveryService, ProviderDeliveryService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWishlistService, WishlistService>();
             services.AddSingleton<ILoggerService, LoggerService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //Session
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(120);
+            });
+
+            //For Jwt
+            var tokenValidationParameter = new TokenValidationParameters()
+            {
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["SecretKey"])),
+                RequireExpirationTime = true,
+                ClockSkew = TimeSpan.Zero
+            };
+            services.AddSingleton(tokenValidationParameter);
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+                options.TokenValidationParameters = tokenValidationParameter;
+            });
+
 
             //For SWAGGER
             services.AddSwaggerGen(c =>
@@ -82,6 +113,9 @@ namespace Plush
 
             app.UseRouting();
 
+            //Session
+            app.UseSession();
+
             //For Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -90,6 +124,20 @@ namespace Plush
             });
 
             app.UseHttpsRedirection();
+
+            //Add JWToken to all incoming HTTP Request Header
+            app.Use(async (context, next) =>
+            {
+                var jwToken = context.Session.GetString("Token");
+                if (!string.IsNullOrEmpty(jwToken))
+                {
+                    context.Request.Headers.Add("Authorization", "Bearer " + jwToken);
+                }
+                await next();
+            });
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,5 +1,23 @@
 .size-position{
-    margin-top: 10%;
-    margin-left: -40%;
-    width: 200%;
+    margin-top: -36%;
+    margin-left: -20%;
+ width: 200%;
+}
+.input-medi-style{
+    width: 290px;
+    font-size: small;
+   color:crimson;
+}
+.card-size{
+    padding: 5px;
+    width: 360px;
+    margin-top: 30%;
+    margin-right: -584%;
+    height: 300px;
+}
+
+.input-min-style{
+    width: 150px;
+    font-size: small;
+   color:crimson;
 }

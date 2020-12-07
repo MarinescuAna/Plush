@@ -25,4 +25,8 @@ export class ProductViewModule {
     extension: string;
     fileName: string;
     imageID:string;
+    wishlist:boolean;
+    categoryID:string;
+    providerID:string;
+    display:boolean;
 }

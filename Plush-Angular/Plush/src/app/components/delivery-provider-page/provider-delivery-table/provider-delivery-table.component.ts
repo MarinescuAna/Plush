@@ -13,7 +13,6 @@ export class ProviderDeliveryTableComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns: string[] = [ 
-    'providerDeliveryID',
     'providerName', 
     'providerContactData',
     'deliveryName',
@@ -24,7 +23,6 @@ export class ProviderDeliveryTableComponent implements AfterViewInit {
     'symbol'];
 
   dataSource : any;
-  index: any;
 
   ngAfterViewInit() {
     this.service.getProvidersDeliveries().subscribe( cr =>
@@ -40,6 +38,9 @@ export class ProviderDeliveryTableComponent implements AfterViewInit {
    
    }
 
-   deleteProviderDelivery(i: any, id: any):void {
+   deleteProviderDelivery(id: any):void {
+    this.service.deleteProviderDelivery(id).subscribe(cr =>{
+      window.location.reload();
+    });
    }
 }

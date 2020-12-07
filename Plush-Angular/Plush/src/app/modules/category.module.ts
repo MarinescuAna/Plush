@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CategoryModule {
+  categoryID:string;
     name: string;
     ages: string;
 }

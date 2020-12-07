@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
 import { CategoryService } from 'src/app/services/category-service';
 
@@ -13,26 +14,23 @@ import { CategoryService } from 'src/app/services/category-service';
 export class ViewCategoryComponent implements AfterViewInit  {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  displayedColumns: string[] = [ 'categoryId','name', 'ages', 'symbol'];
+  displayedColumns: string[] = [ 'name', 'ages', 'symbol'];
   dataSource : any;
-  index: any;
   ngAfterViewInit() {
     this.categoryService.getCategories().subscribe( cr =>
       {
-        debugger
         this.dataSource=new MatTableDataSource<CategoryViewModule>(cr as CategoryViewModule[]);
         this.dataSource.paginator = this.paginator;
       }
-    ); 
-   
-    
+    );  
   }
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: CategoryService, private route: Router) {
    
    }
 
-   deleteCategory(i: any, id: any):void {
-   
-    debugger
+   deleteCategory(id: any):void {
+      this.categoryService.deleteCategory(id).subscribe(cr => {
+        window.location.reload();
+      });
    }
 }

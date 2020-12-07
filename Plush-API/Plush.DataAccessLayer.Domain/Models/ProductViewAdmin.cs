@@ -6,7 +6,7 @@ namespace Plush.DataAccessLayer.Domain.Models
 {
     public class ProductViewAdmin
     {
-        public int ProductID { get; set; }
+        public string ProductID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Specification { get; set; }

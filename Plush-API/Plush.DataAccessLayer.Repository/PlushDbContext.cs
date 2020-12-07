@@ -16,5 +16,6 @@ namespace Plush.DataAccessLayer.Repository
         public DbSet<Product> Products { get; set; }
         public DbSet<ProviderDelivery> ProviderDeliveries { get; set; }
         public DbSet<Provider> Providers { get; set; }
+        public DbSet<Wishlist> Wishlists { get; set; }
     }
 }

@@ -1,10 +1,10 @@
 <mat-dialog-content class="mat-typography">
-        <mat-card-header>
+        <div fxLayoutAlign="center center" class="position-div-img">
+            <img mat-card-image [src]="src"> 
+        </div>      
+          <mat-card-header>
             <mat-card-title><strong>{{product.name}}</strong> </mat-card-title>
         </mat-card-header>
-        <div fxLayoutAlign="center center" class="position-div-img">
-            <img mat-card-image src="assets/images/no-img.jpg"> 
-        </div>
         <mat-card-content>
             <p *ngIf='product.description!=null'>
                 <strong>Description: </strong>{{product.description}} 

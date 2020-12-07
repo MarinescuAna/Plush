@@ -10,14 +10,15 @@ namespace Plush.BusinessLogicLayer.Service.Interface
     {
         Task<Provider> GetProviderByNameAsync(string providerName);
         Task<Delivery> GetDeliveryByNameAsync(string deliveryName);
-        Task<ProviderDelivery> GetProviderDeliveryByIdAsync(int id);
+        Task<ProviderDelivery> GetProviderDeliveryByIdAsync(Guid id);
         Task<bool> InsertProvider(Provider provider);
         Task<bool> InsertDelivery(Delivery delivery);
         Task<bool> InsertProviderDelivery(ProviderDelivery provider);
         Task<IEnumerable<Delivery>> GetDeliveriesAsync();
         Task<IEnumerable<Provider>> GetProvidersAsync();
         Task<IEnumerable<ProviderDelivery>> GetProvidersDeliveriesAsync();
-        Task<bool> DeleteProviderDeliveryByIdAsync(int id);
+        Task<bool> DeleteProviderDeliveryByIdAsync(Guid id);
+        Task<ProviderDelivery> GetProviderDeliveryByNameAsync(string id);
 
     }
 }

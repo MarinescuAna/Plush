@@ -21,14 +21,14 @@ export class ProviderDeliveryService extends DataService {
   createProvider(module: ProviderModule): void{
     super.post<any>('InsertProvider', module).subscribe(cr => {
         this.alertService.showSucces('The provider was created!');
-       // this.route.navigateByUrl['\products'];
+        window.location.reload();
       });
   }
 
   createDelivery(module: DeliveryModule): void{
     super.post<any>('InsertDelivery', module).subscribe(cr => {
         this.alertService.showSucces('The delivery method was created!');
-       // this.route.navigateByUrl['\products'];
+        window.location.reload();
       });
   }
 
@@ -47,7 +47,11 @@ export class ProviderDeliveryService extends DataService {
   createProviderDelivery(module: ProviderDeliveryInsertModule): void{
     super.post<any>('InsertProviderDelivery', module).subscribe(cr => {
         this.alertService.showSucces('Created!');
-      //  this.route.navigateByUrl['\products'];
+        window.location.reload();
       });
+  }
+
+  deleteProviderDelivery(id: any):any{
+    return super.delete(id,'DeleteProviderDelivery?id=');
   }
 }

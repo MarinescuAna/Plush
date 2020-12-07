@@ -23,7 +23,6 @@ export class DeliveryComponentComponent implements OnInit {
     let newRecord=new DeliveryModule();
     newRecord.specification=this.formDelivery.value.specifications;
     newRecord.name=this.formDelivery.value.name;
-    debugger
     this.service.createDelivery(newRecord);
   }
 }

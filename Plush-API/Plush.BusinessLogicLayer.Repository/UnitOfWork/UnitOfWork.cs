@@ -18,6 +18,8 @@ namespace Plush.BusinessLogicLayer.Repository.UnitOfWork
         private IProviderDeliveryRepository providerDeliveryRepository;
         private IProductRepository productRepository;
         private IImageRepository imageRepository;
+        private IUserRepository userRepository;
+        private IWishlistRepository wishlistRepository;
         private readonly ILoggerService _loggerService;
         public UnitOfWork(PlushDbContext ctx, ILoggerService loggerService)
         {
@@ -94,6 +96,30 @@ namespace Plush.BusinessLogicLayer.Repository.UnitOfWork
                 }
 
                 return imageRepository;
+            }
+        }
+        public IUserRepository UserRepository
+        {
+            get
+            {
+                if (userRepository == null)
+                {
+                    userRepository = new UserRepository(context, _loggerService);
+                }
+
+                return userRepository;
+            }
+        }
+        public IWishlistRepository WishlistRepository
+        {
+            get
+            {
+                if (wishlistRepository == null)
+                {
+                    wishlistRepository = new WishlistRepository(context, _loggerService);
+                }
+
+                return wishlistRepository;
             }
         }
         public async Task<bool> CommitAsync(string loggDetails)

@@ -6,8 +6,10 @@ namespace Plush.DataAccessLayer.Domain.Domain
 {
     public class Provider
     {
-        public int ProviderID { get; set; }
+        public Guid ProviderID { get; set; }
         public string Name  { get; set; }
         public string ContactData  { get; set; }
+
+        public ICollection<ProviderDelivery> ProviderDeliveries { get; set; }
     }
 }

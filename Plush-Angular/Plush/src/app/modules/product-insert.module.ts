@@ -16,8 +16,9 @@ export class ProductInsertModule {
     specification: string;
     price: string;
     stock: string;
-    category: string;
-    provider: string;
+    categoryID: string;
+    providerID: string;
+    imageID: string;
     status: string;
     document: string;
     extension: string;

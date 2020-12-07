@@ -20,5 +20,4 @@ export class ProviderDeliveryModule {
     specification: string;
     deliveryCompany: string;
     price: string;
-        
 }

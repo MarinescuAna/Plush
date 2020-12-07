@@ -10,5 +10,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public string Extension { get; set; }
         public string FileName { get; set; }
         public string Document { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

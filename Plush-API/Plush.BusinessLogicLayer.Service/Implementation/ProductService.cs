@@ -23,15 +23,6 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
         public async Task<bool> InsertProductAsync(Product product)
         {
-            if (!string.IsNullOrEmpty(product.Image.Document))
-            {
-                _unitOfWork.ImageRepository.InsertItemAsync(product.Image,ConstantsTextService.InsertProductAsync_text);
-
-                if (await _unitOfWork.CommitAsync(ConstantsTextService.InsertProductAsync_text) == false)
-                {
-                    return false;
-                }
-            }
             _unitOfWork.ProductRepository.InsertItemAsync(product, ConstantsTextService.InsertProductAsync_text);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.InsertProductAsync_text);
@@ -41,15 +32,15 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             .Where(u => u.Status == Status.Public);
         public async Task<IEnumerable<Product>> GetProductsAsync() 
             => await _unitOfWork.ProductRepository.GetItemsAsync(ConstantsTextService.GetProductsAsync_text);
-        public async Task<Product> GetProductByIdAsync(int id) 
+        public async Task<Product> GetProductByIdAsync(Guid id) 
             => await _unitOfWork.ProductRepository.GetItemAsync(u => u.ProductID == id,ConstantsTextService.GetProductByIdAsync_text);
-        public async Task<bool> DeleteProduct(int id)
+        public async Task<bool> DeleteProduct(Guid id)
         {
             await _unitOfWork.ProductRepository.DeleteItemAsync(u => u.ProductID == id,ConstantsTextService.DeleteProduct_text);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.DeleteProduct_text);
         }
-        public async Task<bool> PublishProduct(int id)
+        public async Task<bool> PublishProduct(Guid id)
         {
             var product = await _unitOfWork.ProductRepository.GetItemAsync(u => u.ProductID == id,ConstantsTextService.PublishProduct_text);
 

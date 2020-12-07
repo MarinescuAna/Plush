@@ -6,7 +6,9 @@ namespace Plush.DataAccessLayer.Domain.Models
 {
     public class ProductView
     {
-        public int ProductID { get; set; }
+        public string ProductID { get; set; }
+        public string CategoryID { get; set; }
+        public string ProviderID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Specification { get; set; }
@@ -20,5 +22,8 @@ namespace Plush.DataAccessLayer.Domain.Models
         public string FileName { get; set; }
         public string Document { get; set; }
         public string ImageID { get; set; }
+        public bool Wishlist { get; set; }
+        public bool Display { get; set; }
+        
     }
 }

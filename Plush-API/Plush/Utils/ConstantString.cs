@@ -15,5 +15,7 @@ namespace Plush.Utils
         public static readonly string CORSPolicy = "CORSPolicy";
         public static readonly string CORSOrigin = "CORSOrigin";
         public static readonly string nlogConfig = "/nlog.config";
+        public static readonly string Token = "Token";
+
     }
 }

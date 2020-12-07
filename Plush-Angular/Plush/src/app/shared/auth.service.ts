@@ -1,0 +1,69 @@
+import { Injectable, Injector } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenModule } from 'src/app/modules/token.module';
+import { UserLoginModule } from '../modules/user-login.module';
+import { DataService } from '../services/data.service';
+import {JwtHelperService} from '@auth0/angular-jwt';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService extends DataService {
+  constructor(injector: Injector,private route: Router, private jwtDecode: JwtHelperService) {
+    super(injector, 'User');
+  }
+
+  private setLocalStorage(token: TokenModule): void {
+    localStorage.setItem('access_token', token.accessToken);
+    localStorage.setItem('access_token_expiration', token.accessTokenExpiration);
+  }
+
+  private removeLocalStorage(): void {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('access_token_expiration');
+  }
+  getRole():string{ 
+    const decode=this.jwtDecode.decodeToken(localStorage.getItem('access_token'));
+    return decode==null? "":decode['role'];
+  }
+  getToken(): any {
+    if (localStorage.getItem('access_token') !== null) {
+      let token: TokenModule;
+      token.accessToken = localStorage.getItem('access_token');
+      token.accessTokenExpiration = localStorage.getItem('access_token_expiration');
+      return token;
+    }
+    return null;
+  }
+
+  isLogged(): boolean{
+    return localStorage.getItem('is_logged')==='true';
+  }
+
+  doLogout(): void {
+    this.removeLocalStorage();
+    localStorage.setItem('is_logged', 'false');
+    this.route.navigateByUrl('/products');
+  }
+
+  register(user: UserLoginModule): void {
+    super.post<TokenModule>('Register', user).subscribe(cr => {
+      this.setLocalStorage(cr as TokenModule);
+      localStorage.setItem('is_logged', 'true');
+      this.route.navigateByUrl('/products');
+    });
+  }
+
+  login(user: UserLoginModule): void {
+    super.post<TokenModule>('Login', user).subscribe(cr => {
+      this.setLocalStorage(cr as TokenModule);
+      localStorage.setItem('is_logged', 'true');
+      this.route.navigateByUrl('/products');
+    });
+  }
+
+  refreshToken():any{
+    var token = this.getToken();
+    return super.update('RefreshToken?token='+token,{});
+  }
+}

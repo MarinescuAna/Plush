@@ -10,8 +10,8 @@ using Plush.DataAccessLayer.Repository;
 namespace Plush.DataAccessLayer.Repository.Migrations
 {
     [DbContext(typeof(PlushDbContext))]
-    [Migration("20201105171523_ProviderDeliveryUpdate2")]
-    partial class ProviderDeliveryUpdate2
+    [Migration("20201127151348_ProviderDeliveryFK")]
+    partial class ProviderDeliveryFK
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,10 +23,9 @@ namespace Plush.DataAccessLayer.Repository.Migrations
 
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.Category", b =>
                 {
-                    b.Property<int>("CategoryID")
+                    b.Property<Guid>("CategoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Ages")
                         .HasColumnType("nvarchar(max)");
@@ -41,10 +40,9 @@ namespace Plush.DataAccessLayer.Repository.Migrations
 
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.Delivery", b =>
                 {
-                    b.Property<int>("DeliveryID")
+                    b.Property<Guid>("DeliveryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -79,18 +77,17 @@ namespace Plush.DataAccessLayer.Repository.Migrations
 
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.Product", b =>
                 {
-                    b.Property<int>("ProductID")
+                    b.Property<Guid>("ProductID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("CategoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CategoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ImageID")
+                    b.Property<Guid>("ImageID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
@@ -102,8 +99,11 @@ namespace Plush.DataAccessLayer.Repository.Migrations
                     b.Property<float>("Price")
                         .HasColumnType("real");
 
-                    b.Property<int?>("ProviderID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProviderDeliveryID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ProviderID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Specification")
                         .HasColumnType("nvarchar(max)");
@@ -120,6 +120,8 @@ namespace Plush.DataAccessLayer.Repository.Migrations
 
                     b.HasIndex("ImageID");
 
+                    b.HasIndex("ProviderDeliveryID");
+
                     b.HasIndex("ProviderID");
 
                     b.ToTable("Products");
@@ -127,10 +129,9 @@ namespace Plush.DataAccessLayer.Repository.Migrations
 
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.Provider", b =>
                 {
-                    b.Property<int>("ProviderID")
+                    b.Property<Guid>("ProviderID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ContactData")
                         .HasColumnType("nvarchar(max)");
@@ -145,26 +146,26 @@ namespace Plush.DataAccessLayer.Repository.Migrations
 
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.ProviderDelivery", b =>
                 {
-                    b.Property<Guid>("ProviderDeliveryID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DeliveryCompany")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DeliveryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("DeliveryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<float>("Price")
                         .HasColumnType("real");
 
-                    b.Property<int?>("ProviderID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProviderID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Specification")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ProviderDeliveryID");
+                    b.HasKey("ID");
 
                     b.HasIndex("DeliveryID");
 
@@ -175,10 +176,9 @@ namespace Plush.DataAccessLayer.Repository.Migrations
 
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.User", b =>
                 {
-                    b.Property<int>("UserID")
+                    b.Property<Guid>("UserID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AccessToken")
                         .HasColumnType("nvarchar(max)");
@@ -215,12 +215,22 @@ namespace Plush.DataAccessLayer.Repository.Migrations
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.Product", b =>
                 {
                     b.HasOne("Plush.DataAccessLayer.Domain.Domain.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryID");
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Plush.DataAccessLayer.Domain.Domain.Image", "Image")
-                        .WithMany()
-                        .HasForeignKey("ImageID");
+                        .WithMany("Products")
+                        .HasForeignKey("ImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Plush.DataAccessLayer.Domain.Domain.ProviderDelivery", null)
+                        .WithMany("Products")
+                        .HasForeignKey("ProviderDeliveryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Plush.DataAccessLayer.Domain.Domain.Provider", "Provider")
                         .WithMany()
@@ -230,12 +240,16 @@ namespace Plush.DataAccessLayer.Repository.Migrations
             modelBuilder.Entity("Plush.DataAccessLayer.Domain.Domain.ProviderDelivery", b =>
                 {
                     b.HasOne("Plush.DataAccessLayer.Domain.Domain.Delivery", "Delivery")
-                        .WithMany()
-                        .HasForeignKey("DeliveryID");
+                        .WithMany("ProviderDeliveries")
+                        .HasForeignKey("DeliveryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Plush.DataAccessLayer.Domain.Domain.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderID");
+                        .WithMany("ProviderDeliveries")
+                        .HasForeignKey("ProviderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
