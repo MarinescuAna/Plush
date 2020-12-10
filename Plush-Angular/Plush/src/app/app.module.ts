@@ -5,7 +5,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { ProductsComponent } from './components/product-page/products/products.component';
 import { ProductComponent } from './components/product-page/product/product.component';
 import { CategoriesComponent } from './components/category-page/categories/categories.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -47,8 +46,9 @@ import { DialogAboutProductComponent } from './components/product-page/dialog-ab
 import { DialogUpdateProductComponent } from './components/product-page/dialog-update-product/dialog-update-product.component';
 import { LoginComponent } from './components/account-page/login/login.component';
 import { RegisterComponent } from './components/account-page/register/register.component';
-import { config } from 'rxjs';
 import { WishlistComponent } from './components/product-page/wishlist/wishlist.component';
+import { ProductsComponent } from './components/product-page/products/products.component';
+import { NgxSpinnerModule } from "ngx-spinner"; 
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -58,7 +58,6 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     MenuComponent,
-    ProductsComponent,
     ProductComponent,
     CategoriesComponent,
     InsertProductComponent,
@@ -77,7 +76,8 @@ export function tokenGetter() {
     DialogUpdateProductComponent,
     LoginComponent,
     RegisterComponent,
-    WishlistComponent
+    WishlistComponent,
+    ProductsComponent
   ],
   imports: [
 
@@ -105,7 +105,8 @@ export function tokenGetter() {
     MatTableModule,
     MatSlideToggleModule,
     MatDialogModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgxSpinnerModule
   ],
   providers: [
     AppErrorHandler,

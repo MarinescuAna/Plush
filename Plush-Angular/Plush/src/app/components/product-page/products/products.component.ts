@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
-import { DeliveryDDLModule } from 'src/app/modules/delivery-ddl.module';
-import { FilterModule } from 'src/app/modules/filter.module';
 import { ProductViewModule } from 'src/app/modules/product-view.module';
 import { ProviderDDLModule } from 'src/app/modules/provider-ddl.module';
 import { CategoryService } from 'src/app/services/category-service';
 import { ProductService } from 'src/app/services/product.service';
 import { ProviderDeliveryService } from 'src/app/services/provider-delivery-service';
 import { AuthService } from 'src/app/shared/auth.service';
+import { NgxSpinnerService } from "ngx-spinner"; 
 
 @Component({
   selector: 'app-products',
@@ -26,24 +25,29 @@ export class ProductsComponent implements OnInit {
   categories: CategoryViewModule[];
   providers: ProviderDDLModule[];
   products: ProductViewModule[];
+  filterProducts: ProductViewModule[];
 
   constructor(private service: ProductService,
     private user: AuthService,
     private categoryService: CategoryService,
-    private providerService: ProviderDeliveryService) { }
+    private providerService: ProviderDeliveryService,
+    private SpinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    if (this.products == null) {
-      if (this.user.isLogged() && this.user.getRole().toLowerCase() == "user") {
-        this.service.getPublicProductsLogged().subscribe(cr => {
-          this.products = cr as ProductViewModule[];
-        });
-      } else {
-        this.service.getPublicProducts().subscribe(cr => {
-          this.products = cr as ProductViewModule[];
-        });
-      }
+
+    this.SpinnerService.show();
+    if (this.user.isLogged() && this.user.getRole().toLowerCase() == "user") {
+      this.service.getPublicProductsLogged().subscribe(cr => {
+        this.products = cr as ProductViewModule[];
+        this.SpinnerService.hide();
+      });
+    } else {
+      this.service.getPublicProducts().subscribe(cr => {
+        this.products = cr as ProductViewModule[];
+        this.SpinnerService.hide();
+      });
     }
+  
     if (this.categories == null) {
       this.categoryService.getCategories().subscribe(cr => {
         this.categories = cr as CategoryViewModule[];
@@ -56,11 +60,13 @@ export class ProductsComponent implements OnInit {
         }
       );
     }
-    debugger
+  
   }
+
   onSubmit(): void {
     debugger
-    this.products.forEach(element => {
+    this.filterProducts = this.products;
+    this.filterProducts.forEach(element => {
       element.display = true;
       if (this.formProvider.value.providerId != "") {
         element.display = element.providerID === this.formProvider.value.providerId;
@@ -80,7 +86,6 @@ export class ProductsComponent implements OnInit {
 
     });
 
-    this.ngOnInit();
   }
 
 }

@@ -1,11 +1,11 @@
-<div fxLayout="row wrap" >
+<div fxLayout="row wrap">
     <div fxLayoutAlign="center center">
         <mat-card class="card-size">
             <form [formGroup]="formProvider">
                 <div fxLayout="column" fxLayoutAlign="center center">
                     <mat-form-field class="input-medi-style">
                         <mat-label>Providers</mat-label>
-                        <mat-select formControlName='providerId' >
+                        <mat-select formControlName='providerId'>
                             <mat-option *ngFor="let prov of providers" [value]="prov.providerID">
                                 {{prov.name}}
                             </mat-option>
@@ -36,10 +36,13 @@
             </div>
         </mat-card>
     </div>
-<div fxLayoutAlign="center center" fxLayout="row wrap"  class="size-position">
-    <div *ngFor="let product of products">
-        <app-product [product]='product'></app-product>
+    <div fxLayoutAlign="center center" fxLayout="row wrap" class="size-position">
+        <div *ngFor="let product of products">
+            <app-product [product]='product'></app-product>
+        </div>
     </div>
 </div>
 
-</div>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#c11ac7" type = "square-jelly-box" [fullScreen] = "true">
+    <p style="color: white" > Loading... </p>
+</ngx-spinner>

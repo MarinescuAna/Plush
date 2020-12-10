@@ -17,10 +17,6 @@ const routes: Routes = [
     data: { roles: ["admin"]}
   },
   {
-    path: 'products',
-    component: ProductsComponent
-  },
-  {
     path: '',
     redirectTo: '/products',
     pathMatch: 'full'
@@ -50,7 +46,10 @@ const routes: Routes = [
   {
     path:'register',
     component:RegisterComponent
-  }
+  },
+  { path: 'products', 
+  component:ProductsComponent 
+}
 ]
 
 @NgModule({
