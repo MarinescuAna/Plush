@@ -13,7 +13,6 @@ namespace Plush.BusinessLogicLayer.Repository.UnitOfWork
         IDeliveryRepository DeliveryRepository { get; }
         IProductRepository ProductRepository { get; }
         IProviderRepository ProviderRepository { get; }
-        IProviderDeliveryRepository ProviderDeliveryRepository { get; }
         IImageRepository ImageRepository { get; }
         IUserRepository UserRepository { get; }
         IWishlistRepository WishlistRepository { get; }

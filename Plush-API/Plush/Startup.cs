@@ -40,7 +40,8 @@ namespace Plush
             services.AddDbContext<PlushDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(ConstantString.DefaultConnection)));
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IProviderDeliveryService, ProviderDeliveryService>();
+            services.AddScoped<IDeliveryService, DeliveryService>();
+            services.AddScoped<IProviderService, ProviderService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();

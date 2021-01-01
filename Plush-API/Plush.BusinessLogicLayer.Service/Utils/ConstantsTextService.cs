@@ -20,17 +20,14 @@ namespace Plush.BusinessLogicLayer.Service.Utils
         public const string PublishProduct_text = "(CategoryService)PublishProduct ";
         public const string UpdateProductAsync_text = "(CategoryService)UpdateProductAsync ";
 
-        public const string GetProviderByNameAsync_text = "(ProviderDeliveryService)GetProviderByNameAsync ";
-        public const string GetDeliveryByNameAsync_text = "(ProviderDeliveryService)GetDeliveryByNameAsync ";
-        public const string GetProviderDeliveryByIdAsync_text = "(ProviderDeliveryService)GetProviderDeliveryByIdAsync ";
-        public const string InsertProvider_text = "(ProviderDeliveryService)InsertProvider ";
-        public const string InsertProviderDelivery_text = "(ProviderDeliveryService)InsertProviderDelivery ";
-        public const string InsertDelivery_text = "(ProviderDeliveryService)InsertDelivery ";
-        public const string GetDeliveriesAsync_text = "(ProviderDeliveryService)GetDeliveriesAsync ";
-        public const string GetProvidersAsync_text = "(ProviderDeliveryService)GetProvidersAsync ";
-        public const string GetProvidersDeliveriesAsync_text = "(ProviderDeliveryService)GetProvidersDeliveriesAsync ";
-        public const string DeleteProviderDeliveryByIdAsync_text = "(ProviderDeliveryService)DeleteProviderDeliveryByIdAsync ";
-        public const string GetProviderDeliveryByNameAsync_text = "(ProviderDeliveryService)GetProviderDeliveryByNameAsync ";
+        public const string GetProviderByIdAsync_text = "(ProviderService)GetProviderByIdAsync ";
+        public const string GetDeliveryByIdAsync_text = "(DeliveryService)GetDeliveryByIdAsync ";
+        public const string InsertProvider_text = "(ProviderService)InsertProvider ";
+        public const string InsertDelivery_text = "(DeliveryService)InsertDelivery ";
+        public const string GetDeliveriesAsync_text = "(DeliveryService)GetDeliveriesAsync ";
+        public const string GetProvidersAsync_text = "(ProviderService)GetProvidersAsync ";
+        public const string DeleteProviderByIdAsync_text = "(ProviderService)DeleteProviderByIdAsync ";
+        public const string DeleteDeliveryByIdAsync_text = "(DeliveryService)DeleteDeliveryByIdAsync ";
 
         public const string GetUserByEmailAsync_text = "(UserService)GetUserByEmailAsync ";
         public const string InsertUserAsync_text = "(UserService)InsertUserAsync ";

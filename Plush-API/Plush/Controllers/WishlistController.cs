@@ -40,7 +40,7 @@ namespace Plush.Controllers
 
             var wishlistId = (await wishlistService.GetWishlistAsync(
                 productId,
-                (await userService.GetUserByEmailAsync(ExtractEmailFromJWT())).UserID.ToString()
+                (await userService.GetUserByEmailAsync(ExtractEmailFromJWT())).UserEmailID.ToString()
                 ))?.WishlistID.ToString();
 
             if (!string.IsNullOrEmpty(wishlistId))
@@ -55,7 +55,7 @@ namespace Plush.Controllers
 
             var request = new Wishlist
             {
-                UserID = (await userService.GetUserByEmailAsync(ExtractEmailFromJWT())).UserID,
+                UserID = (await userService.GetUserByEmailAsync(ExtractEmailFromJWT())).UserEmailID,
                 Datetime=DateTime.Now,
                 ProductID=Guid.Parse(productId),
                 WishlistID=Guid.NewGuid()

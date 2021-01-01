@@ -10,6 +10,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public string Name  { get; set; }
         public string ContactData  { get; set; }
 
-        public ICollection<ProviderDelivery> ProviderDeliveries { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         protected readonly IUnitOfWork _unitOfWork;
         public UserService(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
 
-        public async Task<User> GetUserByEmailAsync(string email) => await _unitOfWork.UserRepository.GetItemAsync(u => u.Email == email, ConstantsTextService.GetUserByEmailAsync_text);
+        public async Task<User> GetUserByEmailAsync(string email) => await _unitOfWork.UserRepository.GetItemAsync(u => u.UserEmailID == email, ConstantsTextService.GetUserByEmailAsync_text);
 
         public async Task<bool> InsertUserAsync(User user)
         {
@@ -26,7 +26,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
         public async Task<bool> UpdateUserInformationAsync(User user)
         {
-            var user2 = await GetUserByEmailAsync(user.Email);
+            var user2 = await GetUserByEmailAsync(user.UserEmailID);
 
             if (!String.IsNullOrEmpty(user.AccessToken))
             {
@@ -38,7 +38,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
                 user2.AccessTokenExp = user.AccessTokenExp;
             }
 
-            await _unitOfWork.UserRepository.UpdateItemAsync(u => u.UserID == user2.UserID, user2, ConstantsTextService.UpdateUserInformationAsync_text);
+            await _unitOfWork.UserRepository.UpdateItemAsync(u => u.UserEmailID == user2.UserEmailID, user2, ConstantsTextService.UpdateUserInformationAsync_text);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.UpdateUserInformationAsync_text);
         }

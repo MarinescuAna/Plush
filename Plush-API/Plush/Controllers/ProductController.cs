@@ -19,16 +19,13 @@ namespace Plush.Controllers
     {
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
-        private readonly IProviderDeliveryService providerDeliveryService;
         public ProductController(IProductService service,
             ICategoryService category,
-            IProviderDeliveryService providerDelivery, 
             IConfiguration configuration, 
             IHttpContextAccessor httpContextAccessor) :base(configuration,httpContextAccessor)
         {
             productService = service;
             categoryService = category;
-            providerDeliveryService = providerDelivery;
         }
 
         [Authorize(Roles = "admin")]
@@ -59,7 +56,7 @@ namespace Plush.Controllers
                 },
                 ProductID= Guid.NewGuid(),
                 CategoryID=Guid.Parse(product.CategoryID),
-                ProviderDeliveryID= Guid.Parse(product.ProviderID),
+                ProviderID= Guid.Parse(product.ProviderID),
                 ImageID= Guid.Parse(product.ImageID)
             };
 
@@ -102,7 +99,7 @@ namespace Plush.Controllers
                     Extension=prduct.Image?.Extension,
                     FileName=prduct.Image?.FileName,
                     ImageID=prduct.Image?.ImageID.ToString(),
-                    ProviderID=prduct.Provider?.ProviderID.ToString(),
+                    ProviderID=prduct.ProviderID.ToString(),
                     CategoryID=prduct.CategoryID.ToString(),
                     Display=true
                 });
@@ -259,7 +256,7 @@ namespace Plush.Controllers
                 Stock = !string.IsNullOrEmpty(product.Stock)?Int32.Parse(product.Stock):0,
                 Price = !string.IsNullOrEmpty(product.Price)?float.Parse(product.Price):0,
                 Name = product.Name,
-                Provider = !string.IsNullOrEmpty(product.ProviderName) ? await providerDeliveryService.GetProviderByNameAsync(product.ProviderName) : null,
+                //Provider = !string.IsNullOrEmpty(product.ProviderName) ? await providerDeliveryService.GetProviderByNameAsync(product.ProviderName) : null,
                 Category = !string.IsNullOrEmpty(product.CategoryName) ? await categoryService.GetCategoryByNameAsync(new Category { Name = product.CategoryName }): null,
                 Image=new Image
                 {

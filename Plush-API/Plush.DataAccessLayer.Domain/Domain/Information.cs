@@ -4,14 +4,14 @@ using System.Text;
 
 namespace Plush.DataAccessLayer.Domain.Domain
 {
-    public class Wishlist
+    public class Information
     {
-        public Guid WishlistID { get; set; }
-        public Guid ProductID { get; set; }
+        public Guid InformationID { get; set; }
         public string UserID { get; set; }
-        public DateTime? Datetime { get; set; }
+        public string Address { get; set; }
+        public string Remarks { get; set; }
 
-        public virtual Product Product { get; set; }
         public virtual User User { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

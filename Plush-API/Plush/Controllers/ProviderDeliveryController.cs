@@ -17,11 +17,13 @@ namespace Plush.Controllers
     [ApiController]
     public class ProviderDeliveryController : ControllerBase
     {
-        private readonly IProviderDeliveryService providerDeliveryService;
+        private readonly IProviderService providerService;
+        private readonly IDeliveryService deliveryService;
 
-        public ProviderDeliveryController(IProviderDeliveryService providerDeliveryService)
+        public ProviderDeliveryController(IProviderService providerService, IDeliveryService deliveryService)
         {
-            this.providerDeliveryService = providerDeliveryService;
+            this.providerService = providerService;
+            this.deliveryService = deliveryService;
         }
 
         [Authorize(Roles = "admin")]
@@ -34,11 +36,6 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await providerDeliveryService.GetProviderByNameAsync(provider.Name) != null)
-            {
-                return StatusCode(Codes.Number_409, Messages.AlreadyExist_409Conflict);
-            }
-
             var newProvider = new Provider
             {
                 Name = provider.Name,
@@ -46,7 +43,7 @@ namespace Plush.Controllers
                 ProviderID = Guid.NewGuid()
             };
 
-            if (await providerDeliveryService.InsertProvider(newProvider) == false)
+            if (await providerService.InsertProvider(newProvider) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
@@ -64,54 +61,15 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await providerDeliveryService.GetDeliveryByNameAsync(delivery.Name) != null)
-            {
-                return StatusCode(Codes.Number_409, Messages.AlreadyExist_409Conflict);
-            }
-
             var newDelivery = new Delivery
             {
                 Name = delivery.Name,
                 Specification = delivery.Specification,
-                DeliveryID=Guid.NewGuid()
+                DeliveryID=Guid.NewGuid(),
+                Price=delivery.Price
             };
 
-            if (await providerDeliveryService.InsertDelivery(newDelivery) == false)
-            {
-                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
-            }
-
-            return StatusCode(Codes.Number_201, Messages.Created_201Ok);
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        [Route("InsertProviderDelivery")]
-        public async Task<IActionResult> InsertProviderDelivery(ProviderDeliveryInsert providerDeliveryInsert)
-        {
-            if (providerDeliveryInsert == null)
-            {
-                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
-            }
-
-            var provider = await providerDeliveryService.GetProviderByNameAsync(providerDeliveryInsert.ProviderName);
-            var delivery = await providerDeliveryService.GetDeliveryByNameAsync(providerDeliveryInsert.DeliveryName);
-            var newProviderDelivery = new ProviderDelivery
-            {
-                DeliveryCompany = providerDeliveryInsert.DeliveryCompany,
-                Price = providerDeliveryInsert.Price,
-                Specification = providerDeliveryInsert.Specification,
-                ProviderID=provider.ProviderID,
-                DeliveryID=delivery.DeliveryID,
-                ID=Guid.NewGuid()
-            };
-
-           if (newProviderDelivery.ProviderID==null || newProviderDelivery.DeliveryID==null)
-            {
-                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
-            }
-
-            if (await providerDeliveryService.InsertProviderDelivery(newProviderDelivery) == false)
+            if (await deliveryService.InsertDelivery(newDelivery) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
@@ -123,7 +81,7 @@ namespace Plush.Controllers
         [Route("GetDelivery")]
         public async Task<IActionResult> GetDelivery()
         {
-            var deliveries = await providerDeliveryService.GetDeliveriesAsync();
+            var deliveries = await deliveryService.GetDeliveriesAsync();
 
             if (deliveries == null)
             {
@@ -137,7 +95,7 @@ namespace Plush.Controllers
         [Route("GetProviders")]
         public async Task<IActionResult> GetProviders()
         {
-            var providers = await providerDeliveryService.GetProvidersAsync();
+            var providers = await providerService.GetProvidersAsync();
 
             if (providers == null)
             {
@@ -147,53 +105,45 @@ namespace Plush.Controllers
             return StatusCode(Codes.Number_200, providers);
         }
 
-
-        [HttpGet]
-        [Route("GetProvidersDeliveries")]
-        public async Task<IActionResult> GetProvidersDeliveries()
-        {
-            var providersdeliveries = await providerDeliveryService.GetProvidersDeliveriesAsync();
-
-            if (providersdeliveries == null)
-            {
-                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
-            }
-
-            var newProvDeliver = new List<ProviderDeliveryView>();
-            foreach(var provdeliver in providersdeliveries)
-            {
-                newProvDeliver.Add(new ProviderDeliveryView
-                {
-                    DeliveryCompany = provdeliver?.DeliveryCompany,
-                    DeliveryName=provdeliver?.Delivery?.Name,
-                    DeliverySpecification=provdeliver?.Delivery?.Specification,
-                    Specification=provdeliver?.Specification,
-                    Price=provdeliver.Price,
-                    ProviderContactData=provdeliver?.Provider?.ContactData,
-                    ProviderDeliveryID=provdeliver.ID.ToString(),
-                    ProviderName=provdeliver?.Provider?.Name
-                }) ;
-            }
-
-            return StatusCode(Codes.Number_200, newProvDeliver);
-        }
-
         [Authorize(Roles = "admin")]
-        [Route("DeleteProviderDelivery")]
+        [Route("DeleteDelivery")]
         [HttpDelete]
-        public async Task<IActionResult> DeleteProviderDelivery(String id)
+        public async Task<IActionResult> DeleteDelivery(String id)
         {
             if (string.IsNullOrEmpty(id))
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await providerDeliveryService.GetProviderDeliveryByIdAsync(new Guid(id)) == null)
+            if (await deliveryService.GetDeliveryByIdAsync(new Guid(id)) == null)
             {
                 return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
             }
 
-            if (await providerDeliveryService.DeleteProviderDeliveryByIdAsync(new Guid(id)) == false)
+            if (await deliveryService.DeleteDeliveryByIdAsync(new Guid(id)) == false)
+            {
+                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
+
+            return Ok();
+        }
+
+        [Authorize(Roles = "admin")]
+        [Route("DeleteProvider")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProvider(String id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            if (await providerService.GetProviderByIdAsync(new Guid(id)) == null)
+            {
+                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
+            }
+
+            if (await providerService.DeleteProviderByIdAsync(new Guid(id)) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }

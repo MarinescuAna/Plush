@@ -15,7 +15,6 @@ namespace Plush.BusinessLogicLayer.Repository.UnitOfWork
         private ICategoryRepository categoryRepository;
         private IDeliveryRepository deliveryRepository;
         private IProviderRepository providerRepository;
-        private IProviderDeliveryRepository providerDeliveryRepository;
         private IProductRepository productRepository;
         private IImageRepository imageRepository;
         private IUserRepository userRepository;
@@ -74,18 +73,6 @@ namespace Plush.BusinessLogicLayer.Repository.UnitOfWork
                 return providerRepository;
             }
         }
-        public IProviderDeliveryRepository ProviderDeliveryRepository
-        {
-            get
-            {
-                if (providerDeliveryRepository == null)
-                {
-                    providerDeliveryRepository = new ProviderDeliveryRepository(context, _loggerService);
-                }
-
-                return providerDeliveryRepository;
-            }
-        }
         public IImageRepository ImageRepository
         {
             get
@@ -126,7 +113,7 @@ namespace Plush.BusinessLogicLayer.Repository.UnitOfWork
         {
             try
             {
-                return await context.SaveChangesAsync() > 0 ? true : false;
+                return await context.SaveChangesAsync() > 0;
             }
             catch (Exception ex)
             {

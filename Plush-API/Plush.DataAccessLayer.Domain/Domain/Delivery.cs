@@ -9,6 +9,8 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public Guid DeliveryID { get; set; }
         public string Name { get; set; }
         public string Specification { get; set; }
-        public ICollection<ProviderDelivery> ProviderDeliveries { get; set; }
+        public float Price { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
     }
 }

@@ -8,5 +8,6 @@ namespace Plush.DataAccessLayer.Domain.Models
     {
         public string Name { get; set; }
         public string Specification { get; set; }
+        public float Price { get; set; }
     }
 }

@@ -18,13 +18,16 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public float Price { get; set; }
         public int Stock { get; set; }
         public Guid CategoryID { get; set; }
-        public Guid ProviderDeliveryID { get; set; }
         public Guid ImageID { get; set; }
-        public virtual Category Category { get; set; }
-        public virtual Provider Provider{ get; set; }
+        public Guid ProviderID { get; set; }
         public DateTime? PostDatetime { get; set; }
         public Status Status { get; set; }
+
+        public virtual Category Category { get; set; }
+        public virtual Provider Provider{ get; set; }
         public virtual Image Image { get; set; }
+
         public ICollection<Wishlist> Wishlists { get; set; }
+        public ICollection<Basket> Baskets { get; set; }
     }
 }
