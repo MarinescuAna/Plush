@@ -4,6 +4,7 @@ using Plush.BusinessLogicLayer.Service.Utils;
 using Plush.DataAccessLayer.Domain.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,9 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
                     u.UserID.ToString() == userId,
                 ConstantsTextService.GetWishlistAsync_text); 
 
-        public async Task<IEnumerable<Wishlist>> GetFavoriteProductsAsync() => await UnitOfWork.WishlistRepository.GetItemsAsync(ConstantsTextService.GetFavoriteProductsAsync_text);
+        public async Task<IEnumerable<Wishlist>> GetFavoriteProductsAsync(string UserEmail) => (await UnitOfWork.WishlistRepository.GetItemsAsync(ConstantsTextService.GetFavoriteProductsAsync_text))
+            .Where(u=>u.UserID==UserEmail).ToList();
+
+
     }
 }

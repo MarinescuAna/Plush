@@ -2,7 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
 import {ProductInsertModule} from 'src/app/modules/product-insert.module';
-import { ProviderDeliveryModule } from 'src/app/modules/provider-delivery.module';
+import { ProviderDDLModule } from 'src/app/modules/provider-ddl.module';
 import { AlertService } from 'src/app/services/alert.service';
 import { CategoryService } from 'src/app/services/category-service';
 import { ProductService } from 'src/app/services/product.service';
@@ -29,7 +29,7 @@ export class InsertProductComponent implements OnInit {
   fileName:string;
   isChecked=false;
   categories: CategoryViewModule[];
-  providers: ProviderDeliveryModule[];
+  providers: ProviderDDLModule[];
   constructor(private categoryService:CategoryService,
     private productService:ProductService,
     private providerService:ProviderDeliveryService,
@@ -39,8 +39,8 @@ export class InsertProductComponent implements OnInit {
     this.categoryService.getCategories().subscribe(cr => {
       this.categories=cr as CategoryViewModule[];
     });
-    this.providerService.getProvidersDeliveries().subscribe(cr => {
-      this.providers=cr as ProviderDeliveryModule[];
+    this.providerService.getProviders().subscribe(cr => {
+      this.providers=cr as ProviderDDLModule[];
     });
   }
 

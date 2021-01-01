@@ -9,7 +9,7 @@ namespace Plush.BusinessLogicLayer.Service.Interface
     public interface IWishlistService
     {
         Task<bool> InsertProductToWishlistAsync(Wishlist wishlist);
-        Task<IEnumerable<Wishlist>> GetFavoriteProductsAsync();
+        Task<IEnumerable<Wishlist>> GetFavoriteProductsAsync(string UserEmail);
         Task<Wishlist> GetWishlistAsync(string productId, string userId);
         Task<bool> DeleteProductFromWishlistAsync(string id);
     }

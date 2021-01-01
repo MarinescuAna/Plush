@@ -15,8 +15,11 @@
         <a mat-fab class="btn-color" [routerLink]="'/category'" *ngIf="isLogged && isAdmin">
             Categories
         </a>
-        <a mat-fab class="btn-color" [routerLink]="'/deliveryProvider'" *ngIf="isLogged && isAdmin">
+        <a mat-fab class="btn-color" [routerLink]="'/provider'" *ngIf="isLogged && isAdmin">
             Providers
+        </a>
+        <a mat-fab class="btn-color" [routerLink]="'/delivery'" *ngIf="isLogged && isAdmin">
+            Deliveries
         </a>
         <a mat-fab class="btn-color" [routerLink]="'/wishlist'" *ngIf="isLogged && !isAdmin">
             <mat-icon>favorite</mat-icon>

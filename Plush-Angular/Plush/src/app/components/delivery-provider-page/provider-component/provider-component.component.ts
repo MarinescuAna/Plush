@@ -24,7 +24,7 @@ export class ProviderComponentComponent implements OnInit {
     let newRecord=new ProviderModule();
     newRecord.contactData=this.formProvider.value.address;
     newRecord.name=this.formProvider.value.name;
-    debugger
+    
     this.service.createProvider(newRecord);
   }
 

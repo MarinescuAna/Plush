@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Plush.BusinessLogicLayer.Service.Interface;
 using Plush.DataAccessLayer.Domain.Domain;
@@ -115,11 +112,6 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await deliveryService.GetDeliveryByIdAsync(new Guid(id)) == null)
-            {
-                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
-            }
-
             if (await deliveryService.DeleteDeliveryByIdAsync(new Guid(id)) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
@@ -136,11 +128,6 @@ namespace Plush.Controllers
             if (string.IsNullOrEmpty(id))
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
-            }
-
-            if (await providerService.GetProviderByIdAsync(new Guid(id)) == null)
-            {
-                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
             }
 
             if (await providerService.DeleteProviderByIdAsync(new Guid(id)) == false)

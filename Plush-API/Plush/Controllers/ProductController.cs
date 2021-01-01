@@ -74,11 +74,6 @@ namespace Plush.Controllers
         {
             var products = await productService.GetPublicProductsAsync();
 
-            if (products == null || products?.Count()==0)
-            {
-                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
-            }
-
             var prods = new List<ProductView>();
 
             foreach(var prduct in products)
@@ -109,58 +104,12 @@ namespace Plush.Controllers
             return StatusCode(Codes.Number_201, prods);
         }
 
-        [Authorize]
-        [Route("GetPublicProductsLogged")]
-        [HttpGet]
-        public async Task<IActionResult> GetPublicProductsLogged()
-        {
-            var products = await productService.GetPublicProductsAsync();
-
-            if (products == null || products?.Count() == 0)
-            {
-                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
-            }
-
-            var prods = new List<ProductView>();
-
-            foreach (var prduct in products)
-            {
-                prods.Add(new ProductView
-                {
-                    CategoryName = prduct.Category?.Name,
-                    CategorySpecification = prduct.Category?.Ages,
-                    Description = prduct.Description,
-                    Name = prduct.Name.ToUpper(),
-                    Price = prduct.Price,
-                    ProviderName = prduct.Provider?.Name,
-                    ProviderSpecification = prduct.Provider?.ContactData,
-                    Specification = prduct.Specification,
-                    ProductID = prduct.ProductID.ToString(),
-                    Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0],
-                    Document = prduct.Image?.Document,
-                    Extension = prduct.Image?.Extension,
-                    FileName = prduct.Image?.FileName,
-                    ImageID = prduct.Image?.ImageID.ToString(),
-                    //Wishlist=prduct.Wishlists.FirstOrDefault(u=>u.ProductID==prduct.ProductID)!=null,
-                    Display = true
-                });
-            }
-
-
-            return StatusCode(Codes.Number_201, prods);
-        }
-
         [Authorize(Roles = "admin")]
         [Route("GetProducts")]
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
             var products = await productService.GetProductsAsync();
-
-            if (products == null || products?.Count() == 0)
-            {
-                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
-            }
 
             var prods = new List<ProductViewAdmin>();
 
@@ -223,11 +172,6 @@ namespace Plush.Controllers
             if (id == null)
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
-            }
-
-            if (await productService.GetProductByIdAsync(id) == null)
-            {
-                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
             }
 
             if (await productService.PublishProduct(id) == false)

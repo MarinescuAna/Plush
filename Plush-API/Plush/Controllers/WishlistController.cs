@@ -40,7 +40,7 @@ namespace Plush.Controllers
 
             var wishlistId = (await wishlistService.GetWishlistAsync(
                 productId,
-                (await userService.GetUserByEmailAsync(ExtractEmailFromJWT())).UserEmailID.ToString()
+                ExtractEmailFromJWT()
                 ))?.WishlistID.ToString();
 
             if (!string.IsNullOrEmpty(wishlistId))
@@ -76,7 +76,7 @@ namespace Plush.Controllers
         public async Task<IActionResult> GetAllProducts()
         {
             var products = new List<ProductView>();
-            var wishlist = await wishlistService.GetFavoriteProductsAsync();
+            var wishlist = await wishlistService.GetFavoriteProductsAsync(ExtractEmailFromJWT());
 
             foreach(var wish in wishlist)
             {

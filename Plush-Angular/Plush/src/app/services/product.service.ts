@@ -25,9 +25,6 @@ export class ProductService extends DataService {
   getPublicProducts(): Observable<ProductViewModule[]>{
     return super.getMany<ProductViewModule>('GetPublicProducts');
   }
-  getPublicProductsLogged(): Observable<ProductViewModule[]>{
-    return super.getMany<ProductViewModule>('GetPublicProductsLogged');
-  }
 
   getProducts(): Observable<ProductViewAdminModule[]>{
     return super.getMany<ProductViewAdminModule>('GetProducts');

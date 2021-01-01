@@ -14,4 +14,5 @@ import { CommonModule } from '@angular/common';
 export class DeliveryModule {
     name: string;
     specification: string;
+    price:string;
 }

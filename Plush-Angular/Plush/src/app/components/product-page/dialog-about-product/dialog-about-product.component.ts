@@ -13,6 +13,7 @@ export class DialogAboutProductComponent implements OnInit {
   ngOnInit(): void {
   }
   constructor( @Optional() @Inject(MAT_DIALOG_DATA) public data: any) {
+    debugger
     this.product = data.product;
   }
 }

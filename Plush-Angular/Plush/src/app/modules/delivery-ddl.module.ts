@@ -15,4 +15,5 @@ export class DeliveryDDLModule {
     deliveryID:string;
     name: string;
     specification: string;
+    price:string;
 }

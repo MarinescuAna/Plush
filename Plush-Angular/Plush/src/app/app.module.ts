@@ -35,9 +35,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppErrorHandler } from 'src/app/handler-error/app-error-handler';
 import { DeliveryComponentComponent } from './components/delivery-provider-page/delivery-component/delivery-component.component';
 import { ProviderComponentComponent } from './components/delivery-provider-page/provider-component/provider-component.component';
-import { ProviderDeliveryViewComponent } from './components/delivery-provider-page/provider-delivery-view/provider-delivery-view.component';
-import { ProviderDeliveryTableComponent } from './components/delivery-provider-page/provider-delivery-table/provider-delivery-table.component';
-import { ProviderDeliveryComponentComponent } from './components/delivery-provider-page/provider-delivery-component/provider-delivery-component.component';
 import { ProductAboutComponent } from './components/product-page/product-about/product-about.component';
 import { ProductImageViewComponent } from './components/product-page/product-image-view/product-image-view.component';
 import { ViewProductsComponent } from './components/product-page/view-products/view-products.component';
@@ -48,7 +45,11 @@ import { LoginComponent } from './components/account-page/login/login.component'
 import { RegisterComponent } from './components/account-page/register/register.component';
 import { WishlistComponent } from './components/product-page/wishlist/wishlist.component';
 import { ProductsComponent } from './components/product-page/products/products.component';
-import { NgxSpinnerModule } from "ngx-spinner"; 
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ProviderTableComponent } from './components/delivery-provider-page/provider-table/provider-table.component';
+import { DeliveryTableComponent } from './components/delivery-provider-page/delivery-table/delivery-table.component';
+import { DeliveryComponent } from './components/delivery-provider-page/delivery/delivery.component';
+import { ProviderComponent } from './components/delivery-provider-page/provider/provider.component'; 
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -65,9 +66,6 @@ export function tokenGetter() {
     MainPageComponent,
     DeliveryComponentComponent,
     ProviderComponentComponent,
-    ProviderDeliveryViewComponent,
-    ProviderDeliveryTableComponent,
-    ProviderDeliveryComponentComponent,
     ProductAboutComponent,
     ProductImageViewComponent,
     ViewProductsComponent,
@@ -77,7 +75,11 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     WishlistComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProviderTableComponent,
+    DeliveryTableComponent,
+    DeliveryComponent,
+    ProviderComponent
   ],
   imports: [
 

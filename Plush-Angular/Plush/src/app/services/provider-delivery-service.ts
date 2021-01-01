@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { DeliveryDDLModule } from '../modules/delivery-ddl.module';
 import { DeliveryModule } from '../modules/delivery.module';
 import { ProviderDDLModule } from '../modules/provider-ddl.module';
-import { ProviderDeliveryInsertModule } from '../modules/provider-delivery-insert.module';
-import { ProviderDeliveryModule } from '../modules/provider-delivery.module';
 import { ProviderModule } from '../modules/provider.module';
 import { DataService } from './data.service';
 
@@ -32,26 +30,19 @@ export class ProviderDeliveryService extends DataService {
       });
   }
 
-  getProvidersDeliveries():Observable<ProviderDeliveryModule[]>{
-    return super.getMany<ProviderDeliveryModule>('GetProvidersDeliveries');
-  }
-
   getProviders():Observable<ProviderDDLModule[]>{
     return super.getMany<ProviderDDLModule>('GetProviders');
   }
   
   getDeliveries():Observable<DeliveryDDLModule[]>{
+    debugger
     return super.getMany<DeliveryDDLModule>('GetDelivery');
   }
 
-  createProviderDelivery(module: ProviderDeliveryInsertModule): void{
-    super.post<any>('InsertProviderDelivery', module).subscribe(cr => {
-        this.alertService.showSucces('Created!');
-        window.location.reload();
-      });
+  deleteProvider(id: any):any{
+    return super.delete(id,'DeleteProvider?id=');
   }
-
-  deleteProviderDelivery(id: any):any{
-    return super.delete(id,'DeleteProviderDelivery?id=');
+  deleteDelivery(id: any):any{
+    return super.delete(id,'DeleteDelivery?id=');
   }
 }

@@ -23,12 +23,22 @@
                             Specifications are <strong>required</strong>!
                         </mat-error>
                     </mat-form-field>
+                    <br>
+                    <mat-form-field class="input-style">
+                        <mat-label>Price</mat-label>
+                        <input matInput type="number" placeholder="Ex. livrare in 3 zile " formControlName='price' required>
+                        <mat-icon matSuffix class="color-text">euro</mat-icon>
+                        <mat-error *ngIf="formDelivery.controls['price'].hasError('required')">
+                            Price are <strong>required</strong>!
+                        </mat-error>
+                    </mat-form-field>
                 </div>
             </form>
 
             <div fxLayoutAlign="center center">
                 <button class="btn-size" mat-raised-button color="accent" (click)="onSubmit()" [disabled]="formDelivery.controls['specifications'].hasError('required') || 
-                formDelivery.controls['name'].hasError('required')">Create</button>
+                formDelivery.controls['name'].hasError('required') ||
+                formDelivery.controls['price'].hasError('required')">Create</button>
             </div>
         </mat-card-content>
     </mat-card>

@@ -17,11 +17,14 @@ export class ProductComponent implements OnInit {
 
   src: string;
   isfavorite = false;
+  isAdmin=true;
   @Input() product: ProductViewModule;
   constructor(private dialog: MatDialog,
     private wishlist: WishlistService,
     private userService: AuthService,
-    private route: Router) { }
+    private route: Router) {
+      this.isAdmin=userService.getRole().toLowerCase()==="admin";
+     }
 
   ngOnInit(): void {
     this.isfavorite=this.product.wishlist;

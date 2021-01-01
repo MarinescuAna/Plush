@@ -11,6 +11,7 @@ import{DeliveryModule} from 'src/app/modules/delivery.module';
 export class DeliveryComponentComponent implements OnInit {
   formDelivery = new FormGroup({
     name: new FormControl('',[Validators.required]),
+    price: new FormControl('',[Validators.required]),
     specifications: new FormControl('',[Validators.required])
   });
   
@@ -23,6 +24,7 @@ export class DeliveryComponentComponent implements OnInit {
     let newRecord=new DeliveryModule();
     newRecord.specification=this.formDelivery.value.specifications;
     newRecord.name=this.formDelivery.value.name;
+    newRecord.price=this.formDelivery.value.price;
     this.service.createDelivery(newRecord);
   }
 }

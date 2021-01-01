@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductViewAdminModule } from 'src/app/modules/product-view-admin.module';
 import { ProductService } from 'src/app/services/product.service';
-import { NgxSpinnerService } from "ngx-spinner"; 
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-view-products',
   templateUrl: './view-products.component.html',
@@ -11,7 +11,7 @@ export class ViewProductsComponent implements OnInit {
 
 
   products: ProductViewAdminModule[];
-  constructor(private service: ProductService,private SpinnerService: NgxSpinnerService) { }
+  constructor(private service: ProductService, private SpinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.SpinnerService.show();

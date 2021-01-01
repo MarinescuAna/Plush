@@ -7,7 +7,7 @@ import { CategoryService } from 'src/app/services/category-service';
 import { ProductService } from 'src/app/services/product.service';
 import { ProviderDeliveryService } from 'src/app/services/provider-delivery-service';
 import { AuthService } from 'src/app/shared/auth.service';
-import { NgxSpinnerService } from "ngx-spinner"; 
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-products',
@@ -35,24 +35,19 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.SpinnerService.show();
-    if (this.user.isLogged() && this.user.getRole().toLowerCase() == "user") {
-      this.service.getPublicProductsLogged().subscribe(cr => {
-        this.products = cr as ProductViewModule[];
-        this.SpinnerService.hide();
-      });
-    } else {
-      this.service.getPublicProducts().subscribe(cr => {
-        this.products = cr as ProductViewModule[];
-        this.SpinnerService.hide();
-      });
-    }
-  
+     this.SpinnerService.show();
+
+    this.service.getPublicProducts().subscribe(cr => {
+      this.products = cr as ProductViewModule[];
+         this.SpinnerService.hide();
+    });
+
     if (this.categories == null) {
       this.categoryService.getCategories().subscribe(cr => {
         this.categories = cr as CategoryViewModule[];
       });
     }
+
     if (this.providers == null) {
       this.providerService.getProviders().subscribe(
         cr => {
@@ -60,7 +55,7 @@ export class ProductsComponent implements OnInit {
         }
       );
     }
-  
+
   }
 
   onSubmit(): void {
