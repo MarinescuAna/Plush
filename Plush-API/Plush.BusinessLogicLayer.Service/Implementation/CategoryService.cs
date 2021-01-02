@@ -20,22 +20,20 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
         public Task<Boolean> InsertCategoryAsync(Category category)
         {
-            _unitOfWork.CategoryRepository.InsertItemAsync(category,ConstantsTextService.InsertCategoryAsync_text);
+            _unitOfWork.CategoryRepository.InsertItemAsync(category);
 
             return _unitOfWork.CommitAsync(ConstantsTextService.InsertCategoryAsync_text);
         }
         public Task<Category> GetCategoryByIdAsync(Category category) 
             => _unitOfWork.CategoryRepository.GetItemAsync(
-                u => u.CategoryID == category.CategoryID,
-                ConstantsTextService.GetCategoryByIdAsync_text);
+                u => u.CategoryID == category.CategoryID);
         public Task<Category> GetCategoryByNameAsync(Category category) 
             => _unitOfWork.CategoryRepository.GetItemAsync(
-                u => u.Name.ToUpper() == category.Name.ToUpper(),
-                ConstantsTextService.GetCategoryByNameAsync_text);
-        public Task<IEnumerable<Category>> GetCategoriesAsync() => _unitOfWork.CategoryRepository.GetItemsAsync(ConstantsTextService.GetCategoriesAsync_text);
+                u => u.Name.ToUpper() == category.Name.ToUpper());
+        public Task<IEnumerable<Category>> GetCategoriesAsync() => _unitOfWork.CategoryRepository.GetItemsAsync();
         public Task<Boolean> DeleteCategoryAsync(Guid categoryID)
         {
-            _unitOfWork.CategoryRepository.DeleteItemAsync(u => u.CategoryID == categoryID,ConstantsTextService.DeleteCategoryAsync_text);
+            _unitOfWork.CategoryRepository.DeleteItemAsync(u => u.CategoryID == categoryID);
 
             return _unitOfWork.CommitAsync(ConstantsTextService.DeleteCategoryAsync_text);
         }

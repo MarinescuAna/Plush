@@ -21,13 +21,13 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
         public async Task<bool> InsertProductToWishlistAsync(Wishlist wishlist)
         {
-            UnitOfWork.WishlistRepository.InsertItemAsync(wishlist,ConstantsTextService.InsertProductToWishlistAsync_text);
+            UnitOfWork.WishlistRepository.InsertItemAsync(wishlist);
 
             return await UnitOfWork.CommitAsync(ConstantsTextService.InsertProductToWishlistAsync_text);
         }
         public async Task<bool> DeleteProductFromWishlistAsync(string id)
         {
-            await UnitOfWork.WishlistRepository.DeleteItemAsync(u=>u.WishlistID.ToString()==id, ConstantsTextService.DeleteProductFromWishlistAsync_text);
+            await UnitOfWork.WishlistRepository.DeleteItemAsync(u=>u.WishlistID.ToString()==id);
 
             return await UnitOfWork.CommitAsync(ConstantsTextService.DeleteProductFromWishlistAsync_text);
         }
@@ -35,10 +35,9 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         public async Task<Wishlist> GetWishlistAsync(string productId, string userId) =>
             await UnitOfWork.WishlistRepository.GetItemAsync(
                 u => u.ProductID.ToString() == productId &&
-                    u.UserID.ToString() == userId,
-                ConstantsTextService.GetWishlistAsync_text); 
+                    u.UserID.ToString() == userId); 
 
-        public async Task<IEnumerable<Wishlist>> GetFavoriteProductsAsync(string UserEmail) => (await UnitOfWork.WishlistRepository.GetItemsAsync(ConstantsTextService.GetFavoriteProductsAsync_text))
+        public async Task<IEnumerable<Wishlist>> GetFavoriteProductsAsync(string UserEmail) => (await UnitOfWork.WishlistRepository.GetItemsAsync())
             .Where(u=>u.UserID==UserEmail).ToList();
 
 

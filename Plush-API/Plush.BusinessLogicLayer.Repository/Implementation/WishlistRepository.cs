@@ -6,6 +6,7 @@ using Plush.DataAccessLayer.Domain.Domain;
 using Plush.DataAccessLayer.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,25 +19,43 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
 
         }
 
-        public override async Task<IEnumerable<Wishlist>> GetItemsAsync(string loggDetails)
+        public override async Task<IEnumerable<Wishlist>> GetItemsAsync()
         {
             try
             {
                 var temp = await _context.Set<Wishlist>()
                                 .Include("Product")
                                 .Include("User")
-                                .Include("Product.Image")
-                                .Include("Product.Provider")
-                                .Include("Product.Category")
                                 .ToListAsync();
                 return temp;
             }
             catch (Exception ex)
             {
-                _loggerService.LogError(loggDetails + ConstantsText.GetItemsAsync_Text, ex.Message);
+                _loggerService.LogError(ConstantsText.SelectItemsMessage_Text, ex.Message);
                 if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
-                    _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
+                    _loggerService.LogError(ConstantsText.SelectItemsMessage_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
+                }
+                return null;
+            }
+        }
+        public override async Task<Wishlist> GetItemAsync(Expression<Func<Wishlist, bool>> expression)
+        {
+            try
+            {
+                var temp = await _context.Set<Wishlist>()
+                                .Include("Product")
+                                .Include("User")
+                                .AsNoTracking()
+                                .FirstOrDefaultAsync(expression);
+                return temp;
+            }
+            catch (Exception ex)
+            {
+                _loggerService.LogError(ConstantsText.SelectItemMessange_Text, ex.Message);
+                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                {
+                    _loggerService.LogError(ConstantsText.SelectItemMessange_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
                 return null;
             }

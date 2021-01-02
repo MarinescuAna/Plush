@@ -6,28 +6,27 @@ using Plush.DataAccessLayer.Domain.Domain;
 using Plush.DataAccessLayer.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Plush.BusinessLogicLayer.Repository.Implementation
 {
-    public class ProductRepository : RepositoryBase<Product>, IProductRepository
+    public class OrderRepository: RepositoryBase<Order> , IOrderRepository
     {
-        public ProductRepository(PlushDbContext context, ILoggerService loggerService) : base(context, loggerService)
+        public OrderRepository(PlushDbContext context, ILoggerService loggerService):
+            base(context,loggerService)
         {
-
+                
         }
 
-        public override async Task<IEnumerable<Product>> GetItemsAsync()
+        public override async Task<IEnumerable<Order>> GetItemsAsync()
         {
             try
             {
-                var temp = await _context.Set<Product>()
-                                .Include("Provider")
-                                .Include("Category")
-                                .Include("Image")
+                var temp = await _context.Set<Order>()
+                                .Include("Delivery")
+                                .Include("Information")
                                 .ToListAsync();
                 return temp;
             }
@@ -42,14 +41,13 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             }
         }
 
-        public override async Task<Product> GetItemAsync(Expression<Func<Product, bool>> expression)
+        public override async Task<Order> GetItemAsync(Expression<Func<Order, bool>> expression)
         {
             try
             {
-                var temp = await _context.Set<Product>()
-                                .Include("Provider")
-                                .Include("Category")
-                                .Include("Image")
+                var temp = await _context.Set<Order>()
+                                .Include("Delivery")
+                                .Include("Information")
                                 .AsNoTracking()
                                 .FirstOrDefaultAsync(expression);
                 return temp;

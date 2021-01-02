@@ -18,20 +18,18 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         }
         public async Task<bool> InsertProvider(Provider provider)
         {
-            _unitOfWork.ProviderRepository.InsertItemAsync(provider, ConstantsTextService.InsertProvider_text);
+            _unitOfWork.ProviderRepository.InsertItemAsync(provider);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.InsertProvider_text);
         }
         public async Task<IEnumerable<Provider>> GetProvidersAsync()
-            => await _unitOfWork.ProviderRepository.GetItemsAsync(ConstantsTextService.GetProvidersAsync_text);
+            => await _unitOfWork.ProviderRepository.GetItemsAsync();
         public async Task<Provider> GetProviderByIdAsync(Guid id)
             => await _unitOfWork.ProviderRepository.GetItemAsync(
-                u => u.ProviderID == id,
-                ConstantsTextService.GetProviderByIdAsync_text);
+                u => u.ProviderID == id);
         public async Task<bool> DeleteProviderByIdAsync(Guid id)
         {
-            await _unitOfWork.ProviderRepository.DeleteItemAsync(u => u.ProviderID == id,
-                ConstantsTextService.DeleteProviderByIdAsync_text);
+            await _unitOfWork.ProviderRepository.DeleteItemAsync(u => u.ProviderID == id);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.DeleteProviderByIdAsync_text);
         }

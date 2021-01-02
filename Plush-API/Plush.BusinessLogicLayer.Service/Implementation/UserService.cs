@@ -15,11 +15,11 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         protected readonly IUnitOfWork _unitOfWork;
         public UserService(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
 
-        public async Task<User> GetUserByEmailAsync(string email) => await _unitOfWork.UserRepository.GetItemAsync(u => u.UserEmailID == email, ConstantsTextService.GetUserByEmailAsync_text);
+        public async Task<User> GetUserByEmailAsync(string email) => await _unitOfWork.UserRepository.GetItemAsync(u => u.UserEmailID == email);
 
         public async Task<bool> InsertUserAsync(User user)
         {
-            _unitOfWork.UserRepository.InsertItemAsync(user, ConstantsTextService.InsertUserAsync_text);
+            _unitOfWork.UserRepository.InsertItemAsync(user);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.InsertUserAsync_text);
         }
@@ -38,7 +38,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
                 user2.AccessTokenExp = user.AccessTokenExp;
             }
 
-            await _unitOfWork.UserRepository.UpdateItemAsync(u => u.UserEmailID == user2.UserEmailID, user2, ConstantsTextService.UpdateUserInformationAsync_text);
+            await _unitOfWork.UserRepository.UpdateItemAsync(u => u.UserEmailID == user2.UserEmailID, user2);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.UpdateUserInformationAsync_text);
         }

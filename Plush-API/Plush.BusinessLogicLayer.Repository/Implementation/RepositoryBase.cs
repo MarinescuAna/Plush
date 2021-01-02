@@ -23,11 +23,11 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             _context = context;
         }
 
-        public async Task<bool> DeleteItemAsync(Expression<Func<T, bool>> expression, string loggDetails)
+        public async Task<bool> DeleteItemAsync(Expression<Func<T, bool>> expression)
         {
             try
             {
-                T itemFind = await GetItemAsync(expression, loggDetails + ConstantsText.GetItemAsync_Text);
+                T itemFind = await GetItemAsync(expression);
 
                 if (itemFind == null)
                 {
@@ -40,15 +40,15 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             }
             catch (Exception ex)
             {
-                _loggerService.LogError(loggDetails + ConstantsText.DeleteItemAsync_Text, ex.Message);
-                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                _loggerService.LogError(ConstantsText.DeleteMessage_Text, ex.Message);
+                if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
-                    _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
+                    _loggerService.LogError(ConstantsText.DeleteMessage_Text+ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
                 return false;
             }
         }
-        public virtual async Task<T> GetItemAsync(Expression<Func<T, bool>> expression, string loggDetails)
+        public virtual async Task<T> GetItemAsync(Expression<Func<T, bool>> expression)
         {
             try
             {
@@ -58,16 +58,16 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             }
             catch (Exception ex)
             {
-                _loggerService.LogError(loggDetails, ex.Message);
+                _loggerService.LogError(ConstantsText.SelectItemMessange_Text, ex.Message);
                 if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
-                    _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
+                    _loggerService.LogError(ConstantsText.SelectItemMessange_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
                 return null;
             }
 
         }
-        public virtual async Task<IEnumerable<T>> GetItemsAsync(string loggDetails)
+        public virtual async Task<IEnumerable<T>> GetItemsAsync()
         {
             try
             {
@@ -77,15 +77,15 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             }
             catch (Exception ex)
             {
-                _loggerService.LogError(loggDetails + ConstantsText.GetItemsAsync_Text, ex.Message);
-                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                _loggerService.LogError(ConstantsText.SelectItemsMessage_Text, ex.Message);
+                if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
-                    _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
+                    _loggerService.LogError(ConstantsText.SelectItemsMessage_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
                 return null;
             }
         }
-        public async void InsertItemAsync(T item, string loggDetails)
+        public async void InsertItemAsync(T item)
         {
             try
             {
@@ -94,41 +94,32 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             }
             catch (Exception ex)
             {
-                _loggerService.LogError(loggDetails + ConstantsText.InsertItemAsync_Text, ex.Message);
+                _loggerService.LogError(ConstantsText.InsertMessage_Text, ex.Message);
                 if (!string.IsNullOrEmpty(ex.InnerException.Message))
                 {
-                    _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
+                    _loggerService.LogError(ConstantsText.InsertMessage_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
             }
         }
 
-        public async Task<bool> UpdateItemAsync(Expression<Func<T, bool>> expression, T item, string loggDetails)
+        public Task<bool> UpdateItemAsync(Expression<Func<T, bool>> expression, T item)
         {
             try
             {
-                T itemFind = await GetItemAsync(expression, loggDetails + ConstantsText.UpdateItemAsync_Text);
+                _context.Set<T>().Update(item);
 
-                if (itemFind == null)
-                {
-                    return false;
-                }
-
-                itemFind = item;
-
-                _context.Set<T>().Update(itemFind);
-
-                return true;
+                return Task.FromResult(true);
             }
             catch (Exception ex)
             {
-                _loggerService.LogError(loggDetails + ConstantsText.UpdateItemAsync_Text, ex.Message);
+                _loggerService.LogError(ConstantsText.UpdateMessage_Text, ex.Message);
 
                 if (!string.IsNullOrEmpty(ex.InnerException.Message))
                 {
-                    _loggerService.LogError(loggDetails + ConstantsText.Inner_Text, ex.InnerException.Message);
+                    _loggerService.LogError(ConstantsText.UpdateMessage_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
 
-                return false;
+                return Task.FromResult(false);
             }
 
         }

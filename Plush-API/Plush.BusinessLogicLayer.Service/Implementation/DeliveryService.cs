@@ -18,23 +18,21 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         }
         public async Task<bool> InsertDelivery(Delivery delivery)
         {
-            _unitOfWork.DeliveryRepository.InsertItemAsync(delivery, ConstantsTextService.InsertDelivery_text);
+            _unitOfWork.DeliveryRepository.InsertItemAsync(delivery);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.InsertDelivery_text);
         }
         public async Task<IEnumerable<Delivery>> GetDeliveriesAsync()
-           => await _unitOfWork.DeliveryRepository.GetItemsAsync(ConstantsTextService.GetDeliveriesAsync_text);
+           => await _unitOfWork.DeliveryRepository.GetItemsAsync();
         public async Task<bool> DeleteDeliveryByIdAsync(Guid id)
         {
-            await _unitOfWork.DeliveryRepository.DeleteItemAsync(u => u.DeliveryID == id,
-                ConstantsTextService.DeleteDeliveryByIdAsync_text);
+            await _unitOfWork.DeliveryRepository.DeleteItemAsync(u => u.DeliveryID == id);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.DeleteDeliveryByIdAsync_text);
         }
 
         public async Task<Delivery> GetDeliveryByIdAsync(Guid id)
             => await _unitOfWork.DeliveryRepository.GetItemAsync(
-                u => u.DeliveryID == id,
-                ConstantsTextService.GetDeliveryByIdAsync_text);
+                u => u.DeliveryID == id);
     }
 }

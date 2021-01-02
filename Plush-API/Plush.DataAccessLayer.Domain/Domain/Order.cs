@@ -21,7 +21,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public Guid OrderID { get; set; }
         public Guid InformationID { get; set; }
         public Guid DeliveryID { get; set; }
-        public Guid BasketID { get; set; }
         public DateTime DeliveryDate { get; set; }
         public DateTime OrderDate { get; set; }
         public StatusOrder StatusOrder { get; set; }

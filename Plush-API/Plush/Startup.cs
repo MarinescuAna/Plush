@@ -46,6 +46,7 @@ namespace Plush
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IWishlistService, WishlistService>();
+            services.AddScoped<IOrderService, OrderService>();
             services.AddSingleton<ILoggerService, LoggerService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
