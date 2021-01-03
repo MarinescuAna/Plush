@@ -14,7 +14,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button (click)="openDialogDetails()" >Details</button>      
-      <button mat-button title="Buy" *ngIf="!isAdmin"><mat-icon>add_shopping_cart</mat-icon> </button>
+      <button mat-button (click)="addToCart()" *ngIf="!isAdmin"><mat-icon>add_shopping_cart</mat-icon> </button>
       <button mat-button (click)="favorite()" *ngIf="!isAdmin"><mat-icon> {{isfavorite==true? "favorite":"favorite_border"}}</mat-icon></button>
     </mat-card-actions>
   </mat-card>

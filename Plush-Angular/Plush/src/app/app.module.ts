@@ -49,7 +49,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { ProviderTableComponent } from './components/delivery-provider-page/provider-table/provider-table.component';
 import { DeliveryTableComponent } from './components/delivery-provider-page/delivery-table/delivery-table.component';
 import { DeliveryComponent } from './components/delivery-provider-page/delivery/delivery.component';
-import { ProviderComponent } from './components/delivery-provider-page/provider/provider.component'; 
+import { ProviderComponent } from './components/delivery-provider-page/provider/provider.component';
+import { ShoppingProductComponent } from './components/shopping/shopping-product/shopping-product.component';
+import { BasketComponent } from './components/shopping/basket/basket.component';
+import { DialogProductQuantityComponent } from './components/product-page/dialog-product-quantity/dialog-product-quantity.component'; 
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -79,7 +82,10 @@ export function tokenGetter() {
     ProviderTableComponent,
     DeliveryTableComponent,
     DeliveryComponent,
-    ProviderComponent
+    ProviderComponent,
+    ShoppingProductComponent,
+    BasketComponent,
+    DialogProductQuantityComponent
   ],
   imports: [
 

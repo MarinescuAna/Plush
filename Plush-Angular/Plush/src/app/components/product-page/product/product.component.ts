@@ -1,12 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductViewModule } from 'src/app/modules/product-view.module';
 import { ProductAboutComponent } from '../product-about/product-about.component';
 import { ProductImageViewComponent } from '../product-image-view/product-image-view.component';
 import { WishlistService } from 'src/app/services/wishlist.service';
-import { window } from 'rxjs/operators';
+import { OrderService } from 'src/app/services/order.service';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Router } from '@angular/router';
+import { DialogProductQuantityComponent } from '../dialog-product-quantity/dialog-product-quantity.component';
 
 @Component({
   selector: 'app-product',
@@ -49,5 +50,8 @@ export class ProductComponent implements OnInit {
     this.wishlist.addToFavorite(this.product.productID).subscribe(cr => {
       this.isfavorite = this.isfavorite == false ? true : false;
     });
+  }
+  addToCart():void{
+    const diagRef = this.dialog.open(DialogProductQuantityComponent, { data: { product: this.product } });
   }
 }

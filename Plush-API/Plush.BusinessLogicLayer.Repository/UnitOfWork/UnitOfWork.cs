@@ -18,12 +18,51 @@ namespace Plush.BusinessLogicLayer.Repository.UnitOfWork
         private IProductRepository productRepository;
         private IImageRepository imageRepository;
         private IUserRepository userRepository;
+        private IOrderRepository orderRepository;
+        private IBasketRepository basketRepository;
+        private IInformationRepository informationRepository;
         private IWishlistRepository wishlistRepository;
         private readonly ILoggerService _loggerService;
         public UnitOfWork(PlushDbContext ctx, ILoggerService loggerService)
         {
             context = ctx;
             _loggerService = loggerService;
+        }
+        public IBasketRepository BasketRepository
+        {
+            get
+            {
+                if (basketRepository == null)
+                {
+                    basketRepository = new BasketRepository(context, _loggerService);
+                }
+
+                return basketRepository;
+            }
+        }
+        public IOrderRepository OrderRepository
+        {
+            get
+            {
+                if (orderRepository == null)
+                {
+                    orderRepository = new OrderRepository(context, _loggerService);
+                }
+
+                return orderRepository;
+            }
+        }
+        public IInformationRepository InformationRepository
+        {
+            get
+            {
+                if (informationRepository == null)
+                {
+                    informationRepository = new InformationRepository(context, _loggerService);
+                }
+
+                return informationRepository;
+            }
         }
         public ICategoryRepository CategoryRepository
         {

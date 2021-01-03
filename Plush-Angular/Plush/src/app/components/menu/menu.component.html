@@ -24,6 +24,9 @@
         <a mat-fab class="btn-color" [routerLink]="'/wishlist'" *ngIf="isLogged && !isAdmin">
             <mat-icon>favorite</mat-icon>
         </a>
+        <a mat-fab class="btn-color" [routerLink]="'/basket'" *ngIf="isLogged && !isAdmin">
+            <mat-icon>shopping_cart</mat-icon>
+        </a>
         <a mat-fab class="btn-color" (click)="logout()" *ngIf="isLogged">
             Logout
         </a>

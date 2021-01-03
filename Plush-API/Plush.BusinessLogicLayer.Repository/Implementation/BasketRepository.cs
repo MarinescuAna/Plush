@@ -26,6 +26,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             {
                 var temp = await _context.Set<Basket>()
                                 .Include("Product")
+                                .Include("Product.Image")
                                 .Include("Order")
                                 .ToListAsync();
                 return temp;

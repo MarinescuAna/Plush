@@ -9,6 +9,7 @@ import{AuthGuard} from 'src/app/shared/auth.guard';
 import { WishlistComponent } from './components/product-page/wishlist/wishlist.component';
 import { DeliveryComponent } from './components/delivery-provider-page/delivery/delivery.component';
 import { ProviderComponent } from './components/delivery-provider-page/provider/provider.component';
+import { BasketComponent } from './components/shopping/basket/basket.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,12 @@ const routes: Routes = [
   {
     path:'wishlist',
     component:WishlistComponent,
+    canActivate:[AuthGuard],
+    data: { roles: ["user"]}
+  },
+  {
+    path:'basket',
+    component:BasketComponent,
     canActivate:[AuthGuard],
     data: { roles: ["user"]}
   },

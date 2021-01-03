@@ -1,0 +1,8 @@
+<div  fxLayout="column">
+    <div fxLayoutAlign="start start" fxLayout="column" class="size-position">
+        <div *ngFor="let product of data">
+            <app-shopping-product [data]='product'></app-shopping-product>
+        </div>
+    </div>
+    <h1>Total: {{total}} RON</h1>
+</div>

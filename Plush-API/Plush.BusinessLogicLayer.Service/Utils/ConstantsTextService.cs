@@ -37,5 +37,7 @@ namespace Plush.BusinessLogicLayer.Service.Utils
         public const string GetFavoriteProductsAsync_text = "(WishlistService)GetFavoriteProductsAsync ";
         public const string DeleteProductFromWishlistAsync_text = "(WishlistService)DeleteProductFromWishlistAsync ";
         public const string GetWishlistAsync_text = "(WishlistService)GetWishlistAsync ";
+
+        public const string AddtoBasketAsync_text = "(OrderService)AddtoBasketAsync ";
     }
 }

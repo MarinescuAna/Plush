@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title><strong>{{data.name}}</strong> </mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+        <div fxLayoutAlign="center center" fxLayout="column">
+            <img mat-card-image [src]='src'>
+        </div>
+        <p>
+            <strong>Quantity:</strong> {{data.quantity}}
+        </p>
+        <p>
+            <strong>Price:</strong> {{data.price}} RON
+        </p>
+    </mat-card-content>
+</mat-card>
