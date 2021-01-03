@@ -36,7 +36,7 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await orderService.AddtoBasketAsync(addToBasket) == false)
+            if (await orderService.AddtoBasketAsync(addToBasket,ExtractEmailFromJWT()) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
@@ -46,9 +46,10 @@ namespace Plush.Controllers
 
         [Route("GetOrderProducts")]
         [HttpGet]
-        public async Task<IActionResult> GetOrderProducts(string orderId)
+        public async Task<IActionResult> GetOrderProducts()
         {
-            var baskets = await orderService.GetProductsOrderByOrderID(Guid.Parse(orderId));
+            var orderId = (await orderService.GetOrderWithBuildingStatusAsync(ExtractEmailFromJWT()));
+            var baskets = await orderService.GetProductsOrderByOrderID(orderId.OrderID);
 
             var prods = new List<OrderView>();
 
@@ -69,6 +70,41 @@ namespace Plush.Controllers
 
             return StatusCode(Codes.Number_201, prods);
         }
+
+        [Route("GetOrderIs")]
+        [HttpGet]
+        public async Task<IActionResult> GetOrderIs()
+        {
+            var order = (await orderService.GetOrderWithBuildingStatusAsync(ExtractEmailFromJWT()))?.OrderID.ToString();
+
+            if (string.IsNullOrEmpty(order))
+            {
+                return StatusCode(Codes.Number_201, null);
+            }
+
+            return StatusCode(Codes.Number_201, order);
+        }
+
+        [Route("FinishOrder")]
+        [HttpPut]
+        public async Task<IActionResult> FinishOrder(UserInformation userInformation)
+        {
+            if (userInformation == null)
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+            if (string.IsNullOrEmpty(userInformation.OrderId))
+            {
+                userInformation.OrderId=(await orderService.GetOrderWithBuildingStatusAsync(ExtractEmailFromJWT()))?.OrderID.ToString();
+            }
+            if(await orderService.SentOrderAsync(userInformation, ExtractEmailFromJWT()) == false)
+            {
+                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
+
+            return Ok();
+        }
+
 
     }
 }

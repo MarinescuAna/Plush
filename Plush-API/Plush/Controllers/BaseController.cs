@@ -28,7 +28,9 @@ namespace Plush.Controllers
             return _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
         }
 
-        protected string GenerateAccessToken(string userEmail, string role)
+        protected string GenerateAccessToken(
+            string userEmail, 
+            string role)
         {
             var key = Encoding.ASCII.GetBytes(configuration["SecretKey"]);
             var tokenHandler = new JwtSecurityTokenHandler();

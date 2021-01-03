@@ -24,6 +24,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public Role Role { get; set; }
 
         public ICollection<Wishlist> Wishlists { get; set; }
-        public ICollection<Information> Informations { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

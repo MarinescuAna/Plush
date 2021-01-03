@@ -26,7 +26,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             {
                 var temp = await _context.Set<Order>()
                                 .Include("Delivery")
-                                .Include("Information")
+                                .AsNoTracking()
                                 .ToListAsync();
                 return temp;
             }
@@ -47,7 +47,6 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             {
                 var temp = await _context.Set<Order>()
                                 .Include("Delivery")
-                                .Include("Information")
                                 .AsNoTracking()
                                 .FirstOrDefaultAsync(expression);
                 return temp;
@@ -55,7 +54,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             catch (Exception ex)
             {
                 _loggerService.LogError(ConstantsText.SelectItemMessange_Text, ex.Message);
-                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
                     _loggerService.LogError(ConstantsText.SelectItemMessange_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }

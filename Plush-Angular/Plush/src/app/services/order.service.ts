@@ -1,9 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AddToBasketModule } from '../modules/add-to-basket.module';
-import { CategoryViewModule } from '../modules/category-view.module';
-import { CategoryModule } from '../modules/category.module';
 import { DataService } from './data.service';
 
 @Injectable({
@@ -24,12 +21,18 @@ export class OrderService extends DataService {
         });
         return uuid;
     }
-    private GetOrderId(): string {
+    public GetOrderId(): string {
         let id = localStorage.getItem('OrderId');
         if (id === null) {
-            id = this.create_UUID();
-            localStorage.setItem('OrderId', id);
+            super.getOne('GetOrderIs').subscribe(cr=>{
+                id=cr as string;
+            });
+            if(id==null || id=='')
+            {
+                id = this.create_UUID();
+            }
         }
+        localStorage.setItem('OrderId', id);
         return id;
     }
     public AddToBasket(idProduct: string, quantity:string): any {
@@ -45,7 +48,11 @@ export class OrderService extends DataService {
     }
 
     public GetOrderProducts(): any{
-        return super.getMany('GetOrderProducts?orderId='+this.GetOrderId());
+        return super.getMany('GetOrderProducts');
+    }
+
+    public FinishOrder(data:any):any{
+        return super.update('FinishOrder',data);
     }
 
 }

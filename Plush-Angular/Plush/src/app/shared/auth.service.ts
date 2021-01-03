@@ -18,13 +18,18 @@ export class AuthService extends DataService {
     localStorage.setItem('access_token_expiration', token.accessTokenExpiration);
   }
 
-  private removeLocalStorage(): void {
+  public removeLocalStorage(): void {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('OrderId');
     localStorage.removeItem('access_token_expiration');
   }
   getRole():string{ 
     const decode=this.jwtDecode.decodeToken(localStorage.getItem('access_token'));
     return decode==null? "":decode['role'];
+  }
+  getEmail():string{ 
+    const decode=this.jwtDecode.decodeToken(localStorage.getItem('access_token'));
+    return decode==null? "":decode['email'];
   }
   getToken(): any {
     if (localStorage.getItem('access_token') !== null) {

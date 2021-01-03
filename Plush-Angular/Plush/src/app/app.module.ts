@@ -29,7 +29,7 @@ import { CategoryViewModule } from 'src/app/modules/category-view.module';
 import { ViewCategoryComponent } from './components/category-page/view-category/view-category.component';
 import { MainPageComponent } from './components/category-page/main-page/main-page.component'
 import {AuthconfigInterceptor} from 'src/app/shared/authconfig.interceptor';
-
+import {MatRadioModule} from '@angular/material/radio';
 import { AlertService } from './services/alert.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppErrorHandler } from 'src/app/handler-error/app-error-handler';
@@ -52,7 +52,8 @@ import { DeliveryComponent } from './components/delivery-provider-page/delivery/
 import { ProviderComponent } from './components/delivery-provider-page/provider/provider.component';
 import { ShoppingProductComponent } from './components/shopping/shopping-product/shopping-product.component';
 import { BasketComponent } from './components/shopping/basket/basket.component';
-import { DialogProductQuantityComponent } from './components/product-page/dialog-product-quantity/dialog-product-quantity.component'; 
+import { DialogProductQuantityComponent } from './components/product-page/dialog-product-quantity/dialog-product-quantity.component';
+import { InformationComponent } from './components/shopping/information/information.component'; 
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -85,7 +86,8 @@ export function tokenGetter() {
     ProviderComponent,
     ShoppingProductComponent,
     BasketComponent,
-    DialogProductQuantityComponent
+    DialogProductQuantityComponent,
+    InformationComponent
   ],
   imports: [
 
@@ -114,7 +116,8 @@ export function tokenGetter() {
     MatSlideToggleModule,
     MatDialogModule,
     MatProgressBarModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatRadioModule
   ],
   providers: [
     AppErrorHandler,

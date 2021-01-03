@@ -46,7 +46,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
             product.Status = product.Status == Status.Public ? Status.Hide : Status.Public;
 
-            await _unitOfWork.ProductRepository.UpdateItemAsync(u=>u.ProductID==id,product);
+            await _unitOfWork.ProductRepository.UpdateItemAsync(product);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.PublishProduct_text);
         }
@@ -92,16 +92,12 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
             if (productNew.Image?.ImageID != null && !string.IsNullOrEmpty(productNew.Image?.Document))
             {
-                await _unitOfWork.ImageRepository.UpdateItemAsync(
-                    u=>u.ImageID==productNew.Image.ImageID,
-                    productNew.Image);
+                await _unitOfWork.ImageRepository.UpdateItemAsync(productNew.Image);
 
                 await _unitOfWork.CommitAsync(ConstantsTextService.UpdateProductAsync_text);      
             }
 
-            await _unitOfWork.ProductRepository.UpdateItemAsync(
-                u => u.ProductID == product.ProductID, 
-                product);
+            await _unitOfWork.ProductRepository.UpdateItemAsync(product);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.UpdateProductAsync_text);
         }

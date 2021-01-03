@@ -43,7 +43,9 @@ namespace Plush.Controllers
 
             TokenResponse jWToken = new TokenResponse
             {
-                AccessToken = user.AccessToken = GenerateAccessToken( user.UserEmailID, user.Role.ToString()),
+                AccessToken = user.AccessToken = GenerateAccessToken( 
+                    user.UserEmailID,
+                    user.Role.ToString()),
                 AccessTokenExpiration = DateTime.Now.AddMinutes(Codes.Number_2).ToString()
             };
 
@@ -86,7 +88,9 @@ namespace Plush.Controllers
 
             TokenResponse jWToken = new TokenResponse();
 
-            user.AccessToken = jWToken.AccessToken = GenerateAccessToken(user.UserEmailID, user.Role.ToString());
+            user.AccessToken = jWToken.AccessToken = GenerateAccessToken(
+                user.UserEmailID, 
+                user.Role.ToString());
             user.AccessTokenExp= DateTime.Now.AddHours(Codes.Number_2);
             jWToken.AccessTokenExpiration = DateTime.Now.AddHours(Codes.Number_2).ToString();
             HttpContext.Session.SetString(ConstantString.Token, user.AccessToken);
@@ -110,7 +114,9 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
 
-            user.AccessToken = GenerateAccessToken(user.UserEmailID, user.Role.ToString());
+            user.AccessToken = GenerateAccessToken(
+                user.UserEmailID, 
+                user.Role.ToString());
             user.AccessTokenExp = DateTime.Today.AddMinutes(Codes.Number_2);
 
             if(await _userService.UpdateUserInformationAsync(user) == false)

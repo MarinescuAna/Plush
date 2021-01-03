@@ -102,7 +102,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             }
         }
 
-        public Task<bool> UpdateItemAsync(Expression<Func<T, bool>> expression, T item)
+        public Task<bool> UpdateItemAsync(T item)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             {
                 _loggerService.LogError(ConstantsText.UpdateMessage_Text, ex.Message);
 
-                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
                     _loggerService.LogError(ConstantsText.UpdateMessage_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }

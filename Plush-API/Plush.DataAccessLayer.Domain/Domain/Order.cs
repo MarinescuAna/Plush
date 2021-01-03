@@ -6,6 +6,7 @@ namespace Plush.DataAccessLayer.Domain.Domain
 {
     public enum StatusOrder
     {
+        Building,
         InProccess,
         Delivered,
         Canceled
@@ -19,16 +20,18 @@ namespace Plush.DataAccessLayer.Domain.Domain
     public class Order
     {
         public Guid OrderID { get; set; }
-        public Guid? InformationID { get; set; }
         public Guid? DeliveryID { get; set; }
         public DateTime? DeliveryDate { get; set; }
         public DateTime? OrderDate { get; set; }
         public StatusOrder? StatusOrder { get; set; }
         public Payment? Payment { get; set; }
         public float TotalPrice { get; set; }
+        public string Address { get; set; }
+        public string Remarks { get; set; }
+        public string UserID { get; set; }
 
+        public virtual User User { get; set; }
         public virtual Delivery Delivery { get; set; }
-        public virtual Information Information { get; set; }
         public ICollection<Basket> Baskets { get; set; }
     }
 }

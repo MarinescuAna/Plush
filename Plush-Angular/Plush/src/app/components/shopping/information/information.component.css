@@ -1,0 +1,30 @@
+.card-size{
+    margin-top: 4.5%;
+    margin-left: 7%;
+    width: 800px;
+    height: 600px;  
+}
+
+.input-style{
+    width: 700px;
+    padding: 5px;
+}
+
+.position{
+    margin: -15%;
+}
+
+.btn-size{
+    width: 200px;
+}
+
+.tp-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+ }
+ .tp-radio-button {
+    margin: 5px;
+ }
+ .tp-selected-value {
+    margin: 15px 0;
+ }
