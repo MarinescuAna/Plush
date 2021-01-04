@@ -38,7 +38,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
                 user2.AccessTokenExp = user.AccessTokenExp;
             }
 
-            await _unitOfWork.UserRepository.UpdateItemAsync(user2);
+            await _unitOfWork.UserRepository.UpdateItemAsync(u=>u.UserEmailID==user.UserEmailID,user2);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.UpdateUserInformationAsync_text);
         }

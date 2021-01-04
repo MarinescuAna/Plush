@@ -10,6 +10,8 @@ import { WishlistComponent } from './components/product-page/wishlist/wishlist.c
 import { DeliveryComponent } from './components/delivery-provider-page/delivery/delivery.component';
 import { ProviderComponent } from './components/delivery-provider-page/provider/provider.component';
 import { BasketComponent } from './components/shopping/basket/basket.component';
+import { OrdersHistoryComponent } from './components/shopping/orders-history/orders-history.component';
+import { OrderDetailsComponent } from './components/shopping/order-details/order-details.component';
 
 const routes: Routes = [
   {
@@ -48,8 +50,20 @@ const routes: Routes = [
     data: { roles: ["user"]}
   },
   {
+    path:'orderHistory',
+    component:OrderDetailsComponent,
+    canActivate:[AuthGuard],
+    data: { roles: ["user"]}
+  },
+  {
     path:'basket',
     component:BasketComponent,
+    canActivate:[AuthGuard],
+    data: { roles: ["user"]}
+  },
+  {
+    path:'history',
+    component:OrdersHistoryComponent,
     canActivate:[AuthGuard],
     data: { roles: ["user"]}
   },

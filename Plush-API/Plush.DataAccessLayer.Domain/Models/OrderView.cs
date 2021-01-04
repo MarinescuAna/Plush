@@ -13,5 +13,7 @@ namespace Plush.DataAccessLayer.Domain.Models
         public string Extension { get; set; }
         public string FileName { get; set; }
         public string Document { get; set; }
+        public string BasketId { get; set; }
+        public string Hide { get; set; }
     }
 }

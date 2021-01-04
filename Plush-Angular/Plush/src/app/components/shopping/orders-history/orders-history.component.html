@@ -1,0 +1,5 @@
+<div fxLayoutAlign="center center" fxLayout="column" class="size-position">
+    <div *ngFor="let data of orders">
+        <app-order-history [data]='data'></app-order-history>
+    </div>
+</div>

@@ -25,7 +25,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public DateTime? OrderDate { get; set; }
         public StatusOrder? StatusOrder { get; set; }
         public Payment? Payment { get; set; }
-        public float TotalPrice { get; set; }
         public string Address { get; set; }
         public string Remarks { get; set; }
         public string UserID { get; set; }

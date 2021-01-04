@@ -11,6 +11,6 @@ namespace Plush.DataAccessLayer.Domain.Models
         public string Delivery { get; set; }
         public string Payment { get; set; }
         public string Phone { get; set; }
-
+        public string Total { get; set; }
     }
 }

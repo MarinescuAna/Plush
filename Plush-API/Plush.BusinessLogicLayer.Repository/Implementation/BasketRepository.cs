@@ -56,7 +56,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             catch (Exception ex)
             {
                 _loggerService.LogError(ConstantsText.SelectItemMessange_Text, ex.Message);
-                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
                     _loggerService.LogError(ConstantsText.SelectItemMessange_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }

@@ -53,7 +53,10 @@ import { ProviderComponent } from './components/delivery-provider-page/provider/
 import { ShoppingProductComponent } from './components/shopping/shopping-product/shopping-product.component';
 import { BasketComponent } from './components/shopping/basket/basket.component';
 import { DialogProductQuantityComponent } from './components/product-page/dialog-product-quantity/dialog-product-quantity.component';
-import { InformationComponent } from './components/shopping/information/information.component'; 
+import { InformationComponent } from './components/shopping/information/information.component';
+import { OrdersHistoryComponent } from './components/shopping/orders-history/orders-history.component';
+import { OrderHistoryComponent } from './components/shopping/order-history/order-history.component';
+import { OrderDetailsComponent } from './components/shopping/order-details/order-details.component'; 
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -87,7 +90,10 @@ export function tokenGetter() {
     ShoppingProductComponent,
     BasketComponent,
     DialogProductQuantityComponent,
-    InformationComponent
+    InformationComponent,
+    OrdersHistoryComponent,
+    OrderHistoryComponent,
+    OrderDetailsComponent
   ],
   imports: [
 

@@ -46,9 +46,17 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
             product.Status = product.Status == Status.Public ? Status.Hide : Status.Public;
 
-            await _unitOfWork.ProductRepository.UpdateItemAsync(product);
+            await _unitOfWork.ProductRepository.UpdateItemAsync(u=>u.ProductID==id,product);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.PublishProduct_text);
+        }
+        public async Task<bool> RemoveStock(Product product, int quantity)
+        {
+            product.Stock -= quantity;
+
+            await _unitOfWork.ProductRepository.UpdateItemAsync(u => u.ProductID == product.ProductID, product);
+
+            return await _unitOfWork.CommitAsync(ConstantsTextService.UpdateProductAsync_text);
         }
         public async Task<bool> UpdateProductAsync(Product productNew)
         {
@@ -92,12 +100,12 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
             if (productNew.Image?.ImageID != null && !string.IsNullOrEmpty(productNew.Image?.Document))
             {
-                await _unitOfWork.ImageRepository.UpdateItemAsync(productNew.Image);
+                await _unitOfWork.ImageRepository.UpdateItemAsync(u=>u.ImageID==productNew.ImageID,productNew.Image);
 
                 await _unitOfWork.CommitAsync(ConstantsTextService.UpdateProductAsync_text);      
             }
 
-            await _unitOfWork.ProductRepository.UpdateItemAsync(product);
+            await _unitOfWork.ProductRepository.UpdateItemAsync(u=>u.ProductID==product.ProductID,product);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.UpdateProductAsync_text);
         }

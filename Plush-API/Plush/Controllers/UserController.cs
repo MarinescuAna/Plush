@@ -38,7 +38,7 @@ namespace Plush.Controllers
             }
             if (user.Password != credentials.Password)
             {
-                return StatusCode(Codes.Number_404, Messages.InvalidCredentials_4040NotFound);
+                return StatusCode(Codes.Number_404, Messages.InvalidCredentials_404NotFound);
             }
 
             TokenResponse jWToken = new TokenResponse

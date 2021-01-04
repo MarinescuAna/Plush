@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title><strong>Command {{data.orderID}}</strong> ( {{data.orderDate}} )</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+        <div *ngIf="data.deliveryDate!=''">
+            <p>
+                <strong>Delivery date:</strong> {{data.deliveryDate}}
+            </p>
+        </div>
+        <p>
+            <strong>Status:</strong> {{data.statusOrder}}
+        </p>
+        <p>
+            <strong>Payment:</strong> {{data.payment}}
+        </p>
+        <p>
+            <strong>Address:</strong> {{data.address}}
+        </p>
+        <p>
+            <strong>Remarks:</strong> {{data.remarks}}
+        </p>
+        <p>
+            <strong>Delivery:</strong> {{data.deliveryType}} ({{data.deliveryPrice}} RON)
+        </p>
+        <p>
+            <strong>Total price:</strong> {{data.totalPrice}} RON
+        </p>
+        <br>
+        <div>
+            <button mat-raised-button color="accent" (click)="onCancel()">
+                Cancel<mat-icon>cancel</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" (click)="onSubmit()">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

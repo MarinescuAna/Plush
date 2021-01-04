@@ -9,10 +9,14 @@ namespace Plush.BusinessLogicLayer.Service.Interface
 {
     public interface IOrderService
     {
+        Task<List<Order>> GetAllOrdersAsync(string email);
         Task<bool> AddtoBasketAsync(AddToBasket addToBasket, string user);
         Task<Order> GetOrderByIdAsync(Guid id);
-        Task<IEnumerable<Basket>> GetProductsOrderByOrderID(Guid id);
+        Task<List<Basket>> GetProductsOrderByOrderID(Guid id);
         Task<Order> GetOrderWithBuildingStatusAsync(string email);
-        Task<bool> SentOrderAsync(UserInformation userInformation, string userEmail);
+        Task<string> SentOrderAsync(UserInformation userInformation, string userEmail);
+        Task<float> GetTotalCostByOrderIdAsync(Order order);
+        Task<bool> DeleteProductFromCartByBasketIdAsync(Guid BasketId);
+        Task<bool> CancelOrderAsync(Guid id);
     }
 }

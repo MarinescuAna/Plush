@@ -24,35 +24,47 @@ export class OrderService extends DataService {
     public GetOrderId(): string {
         let id = localStorage.getItem('OrderId');
         if (id === null) {
-            super.getOne('GetOrderIs').subscribe(cr=>{
-                id=cr as string;
+            super.getOne('GetOrderIs').subscribe(cr => {
+                id = cr as string;
             });
-            if(id==null || id=='')
-            {
+            if (id == null || id == '') {
                 id = this.create_UUID();
             }
         }
         localStorage.setItem('OrderId', id);
         return id;
     }
-    public AddToBasket(idProduct: string, quantity:string): any {
+    public AddToBasket(idProduct: string, quantity: string): any {
         debugger
         let basket = new AddToBasketModule();
         basket.orderId = this.GetOrderId();
         basket.productId = idProduct;
-        basket.quantity=quantity;
+        basket.quantity = quantity;
         return super.post<any>('AddToCart', basket);
     }
     public BuyProducts() {
         localStorage.removeItem('access_token');
     }
 
-    public GetOrderProducts(): any{
+    public GetOrderProducts(): any {
         return super.getMany('GetOrderProducts');
     }
 
-    public FinishOrder(data:any):any{
-        return super.update('FinishOrder',data);
+    public FinishOrder(data: any): any {
+        return super.update('FinishOrder', data);
+    }
+    public CancelOrder(data: any): any {
+        return super.update("CancelOrder?id=" + data, {});
+    }
+    public DeleteCart(id: any): any {
+        return super.delete(id, 'DeleteProductFromCart?id=');
+    }
+
+    public GetOrderHistory(): any {
+        return super.getMany("GetOrderHistory");
+    }
+    public GetOrderProductsHistory(id: any): any {
+        return super.getMany("GetOrderProductsHistory?id=" + id);
     }
 
 }

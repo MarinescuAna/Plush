@@ -71,7 +71,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
         {
             try
             {
-                var temp = await _context.Set<T>().ToListAsync();
+                var temp = await _context.Set<T>().AsNoTracking().ToListAsync();
 
                 return temp;
             }
@@ -95,20 +95,29 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             catch (Exception ex)
             {
                 _loggerService.LogError(ConstantsText.InsertMessage_Text, ex.Message);
-                if (!string.IsNullOrEmpty(ex.InnerException.Message))
+                if (!string.IsNullOrEmpty(ex?.InnerException?.Message))
                 {
                     _loggerService.LogError(ConstantsText.InsertMessage_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
             }
         }
 
-        public Task<bool> UpdateItemAsync(T item)
+        public async Task<bool> UpdateItemAsync(Expression<Func<T, bool>> expression, T item)
         {
             try
             {
-                _context.Set<T>().Update(item);
+                T itemFind = await GetItemAsync(expression);
 
-                return Task.FromResult(true);
+                if (itemFind == null)
+                {
+                    return false;
+                }
+
+                itemFind = item;
+
+                _context.Set<T>().Update(itemFind);
+
+                return true;
             }
             catch (Exception ex)
             {
@@ -119,7 +128,7 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
                     _loggerService.LogError(ConstantsText.UpdateMessage_Text + ConstantsText.Inner_Text, ex.InnerException.Message);
                 }
 
-                return Task.FromResult(false);
+                return false;
             }
 
         }

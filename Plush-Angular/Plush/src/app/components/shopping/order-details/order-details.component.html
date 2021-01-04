@@ -1,0 +1,12 @@
+<div  fxLayout="column" class="size-position">
+    <div>
+        <button mat-raised-button color="accent" (click)="onSubmit()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </div>
+    <div fxLayoutAlign="start start" fxLayout="row" >
+        <div *ngFor="let product of products">
+            <app-shopping-product [data]='product'></app-shopping-product>
+        </div>
+    </div>
+</div>

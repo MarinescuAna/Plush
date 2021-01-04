@@ -27,6 +27,9 @@
         <a mat-fab class="btn-color" [routerLink]="'/basket'" *ngIf="isLogged && !isAdmin">
             <mat-icon>shopping_cart</mat-icon>
         </a>
+        <a mat-fab class="btn-color" [routerLink]="'/history'" *ngIf="isLogged && !isAdmin">
+            My Orders<mat-icon>shopping_cart</mat-icon>
+        </a>
         <a mat-fab class="btn-color" (click)="logout()" *ngIf="isLogged">
             Logout
         </a>

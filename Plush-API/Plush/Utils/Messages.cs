@@ -7,7 +7,8 @@ namespace Plush.Utils
 {
     public static class Messages
     {
-        public static readonly string InvalidCredentials_4040NotFound = "Invalid credentials!";
+        public static readonly string InvalidCredentials_404NotFound = "Invalid credentials!";
+        public static readonly string InsufficientStock_404NotFound = "Insufficient stock!";
         public static readonly string NotFound_4040NotFound = "Not found!";
         public static readonly string SthWentWrong_400BadRequest = "Something went wrong! Please try again";
         public static readonly string NoContent_204NoContent = "No content! Try again.";

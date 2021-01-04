@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 
 export class ProductsOrderModule {
+    basketId:string
     productID: string;
     name: string;
     price: string;
@@ -18,4 +19,5 @@ export class ProductsOrderModule {
     extension: string;
     fileName: string;
     quantity:string;
+    hide:string;
 }

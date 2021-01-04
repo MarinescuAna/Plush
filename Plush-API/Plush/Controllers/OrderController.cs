@@ -21,10 +21,12 @@ namespace Plush.Controllers
     public class OrderController : BaseController
     {
         private readonly IOrderService orderService;
-        public OrderController(IOrderService orderService, IConfiguration configuration, IHttpContextAccessor httpContextAccessor):
-            base(configuration,httpContextAccessor)
+        private readonly IProductService productService;
+        public OrderController(IProductService productService, IOrderService orderService, IConfiguration configuration, IHttpContextAccessor httpContextAccessor) :
+            base(configuration, httpContextAccessor)
         {
             this.orderService = orderService;
+            this.productService = productService;
         }
 
         [HttpPost]
@@ -36,12 +38,50 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await orderService.AddtoBasketAsync(addToBasket,ExtractEmailFromJWT()) == false)
+            var product = await productService.GetProductByIdAsync(Guid.Parse(addToBasket.ProductId));
+
+            if (product.Stock < addToBasket.Quantity)
+            {
+                return StatusCode(Codes.Number_404, Messages.InsufficientStock_404NotFound);
+            }
+
+            if (await orderService.AddtoBasketAsync(addToBasket, ExtractEmailFromJWT()) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
 
             return StatusCode(Codes.Number_201, Messages.Created_201Ok);
+        }
+        [Route("GetOrderProductsHistory")]
+        [HttpGet]
+        public async Task<IActionResult> GetOrderProductsHistory(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+            var baskets = await orderService.GetProductsOrderByOrderID(Guid.Parse(id));
+
+            var prods = new List<OrderView>();
+
+            foreach (var basket in baskets)
+            {
+                prods.Add(new OrderView
+                {
+                    Document = basket.Product?.Image?.Document,
+                    Extension = basket.Product?.Image?.Extension,
+                    FileName = basket.Product?.Image?.FileName,
+                    Name = basket.Product?.Name,
+                    Price = basket.Product?.Price.ToString(),
+                    ProductID = basket.ProductId.ToString(),
+                    Quantity = basket.Quantity.ToString(),
+                    BasketId = basket.BasketId.ToString(),
+                    Hide="true"
+                });
+            }
+
+
+            return StatusCode(Codes.Number_201, prods);
         }
 
         [Route("GetOrderProducts")]
@@ -49,6 +89,10 @@ namespace Plush.Controllers
         public async Task<IActionResult> GetOrderProducts()
         {
             var orderId = (await orderService.GetOrderWithBuildingStatusAsync(ExtractEmailFromJWT()));
+            if (orderId == null)
+            {
+                return StatusCode(Codes.Number_201, null);
+            }
             var baskets = await orderService.GetProductsOrderByOrderID(orderId.OrderID);
 
             var prods = new List<OrderView>();
@@ -57,34 +101,64 @@ namespace Plush.Controllers
             {
                 prods.Add(new OrderView
                 {
-                   Document=basket.Product?.Image?.Document,
-                   Extension=basket.Product?.Image?.Extension,
-                   FileName=basket.Product?.Image?.FileName,
-                   Name=basket.Product?.Name,
-                   Price=basket.Product?.Price.ToString(),
-                   ProductID=basket.ProductId.ToString(),
-                   Quantity=basket.Quantity.ToString()
+                    Document = basket.Product?.Image?.Document,
+                    Extension = basket.Product?.Image?.Extension,
+                    FileName = basket.Product?.Image?.FileName,
+                    Name = basket.Product?.Name,
+                    Price = basket.Product?.Price.ToString(),
+                    ProductID = basket.ProductId.ToString(),
+                    Quantity = basket.Quantity.ToString(),
+                    BasketId = basket.BasketId.ToString(),
+                    Hide = "false"
                 });
             }
 
 
             return StatusCode(Codes.Number_201, prods);
         }
-
-        [Route("GetOrderIs")]
-        [HttpGet]
-        public async Task<IActionResult> GetOrderIs()
+        [Route("CancelOrder")]
+        [HttpPut]
+        public async Task<IActionResult> CancelOrder(string id)
         {
-            var order = (await orderService.GetOrderWithBuildingStatusAsync(ExtractEmailFromJWT()))?.OrderID.ToString();
-
-            if (string.IsNullOrEmpty(order))
+            if (string.IsNullOrEmpty(id))
             {
-                return StatusCode(Codes.Number_201, null);
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            return StatusCode(Codes.Number_201, order);
-        }
+            if (await orderService.CancelOrderAsync(Guid.Parse(id))==false)
+            {
+                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
 
+            return Ok();
+        }
+        [Route("GetOrderHistory")]
+        [HttpGet]
+        public async Task<IActionResult> GetOrderHistory()
+        {
+            var orders = await orderService.GetAllOrdersAsync(ExtractEmailFromJWT());
+
+            var prods = new List<OrderHistory>();
+
+            foreach (var order in orders)
+            {
+                prods.Add(new OrderHistory
+                {
+                    Address = order.Address,
+                    DeliveryDate = order.DeliveryDate.ToString(),
+                    DeliveryPrice = order.Delivery?.Price.ToString(),
+                    DeliveryType = order.Delivery?.Name,
+                    OrderDate = order.OrderDate.ToString(),
+                    OrderID = order.OrderID.ToString(),
+                    Payment = order.Payment.ToString(),
+                    Remarks = order.Remarks,
+                    StatusOrder = order.StatusOrder.ToString(),
+                    TotalPrice=(await orderService.GetTotalCostByOrderIdAsync(order)).ToString()
+                });
+            }
+
+            return StatusCode(Codes.Number_201, prods);
+        }
         [Route("FinishOrder")]
         [HttpPut]
         public async Task<IActionResult> FinishOrder(UserInformation userInformation)
@@ -93,13 +167,33 @@ namespace Plush.Controllers
             {
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
-            if (string.IsNullOrEmpty(userInformation.OrderId))
-            {
-                userInformation.OrderId=(await orderService.GetOrderWithBuildingStatusAsync(ExtractEmailFromJWT()))?.OrderID.ToString();
-            }
-            if(await orderService.SentOrderAsync(userInformation, ExtractEmailFromJWT()) == false)
+
+            var orderId = await orderService.SentOrderAsync(userInformation, ExtractEmailFromJWT());
+            if (string.IsNullOrEmpty(orderId.ToString()))
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
+
+            var products = await orderService.GetProductsOrderByOrderID(Guid.Parse(orderId.ToString()));
+            foreach (var product2 in products)
+            {
+                await productService.RemoveStock(product2?.Product, product2.Quantity);
+            }
+
+            return Ok();
+        }
+        [Route("DeleteProductFromCart")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProductFromCart(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            if (await orderService.DeleteProductFromCartByBasketIdAsync(Guid.Parse(id)) == null)
+            {
+                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
             }
 
             return Ok();
