@@ -13,7 +13,7 @@ import { OrderService } from 'src/app/services/order.service';
 export class DialogProductQuantityComponent implements OnInit {
 
   formProduct= new FormGroup({
-    quantity: new FormControl('1',[Validators.required])
+    quantity: new FormControl('0',[Validators.required])
   });
 
   product:ProductViewModule;

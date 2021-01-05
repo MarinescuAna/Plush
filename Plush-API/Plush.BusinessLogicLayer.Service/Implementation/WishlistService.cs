@@ -35,7 +35,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         public async Task<Wishlist> GetWishlistAsync(string productId, string userId) =>
             await UnitOfWork.WishlistRepository.GetItemAsync(
                 u => u.ProductID.ToString() == productId &&
-                    u.UserID.ToString() == userId); 
+                    u.UserID == userId); 
 
         public async Task<IEnumerable<Wishlist>> GetFavoriteProductsAsync(string UserEmail) => (await UnitOfWork.WishlistRepository.GetItemsAsync())
             .Where(u=>u.UserID==UserEmail).ToList();

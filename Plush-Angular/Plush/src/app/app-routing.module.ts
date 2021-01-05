@@ -12,6 +12,7 @@ import { ProviderComponent } from './components/delivery-provider-page/provider/
 import { BasketComponent } from './components/shopping/basket/basket.component';
 import { OrdersHistoryComponent } from './components/shopping/orders-history/orders-history.component';
 import { OrderDetailsComponent } from './components/shopping/order-details/order-details.component';
+import { OrdersAdminComponent } from './components/shopping/orders-admin/orders-admin.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,12 @@ const routes: Routes = [
   {
     path:'insertProduct',
     component:ViewProductsComponent,
+    canActivate:[AuthGuard],
+    data: { roles: ["admin"]}
+  },
+  {
+    path:'orders',
+    component:OrdersAdminComponent,
     canActivate:[AuthGuard],
     data: { roles: ["admin"]}
   },

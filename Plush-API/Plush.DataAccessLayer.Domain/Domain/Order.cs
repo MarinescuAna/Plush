@@ -28,6 +28,7 @@ namespace Plush.DataAccessLayer.Domain.Domain
         public string Address { get; set; }
         public string Remarks { get; set; }
         public string UserID { get; set; }
+        public string Phone { get; set; }
 
         public virtual User User { get; set; }
         public virtual Delivery Delivery { get; set; }

@@ -56,7 +56,8 @@ import { DialogProductQuantityComponent } from './components/product-page/dialog
 import { InformationComponent } from './components/shopping/information/information.component';
 import { OrdersHistoryComponent } from './components/shopping/orders-history/orders-history.component';
 import { OrderHistoryComponent } from './components/shopping/order-history/order-history.component';
-import { OrderDetailsComponent } from './components/shopping/order-details/order-details.component'; 
+import { OrderDetailsComponent } from './components/shopping/order-details/order-details.component';
+import { OrdersAdminComponent } from './components/shopping/orders-admin/orders-admin.component'; 
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -93,7 +94,8 @@ export function tokenGetter() {
     InformationComponent,
     OrdersHistoryComponent,
     OrderHistoryComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    OrdersAdminComponent
   ],
   imports: [
 

@@ -7,13 +7,14 @@
     width: 290px;
     font-size: small;
    color:crimson;
+   margin: 10px;
 }
 .card-size{
     padding: 5px;
     width: 360px;
     margin-top: 30%;
     margin-right: -584%;
-    height: 300px;
+    height: 330px;
 }
 
 .input-min-style{

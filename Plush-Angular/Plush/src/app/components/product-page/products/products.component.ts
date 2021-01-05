@@ -35,11 +35,12 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
 
-     this.SpinnerService.show();
+    this.SpinnerService.show();
 
     this.service.getPublicProducts().subscribe(cr => {
       this.products = cr as ProductViewModule[];
-         this.SpinnerService.hide();
+      this.filterProducts = this.products;
+      this.SpinnerService.hide();
     });
 
     if (this.categories == null) {
@@ -59,28 +60,19 @@ export class ProductsComponent implements OnInit {
   }
 
   onSubmit(): void {
-    debugger
     this.filterProducts = this.products;
-    this.filterProducts.forEach(element => {
-      element.display = true;
-      if (this.formProvider.value.providerId != "") {
-        element.display = element.providerID === this.formProvider.value.providerId;
-      }
-
-      if (this.formProvider.value.categoryId != "") {
-        element.display = element.categoryID === this.formProvider.value.categoryId;
-      }
-
-      if (this.formProvider.value.priceMax != "") {
-        element.display = parseFloat(element.price) <= parseFloat(this.formProvider.value.priceMax);
-      }
-
-      if (this.formProvider.value.priceMin != "") {
-        element.display = parseFloat(element.price) >= parseFloat(this.formProvider.value.priceMin);
-      }
-
-    });
-
+    if (this.formProvider.value.providerId != "") {
+      this.filterProducts = this.filterProducts.filter(element => element.providerID === this.formProvider.value.providerId)
+    }
+    if (this.formProvider.value.categoryId != "") {
+      this.filterProducts = this.filterProducts.filter(element => element.categoryID === this.formProvider.value.categoryId)
+    }
+    if (this.formProvider.value.priceMax != "") {
+      this.filterProducts = this.filterProducts.filter(element => parseFloat(element.price) <= parseFloat(this.formProvider.value.priceMax))
+    }
+    if (this.formProvider.value.priceMin != "") {
+      this.filterProducts = this.filterProducts.filter(element => parseFloat(element.price) >= parseFloat(this.formProvider.value.priceMin))
+    }
   }
 
 }

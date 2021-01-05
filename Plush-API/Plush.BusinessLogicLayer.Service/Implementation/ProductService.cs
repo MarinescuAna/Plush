@@ -50,10 +50,16 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.PublishProduct_text);
         }
-        public async Task<bool> RemoveStock(Product product, int quantity)
+        public async Task<bool> ChangeStock(Product product, int quantity,int operation)
         {
-            product.Stock -= quantity;
-
+            if (operation == 0)
+            {
+                product.Stock -= quantity;
+            }
+            else
+            {
+                product.Stock += quantity;
+            }
             await _unitOfWork.ProductRepository.UpdateItemAsync(u => u.ProductID == product.ProductID, product);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.UpdateProductAsync_text);

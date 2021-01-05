@@ -125,12 +125,42 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await orderService.CancelOrderAsync(Guid.Parse(id))==false)
+            if (await orderService.ChangeStatusOrderByOrderIdAsync(Guid.Parse(id),StatusOrder.Canceled)==false)
+            {
+                return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+            }
+
+            var products = await orderService.GetProductsOrderByOrderID(Guid.Parse(id));
+            foreach (var product2 in products)
+            {
+                await productService.ChangeStock(product2?.Product, product2.Quantity, 1);
+            }
+
+            return Ok();
+        }
+        [Route("DeliverOrder")]
+        [HttpPut]
+        public async Task<IActionResult> DeliverOrder(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            if (await orderService.ChangeStatusOrderByOrderIdAsync(Guid.Parse(id), StatusOrder.Delivered) == false)
             {
                 return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
             }
 
             return Ok();
+        }
+        [Route("GetOrdersAsAdmin")]
+        [HttpGet]
+        public async Task<IActionResult> GetOrdersAsAdmin()
+        {
+            var orders = await orderService.GetOrdersAdminAsync();
+
+            return StatusCode(Codes.Number_201, orders);
         }
         [Route("GetOrderHistory")]
         [HttpGet]
@@ -177,7 +207,7 @@ namespace Plush.Controllers
             var products = await orderService.GetProductsOrderByOrderID(Guid.Parse(orderId.ToString()));
             foreach (var product2 in products)
             {
-                await productService.RemoveStock(product2?.Product, product2.Quantity);
+                await productService.ChangeStock(product2?.Product, product2.Quantity,0);
             }
 
             return Ok();

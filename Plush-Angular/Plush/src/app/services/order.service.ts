@@ -56,12 +56,18 @@ export class OrderService extends DataService {
     public CancelOrder(data: any): any {
         return super.update("CancelOrder?id=" + data, {});
     }
+    public DeliverOrder(data: any): any {
+        return super.update("DeliverOrder?id=" + data, {});
+    }
     public DeleteCart(id: any): any {
         return super.delete(id, 'DeleteProductFromCart?id=');
     }
 
     public GetOrderHistory(): any {
         return super.getMany("GetOrderHistory");
+    }
+    public GetOrdersAsAdmin(): any {
+        return super.getMany("GetOrdersAsAdmin");
     }
     public GetOrderProductsHistory(id: any): any {
         return super.getMany("GetOrderProductsHistory?id=" + id);

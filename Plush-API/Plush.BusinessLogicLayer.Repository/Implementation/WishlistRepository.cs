@@ -26,6 +26,10 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
                 var temp = await _context.Set<Wishlist>()
                                 .Include("Product")
                                 .Include("User")
+                                .Include("Product.Image")
+                                .Include("Product.Category")
+                                .Include("Product.Provider")
+                                .AsNoTracking()
                                 .ToListAsync();
                 return temp;
             }
@@ -46,6 +50,9 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
                 var temp = await _context.Set<Wishlist>()
                                 .Include("Product")
                                 .Include("User")
+                                .Include("Product.Image")
+                                .Include("Product.Category")
+                                .Include("Product.Provider")
                                 .AsNoTracking()
                                 .FirstOrDefaultAsync(expression);
                 return temp;

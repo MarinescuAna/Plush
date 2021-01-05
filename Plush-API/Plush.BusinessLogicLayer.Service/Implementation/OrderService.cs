@@ -20,6 +20,32 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             unitOfWork = unitOf;
             delivery = deliveryService;
         }
+
+        public async Task<List<OrdersAdminView>> GetOrdersAdminAsync()
+        {
+            var orders = (await unitOfWork.OrderRepository.GetItemsAsync()).Where(u=>u.StatusOrder==StatusOrder.InProccess);
+            var ordersAdmin = new List<OrdersAdminView>();
+
+            foreach(var order in orders)
+            {
+                ordersAdmin.Add(
+                    new OrdersAdminView
+                    {
+                        Address = order.Address,
+                        Delivery = order.Delivery?.Name,
+                        Email = order.UserID,
+                        OrderID = order.OrderID.ToString(),
+                        Payment = order.Payment.ToString(),
+                        Phone = order.Phone,
+                        Total =( await GetTotalCostByOrderIdAsync(order)).ToString(),
+                        Remarks=order.Remarks,
+                        OrderDate=order.OrderDate.ToString()
+                    }
+                );
+            }
+
+            return ordersAdmin;
+        }
         public async Task<List<Order>> GetAllOrdersAsync(string email) => (await unitOfWork.OrderRepository.GetItemsAsync())
             .Where(u => u.UserID == email && u.StatusOrder!=StatusOrder.Building).ToList();
         public async Task<Order> GetOrderByIdAsync(Guid id) => await unitOfWork.OrderRepository.GetItemAsync(u => u.OrderID == id);
@@ -28,10 +54,14 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         public async Task<List<Basket>> GetProductsOrderByOrderID(Guid id) =>
             (await unitOfWork.BasketRepository.GetItemsAsync()).Where(u=>u.OrderId==id).ToList();
 
-        public async Task<bool> CancelOrderAsync(Guid id)
+        public async Task<bool> ChangeStatusOrderByOrderIdAsync(Guid id, StatusOrder status)
         {
             var order = await GetOrderByIdAsync(id);
-            order.StatusOrder = StatusOrder.Canceled;
+            order.StatusOrder = status;
+            if (status == StatusOrder.Delivered)
+            {
+                order.DeliveryDate = DateTime.Now;
+            }
             _ = await unitOfWork.OrderRepository.UpdateItemAsync(u => u.OrderID == id, order);
             return await unitOfWork.CommitAsync(ConstantsTextService.CancelOrderAsync_text);
         }
@@ -81,6 +111,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             order.Remarks = userInformation.Remarks;
             order.OrderDate =new DateTime();
             order.OrderDate =DateTime.Now;
+            order.Phone = userInformation.Phone;
 
             await unitOfWork.OrderRepository.UpdateItemAsync(u=>u.OrderID==order.OrderID,order);
 

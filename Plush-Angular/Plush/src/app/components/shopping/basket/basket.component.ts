@@ -20,8 +20,9 @@ export class BasketComponent implements OnInit {
       this.data = cr as ProductsOrderModule[];
       this.data.forEach(u => {
         this.total = this.total + Number.parseFloat(u.quantity) * Number.parseFloat(u.price)
-      });
+      });  
+        this.SpinnerService.hide();
     });
-    this.SpinnerService.show();
+
   }
 }

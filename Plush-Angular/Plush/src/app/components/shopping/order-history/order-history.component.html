@@ -28,8 +28,8 @@
             <strong>Total price:</strong> {{data.totalPrice}} RON
         </p>
         <br>
-        <div>
-            <button mat-raised-button color="accent" (click)="onCancel()">
+        <div >
+            <button mat-raised-button color="accent" (click)="onCancel()" *ngIf="data.statusOrder=='InProccess'">
                 Cancel<mat-icon>cancel</mat-icon>
             </button>
             <button mat-raised-button color="accent" (click)="onSubmit()">
