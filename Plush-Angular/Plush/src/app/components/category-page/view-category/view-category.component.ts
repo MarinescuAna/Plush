@@ -14,7 +14,7 @@ import { CategoryService } from 'src/app/services/category-service';
 export class ViewCategoryComponent implements AfterViewInit  {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  displayedColumns: string[] = [ 'name', 'ages', 'symbol'];
+  displayedColumns: string[] = [ 'name', 'symbol'];
   dataSource : any;
   ngAfterViewInit() {
     this.categoryService.getCategories().subscribe( cr =>

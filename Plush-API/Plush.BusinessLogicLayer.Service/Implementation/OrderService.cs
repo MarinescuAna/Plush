@@ -46,6 +46,9 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
 
             return ordersAdmin;
         }
+        public async Task<Basket> GetBasketByBasketIdAsync(Guid id) => (await unitOfWork.BasketRepository.GetItemAsync(
+                u => u.BasketId == id));
+        
         public async Task<List<Order>> GetAllOrdersAsync(string email) => (await unitOfWork.OrderRepository.GetItemsAsync())
             .Where(u => u.UserID == email && u.StatusOrder!=StatusOrder.Building).ToList();
         public async Task<Order> GetOrderByIdAsync(Guid id) => await unitOfWork.OrderRepository.GetItemAsync(u => u.OrderID == id);
@@ -122,11 +125,18 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             return string.Empty;
         }
 
-        public async Task<bool> DeleteProductFromCartByBasketIdAsync(Guid BasketId)
+        public async Task<bool> DeleteProductFromCartByBasketIdAsync(Basket basket)
         {
-            unitOfWork.BasketRepository.DeleteItemAsync(u => u.BasketId == BasketId);
+            await unitOfWork.BasketRepository.DeleteItemAsync(null, basket);
 
             return await unitOfWork.CommitAsync(ConstantsTextService.DeleteProductFromCartByBasketIdAsync_text);
+        }
+
+        public async Task<bool> UpdateBascketQuantity(Basket basket)
+        {
+            await unitOfWork.BasketRepository.UpdateItemAsync(b => b.BasketId == basket.BasketId, basket);
+
+            return await unitOfWork.CommitAsync(ConstantsTextService.UpdateBascketQuantity_text);
         }
     }
 }

@@ -9,7 +9,6 @@ namespace Plush.DataAccessLayer.Domain.Domain
     {
         public Guid CategoryID { get; set; }
         public string Name { get; set; }
-        public string Ages { get; set; }
 
         public ICollection<Product> Products { get; set; }
     }

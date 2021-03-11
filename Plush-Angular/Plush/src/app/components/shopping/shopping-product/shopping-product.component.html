@@ -18,6 +18,12 @@
             <button mat-raised-button color="accent" (click)="onSubmit()" >
                 <mat-icon>delete</mat-icon>
             </button>
+            <button mat-raised-button color="accent" (click)="onChange(-1)" >
+                <mat-icon>remove</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" (click)="onChange(+1)" >
+                <mat-icon>add</mat-icon>
+            </button>
         </div>
     </mat-card-content>
 </mat-card>

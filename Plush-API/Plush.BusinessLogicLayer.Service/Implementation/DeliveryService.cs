@@ -26,7 +26,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
            => await _unitOfWork.DeliveryRepository.GetItemsAsync();
         public async Task<bool> DeleteDeliveryByIdAsync(Guid id)
         {
-            await _unitOfWork.DeliveryRepository.DeleteItemAsync(u => u.DeliveryID == id);
+            await _unitOfWork.DeliveryRepository.DeleteItemAsync(u => u.DeliveryID == id,null);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.DeleteDeliveryByIdAsync_text);
         }

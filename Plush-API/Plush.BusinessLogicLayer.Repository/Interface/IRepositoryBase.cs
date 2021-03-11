@@ -12,6 +12,6 @@ namespace Plush.BusinessLogicLayer.Repository.Interface
         Task<T> GetItemAsync(Expression<Func<T, Boolean>> expression);
         void InsertItemAsync(T item);
         Task<bool> UpdateItemAsync(Expression<Func<T, bool>> expression, T item);
-        Task<Boolean> DeleteItemAsync(Expression<Func<T, Boolean>> expression);
+        Task<bool> DeleteItemAsync(Expression<Func<T, bool>> expression, T obj);
     }
 }

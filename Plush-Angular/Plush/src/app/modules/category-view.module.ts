@@ -14,5 +14,4 @@ import { CommonModule } from '@angular/common';
 export class CategoryViewModule {
     categoryId:string;
     name: string;
-    ages: string;
 }

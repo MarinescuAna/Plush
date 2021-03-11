@@ -36,7 +36,6 @@ namespace Plush.Controllers
 
             var request = new Category
             {
-                Ages=categoryInsert.Ages,
                 Name=categoryInsert.Name,
                 CategoryID=Guid.NewGuid()
             };

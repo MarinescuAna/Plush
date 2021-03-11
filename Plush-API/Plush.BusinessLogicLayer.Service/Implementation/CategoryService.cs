@@ -33,7 +33,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         public Task<IEnumerable<Category>> GetCategoriesAsync() => _unitOfWork.CategoryRepository.GetItemsAsync();
         public Task<Boolean> DeleteCategoryAsync(Guid categoryID)
         {
-            _unitOfWork.CategoryRepository.DeleteItemAsync(u => u.CategoryID == categoryID);
+            _unitOfWork.CategoryRepository.DeleteItemAsync(u => u.CategoryID == categoryID,null);
 
             return _unitOfWork.CommitAsync(ConstantsTextService.DeleteCategoryAsync_text);
         }

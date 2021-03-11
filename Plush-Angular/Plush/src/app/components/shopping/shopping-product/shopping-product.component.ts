@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductsOrderModule } from 'src/app/modules/products-order.module';
+import { QuantityModule } from 'src/app/modules/quantity';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -21,8 +22,16 @@ export class ShoppingProductComponent implements OnInit {
     }
   }
 
+  onChange(number:number):void{
+    let data=new QuantityModule();
+    data.id=this.data.basketId;
+    data.number=number;
+    debugger
+    this.orderService.ChangeQuantity(data).subscribe(cr=>{
+      window.location.reload();
+    });
+  }
   onSubmit():void{
-
     this.orderService.DeleteCart(this.data.basketId).subscribe(cr=>{
       window.location.reload();
     });

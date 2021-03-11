@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Plush.DataAccessLayer.Domain.Models
 {
-    public class CategoryInsert
+    public class Quantity
     {
-        public string Name { get; set; }
+        public string Id { get; set; }
+        public int Number { get; set; }
     }
 }

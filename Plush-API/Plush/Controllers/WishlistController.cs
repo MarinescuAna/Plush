@@ -83,7 +83,6 @@ namespace Plush.Controllers
                 products.Add(new ProductView
                 {
                     CategoryName = wish.Product?.Category?.Name,
-                    CategorySpecification = wish.Product?.Category?.Ages,
                     Name = wish.Product?.Name,
                     Datetime = wish.Product?.PostDatetime.ToString(),
                     Description = wish.Product?.Description,

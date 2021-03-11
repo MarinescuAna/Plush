@@ -36,7 +36,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
             => await _unitOfWork.ProductRepository.GetItemAsync(u => u.ProductID == id);
         public async Task<bool> DeleteProduct(Guid id)
         {
-            await _unitOfWork.ProductRepository.DeleteItemAsync(u => u.ProductID == id);
+            await _unitOfWork.ProductRepository.DeleteItemAsync(u => u.ProductID == id,null);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.DeleteProduct_text);
         }

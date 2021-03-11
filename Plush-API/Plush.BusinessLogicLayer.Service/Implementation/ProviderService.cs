@@ -29,7 +29,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
                 u => u.ProviderID == id);
         public async Task<bool> DeleteProviderByIdAsync(Guid id)
         {
-            await _unitOfWork.ProviderRepository.DeleteItemAsync(u => u.ProviderID == id);
+            await _unitOfWork.ProviderRepository.DeleteItemAsync(u => u.ProviderID == id,null);
 
             return await _unitOfWork.CommitAsync(ConstantsTextService.DeleteProviderByIdAsync_text);
         }

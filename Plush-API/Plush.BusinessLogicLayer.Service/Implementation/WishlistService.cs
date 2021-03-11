@@ -27,7 +27,7 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
         }
         public async Task<bool> DeleteProductFromWishlistAsync(string id)
         {
-            await UnitOfWork.WishlistRepository.DeleteItemAsync(u=>u.WishlistID.ToString()==id);
+            await UnitOfWork.WishlistRepository.DeleteItemAsync(u=>u.WishlistID.ToString()==id,null);
 
             return await UnitOfWork.CommitAsync(ConstantsTextService.DeleteProductFromWishlistAsync_text);
         }

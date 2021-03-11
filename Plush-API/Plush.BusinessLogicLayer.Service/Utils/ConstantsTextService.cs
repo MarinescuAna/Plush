@@ -42,5 +42,6 @@ namespace Plush.BusinessLogicLayer.Service.Utils
         public const string SentOrderAsync_text = "(OrderService)SentOrderAsync ";
         public const string CancelOrderAsync_text = "(OrderService)CancelOrderAsync ";
         public const string DeleteProductFromCartByBasketIdAsync_text = "(OrderService)DeleteProductFromCartByBasketIdAsync ";
+        public const string UpdateBascketQuantity_text = "(OrderService)UpdateBascketQuantity ";
     }
 }

@@ -221,7 +221,9 @@ namespace Plush.Controllers
                 return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
             }
 
-            if (await orderService.DeleteProductFromCartByBasketIdAsync(Guid.Parse(id)) == null)
+            var basket = await orderService.GetBasketByBasketIdAsync(Guid.Parse(id));
+
+            if (basket==null || await orderService.DeleteProductFromCartByBasketIdAsync(basket) == null)
             {
                 return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
             }
@@ -229,6 +231,31 @@ namespace Plush.Controllers
             return Ok();
         }
 
+        [Route("ChangeQuantity")]
+        [HttpPut]
+        public async Task<IActionResult> ChangeQuantity(Quantity quantity)
+        {
+            if (quantity==null)
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            var basket = await orderService.GetBasketByBasketIdAsync(Guid.Parse(quantity.Id));
+
+            if (basket == null)
+            {
+                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
+            }
+
+            basket.Quantity += quantity.Number;
+
+            if (await orderService.UpdateBascketQuantity(basket) == null)
+            {
+                return StatusCode(Codes.Number_404, Messages.NotFound_4040NotFound);
+            }
+
+            return Ok();
+        }
 
     }
 }

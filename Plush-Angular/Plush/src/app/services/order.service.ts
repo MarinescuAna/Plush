@@ -59,6 +59,9 @@ export class OrderService extends DataService {
     public DeliverOrder(data: any): any {
         return super.update("DeliverOrder?id=" + data, {});
     }
+    public ChangeQuantity(data: any): any {
+        return super.update("ChangeQuantity", data);
+    }
     public DeleteCart(id: any): any {
         return super.delete(id, 'DeleteProductFromCart?id=');
     }

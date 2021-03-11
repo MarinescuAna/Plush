@@ -11,8 +11,7 @@ import { CategoryService } from 'src/app/services/category-service';
 export class CategoriesComponent implements OnInit {
 
   formCategory = new FormGroup({
-    name: new FormControl('',[Validators.required]),
-    ages: new FormControl('',[Validators.required])
+    name: new FormControl('',[Validators.required])
   });
 
   constructor(private service: CategoryService) { }
@@ -22,7 +21,6 @@ export class CategoriesComponent implements OnInit {
 
   onSubmit(): void{
     const temp=new CategoryModule();
-    temp.ages=this.formCategory.value.ages;
     temp.name=this.formCategory.value.name;
     debugger
     this.service.createCategory(temp);

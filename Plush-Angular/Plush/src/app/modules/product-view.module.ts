@@ -17,7 +17,6 @@ export class ProductViewModule {
     specification: string;
     price: string;
     categoryName: string;
-    categorySpecification: string;
     providerName: string;
     providerSpecification: string;
     datetime: string;   

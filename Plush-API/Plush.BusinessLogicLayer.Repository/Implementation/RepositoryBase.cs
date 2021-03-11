@@ -23,17 +23,24 @@ namespace Plush.BusinessLogicLayer.Repository.Implementation
             _context = context;
         }
 
-        public async Task<bool> DeleteItemAsync(Expression<Func<T, bool>> expression)
+        public async Task<bool> DeleteItemAsync(Expression<Func<T, bool>> expression, T obj)
         {
             try
             {
-                T itemFind = await GetItemAsync(expression);
-
-                if (itemFind == null)
+                T itemFind;
+                if (obj == null)
                 {
-                    return false;
-                }
+                    itemFind = await GetItemAsync(expression);
 
+                    if (itemFind == null)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    itemFind = obj;
+                }
                 _context.Set<T>().Remove(itemFind);
 
                 return true;

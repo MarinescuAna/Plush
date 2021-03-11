@@ -18,7 +18,6 @@ export class ProductViewAdminModule {
     price: string;
     stock: string;
     categoryName: string;
-    categorySpecification: string;
     providerName: string;
     providerSpecification: string;
     datetime: string;

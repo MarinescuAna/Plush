@@ -81,7 +81,6 @@ namespace Plush.Controllers
                 prods.Add(new ProductView
                 {
                     CategoryName = prduct.Category?.Name,
-                    CategorySpecification = prduct.Category?.Ages,
                     Description = prduct.Description,
                     Name = prduct.Name.ToUpper(),
                     Price = prduct.Price,
@@ -118,7 +117,6 @@ namespace Plush.Controllers
                 prods.Add(new ProductViewAdmin
                 {
                     CategoryName = prduct.Category?.Name,
-                    CategorySpecification = prduct.Category?.Ages,
                     Description = prduct.Description,
                     Name = prduct.Name.ToUpper(),
                     Price = prduct.Price,

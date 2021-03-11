@@ -25969,3 +25969,1692 @@
 2021-01-05 17:14:02.7427 Trace  Scanning Property LineEnding 'Default' NLog.Targets
 2021-01-05 17:14:02.7427 Trace File Target[logfile] has 2 layouts
 2021-01-05 17:14:02.7551 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-12 10:19:21.2569 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-01-12 10:19:21.3190 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-01-12 10:19:21.3493 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-12 10:19:21.4944 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-12 10:19:21.4944 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-12 10:19:21.5175 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-01-12 10:19:21.5258 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-12 10:19:21.5258 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-12 10:19:21.5489 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-12 10:19:21.5575 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-12 10:19:21.5683 Debug Auto loading done
+2021-01-12 10:19:21.5683 Info Message Template Auto Format enabled
+2021-01-12 10:19:21.6160 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.6311 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-12 10:19:21.6533 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-12 10:19:21.6672 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-12 10:19:21.6778 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.6778 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-12 10:19:21.6996 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.7077 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-12 10:19:21.7077 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-12 10:19:21.7258 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-12 10:19:21.7258 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:21.7453 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-12 10:19:21.7453 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.7578 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-12 10:19:21.7578 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.7709 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-12 10:19:21.7709 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-12 10:19:21.7898 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-01-12 10:19:21.7898 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.8021 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-12 10:19:21.8021 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-12 10:19:21.8021 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.8239 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-12 10:19:21.8239 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-12 10:19:21.8372 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-12 10:19:21.8372 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.8530 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-12 10:19:21.8530 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.8658 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-12 10:19:21.8658 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-12 10:19:21.8815 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-12 10:19:21.8815 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:21.8970 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-12 10:19:21.8970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:21.9124 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-12 10:19:21.9124 Info Adding target FileTarget(Name=logfile)
+2021-01-12 10:19:21.9286 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-12 10:19:21.9286 Trace ParseRulesElement
+2021-01-12 10:19:21.9709 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-01-12 10:19:21.9802 Debug --- NLog configuration dump ---
+2021-01-12 10:19:21.9887 Debug Targets:
+2021-01-12 10:19:21.9887 Debug File Target[logfile]
+2021-01-12 10:19:22.0073 Debug Rules:
+2021-01-12 10:19:22.0073 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-12 10:19:22.0259 Debug --- End of NLog configuration dump ---
+2021-01-12 10:19:22.0393 Trace FindReachableObject<System.Object>:
+2021-01-12 10:19:22.0393 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-12 10:19:22.0577 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-12 10:19:22.0678 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-12 10:19:22.0678 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-12 10:19:22.0860 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-12 10:19:22.0860 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:22.1032 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.1032 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-12 10:19:22.1159 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.1159 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-12 10:19:22.1297 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-12 10:19:22.1297 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:22.1297 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-12 10:19:22.1486 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.1486 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-12 10:19:22.1629 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-12 10:19:22.1629 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-12 10:19:22.1629 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:22.1813 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-12 10:19:22.1813 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.1937 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-12 10:19:22.1937 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-12 10:19:22.1937 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-12 10:19:22.2129 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-12 10:19:22.2129 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-01-12 10:19:22.2315 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-12 10:19:22.2434 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-12 10:19:22.2434 Trace Initializing Layout Renderer: ${message}
+2021-01-12 10:19:22.2576 Trace Initializing Layout Renderer: ${literal}
+2021-01-12 10:19:22.2576 Trace Initializing Layout Renderer: ${level}
+2021-01-12 10:19:22.2712 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-12 10:19:22.2712 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:22.2885 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-12 10:19:22.2885 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:22.2885 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-12 10:19:22.3089 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-12 10:19:22.3089 Trace Initializing Layout Renderer: ${literal}
+2021-01-12 10:19:22.3219 Trace Initializing Layout Renderer: ${longdate}
+2021-01-12 10:19:22.3219 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-12 10:19:22.3375 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:22.3375 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-12 10:19:22.3538 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:22.3538 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-12 10:19:22.3678 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.3678 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-12 10:19:22.3844 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-12 10:19:22.3844 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-12 10:19:22.4052 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:22.4156 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-12 10:19:22.4156 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.4350 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-12 10:19:22.4467 Trace Initializing Layout Renderer: ${literal}
+2021-01-12 10:19:22.4595 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-12 10:19:22.4595 Trace Initializing Layout Renderer: ${literal}
+2021-01-12 10:19:22.4812 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-01-12 10:19:22.4889 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-12 10:19:22.4889 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-12 10:19:22.5057 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-12 10:19:22.5057 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.5233 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-12 10:19:22.5233 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-12 10:19:22.5423 Trace Initializing File Target[logfile]
+2021-01-12 10:19:22.5521 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-12 10:19:22.5521 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-12 10:19:22.5704 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-12 10:19:22.5704 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-12 10:19:22.5877 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-12 10:19:22.5877 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-12 10:19:22.6053 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-12 10:19:22.6170 Trace File Target[logfile] has 2 layouts
+2021-01-12 10:19:22.6170 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-13 16:52:52.3258 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-01-13 16:52:52.3736 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-01-13 16:52:52.4093 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 16:52:52.5963 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-13 16:52:52.6102 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-13 16:52:52.6331 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-01-13 16:52:52.6483 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-13 16:52:52.6483 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-13 16:52:52.6786 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 16:52:52.6925 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 16:52:52.6925 Debug Auto loading done
+2021-01-13 16:52:52.7213 Info Message Template Auto Format enabled
+2021-01-13 16:52:52.7664 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:52.7824 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:52:52.8058 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 16:52:52.8199 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 16:52:52.8325 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:52.8325 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:52:52.8585 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:52.8711 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:52:52.8874 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:52:52.9001 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:52:52.9122 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:52.9273 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:52:52.9273 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:52.9498 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-13 16:52:52.9610 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:52.9734 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:52:52.9947 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-13 16:52:53.0058 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-01-13 16:52:53.0058 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:53.0335 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 16:52:53.0492 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 16:52:53.0615 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:53.0755 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:52:53.0885 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 16:52:53.1009 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 16:52:53.1009 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:53.1264 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:52:53.1393 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:53.1523 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:52:53.1661 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:52:53.1863 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:52:53.1984 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:53.2114 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:52:53.2258 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:53.2258 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:52:53.2483 Info Adding target FileTarget(Name=logfile)
+2021-01-13 16:52:53.2584 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-13 16:52:53.2713 Trace ParseRulesElement
+2021-01-13 16:52:53.3143 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-01-13 16:52:53.3244 Debug --- NLog configuration dump ---
+2021-01-13 16:52:53.3343 Debug Targets:
+2021-01-13 16:52:53.3343 Debug File Target[logfile]
+2021-01-13 16:52:53.4188 Debug Rules:
+2021-01-13 16:52:53.4358 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-13 16:52:53.4462 Debug --- End of NLog configuration dump ---
+2021-01-13 16:52:53.4645 Trace FindReachableObject<System.Object>:
+2021-01-13 16:52:53.4773 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-13 16:52:53.4907 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-13 16:52:53.5047 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-13 16:52:53.5047 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 16:52:53.5272 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-13 16:52:53.5391 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:53.5391 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:53.5609 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 16:52:53.5720 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:53.5720 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 16:52:53.5908 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 16:52:53.6023 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 16:52:53.6171 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:53.6311 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:52:53.6311 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:53.6575 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:52:53.6716 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:52:53.6861 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:52:53.7015 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:53.7177 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:52:53.7326 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:53.7460 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:52:53.7594 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-13 16:52:53.7594 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-13 16:52:53.7825 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-01-13 16:52:53.7936 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-13 16:52:53.8089 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-13 16:52:53.8192 Trace Initializing Layout Renderer: ${message}
+2021-01-13 16:52:53.8192 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:52:53.8357 Trace Initializing Layout Renderer: ${level}
+2021-01-13 16:52:53.8357 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-13 16:52:53.8602 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:53.8689 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:52:53.8689 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:53.8856 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:52:53.8970 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-13 16:52:53.8970 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:52:53.9160 Trace Initializing Layout Renderer: ${longdate}
+2021-01-13 16:52:53.9260 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 16:52:53.9260 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:53.9477 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 16:52:53.9580 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:53.9580 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:52:53.9772 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:53.9772 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:52:53.9992 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:52:54.0112 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:52:54.0230 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:54.0230 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:52:54.0462 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:54.0567 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:52:54.0676 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:52:54.0676 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-13 16:52:54.0865 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:52:54.0865 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-01-13 16:52:54.1014 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:52:54.1014 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-13 16:52:54.1170 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:52:54.1170 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:54.1380 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 16:52:54.1481 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:52:54.1481 Trace Initializing File Target[logfile]
+2021-01-13 16:52:54.1718 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-13 16:52:54.1825 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-13 16:52:54.1825 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 16:52:54.1979 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-13 16:52:54.2075 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 16:52:54.2075 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 16:52:54.2234 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 16:52:54.2234 Trace File Target[logfile] has 2 layouts
+2021-01-13 16:52:54.2435 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-15 08:02:36.9977 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-01-15 08:02:37.0573 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-01-15 08:02:37.0803 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-15 08:02:37.2008 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-15 08:02:37.2100 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-15 08:02:37.2256 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-01-15 08:02:37.2256 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-15 08:02:37.2410 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-01-15 08:02:37.2529 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-15 08:02:37.2529 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-15 08:02:37.2686 Debug Auto loading done
+2021-01-15 08:02:37.2686 Info Message Template Auto Format enabled
+2021-01-15 08:02:37.3039 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.3147 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-15 08:02:37.3295 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-15 08:02:37.3295 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-15 08:02:37.3511 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.3511 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-15 08:02:37.3662 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.3662 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-15 08:02:37.3805 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-15 08:02:37.3805 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-15 08:02:37.3980 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:37.3980 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-15 08:02:37.4158 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.4241 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-15 08:02:37.4241 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.4399 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-15 08:02:37.4399 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-15 08:02:37.4602 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-01-15 08:02:37.4602 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.4752 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-15 08:02:37.4752 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-15 08:02:37.4912 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.4912 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-15 08:02:37.5055 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-15 08:02:37.5055 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-15 08:02:37.5201 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.5201 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-15 08:02:37.5337 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.5337 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-15 08:02:37.5546 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-15 08:02:37.5654 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-15 08:02:37.5654 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:37.5855 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-15 08:02:37.5975 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:37.5975 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-15 08:02:37.6249 Info Adding target FileTarget(Name=logfile)
+2021-01-15 08:02:37.6362 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-15 08:02:37.6470 Trace ParseRulesElement
+2021-01-15 08:02:37.6778 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-01-15 08:02:37.6778 Debug --- NLog configuration dump ---
+2021-01-15 08:02:37.6933 Debug Targets:
+2021-01-15 08:02:37.6933 Debug File Target[logfile]
+2021-01-15 08:02:37.7086 Debug Rules:
+2021-01-15 08:02:37.7086 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-15 08:02:37.7240 Debug --- End of NLog configuration dump ---
+2021-01-15 08:02:37.7240 Trace FindReachableObject<System.Object>:
+2021-01-15 08:02:37.7432 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-15 08:02:37.7518 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-15 08:02:37.7518 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-15 08:02:37.7518 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-15 08:02:37.7734 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-15 08:02:37.7734 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:37.7873 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:37.7873 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-15 08:02:37.7999 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:37.7999 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-15 08:02:37.7999 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-15 08:02:37.8191 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:37.8191 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-15 08:02:37.8335 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:37.8335 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-15 08:02:37.8468 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-15 08:02:37.8468 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-15 08:02:37.8468 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:37.8691 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-15 08:02:37.8792 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:37.8792 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-15 08:02:37.8979 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-15 08:02:37.9083 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-15 08:02:37.9083 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-15 08:02:37.9296 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-01-15 08:02:37.9418 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-15 08:02:37.9610 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-15 08:02:37.9708 Trace Initializing Layout Renderer: ${message}
+2021-01-15 08:02:37.9708 Trace Initializing Layout Renderer: ${literal}
+2021-01-15 08:02:37.9880 Trace Initializing Layout Renderer: ${level}
+2021-01-15 08:02:37.9880 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-15 08:02:38.0068 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:38.0068 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-15 08:02:38.0221 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:38.0221 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-15 08:02:38.0389 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-15 08:02:38.0389 Trace Initializing Layout Renderer: ${literal}
+2021-01-15 08:02:38.0519 Trace Initializing Layout Renderer: ${longdate}
+2021-01-15 08:02:38.0519 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-15 08:02:38.0659 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:38.0659 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-15 08:02:38.0815 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:38.0815 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-15 08:02:38.0815 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:38.1003 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-15 08:02:38.1003 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-15 08:02:38.1138 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-15 08:02:38.1138 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:38.1138 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-15 08:02:38.1325 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:38.1438 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-15 08:02:38.1438 Trace Initializing Layout Renderer: ${literal}
+2021-01-15 08:02:38.1650 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-15 08:02:38.1741 Trace Initializing Layout Renderer: ${literal}
+2021-01-15 08:02:38.1741 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-01-15 08:02:38.1906 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-15 08:02:38.1906 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-15 08:02:38.2183 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-15 08:02:38.2279 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:38.2374 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-15 08:02:38.2374 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-15 08:02:38.2536 Trace Initializing File Target[logfile]
+2021-01-15 08:02:38.2536 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-15 08:02:38.2733 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-15 08:02:38.2733 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-15 08:02:38.2911 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-01-15 08:02:38.2991 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-15 08:02:38.2991 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-15 08:02:38.2991 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-15 08:02:38.3200 Trace File Target[logfile] has 2 layouts
+2021-01-15 08:02:38.3200 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-02 21:43:05.9630 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-02 21:43:05.9984 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-02 21:43:06.0167 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-02 21:43:06.1136 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-02 21:43:06.1199 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-02 21:43:06.1199 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-02 21:43:06.1351 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-02 21:43:06.1351 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-02 21:43:06.1500 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-02 21:43:06.1500 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-02 21:43:06.1500 Debug Auto loading done
+2021-03-02 21:43:06.1678 Info Message Template Auto Format enabled
+2021-03-02 21:43:06.1923 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.2004 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:43:06.2154 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-02 21:43:06.2154 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-02 21:43:06.2154 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.2328 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:43:06.2328 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.2446 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:43:06.2446 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:43:06.2446 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:43:06.2630 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.2630 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:43:06.2753 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.2753 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-02 21:43:06.2753 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.2915 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:43:06.2915 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-02 21:43:06.3076 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-02 21:43:06.3076 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.3076 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-02 21:43:06.3244 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-02 21:43:06.3244 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.3244 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:43:06.3405 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-02 21:43:06.3405 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-02 21:43:06.3405 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.3566 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:43:06.3566 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.3566 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:43:06.3725 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:43:06.3725 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:43:06.3725 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.3885 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:43:06.3885 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.3995 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:43:06.3995 Info Adding target FileTarget(Name=logfile)
+2021-03-02 21:43:06.3995 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-02 21:43:06.4198 Trace ParseRulesElement
+2021-03-02 21:43:06.4420 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-02 21:43:06.4477 Debug --- NLog configuration dump ---
+2021-03-02 21:43:06.4477 Debug Targets:
+2021-03-02 21:43:06.4477 Debug File Target[logfile]
+2021-03-02 21:43:06.4647 Debug Rules:
+2021-03-02 21:43:06.4647 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-02 21:43:06.4647 Debug --- End of NLog configuration dump ---
+2021-03-02 21:43:06.4844 Trace FindReachableObject<System.Object>:
+2021-03-02 21:43:06.4844 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-02 21:43:06.4948 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-02 21:43:06.4948 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-02 21:43:06.4948 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-02 21:43:06.5104 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-02 21:43:06.5104 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.5104 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.5301 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-02 21:43:06.5301 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.5406 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-02 21:43:06.5406 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-02 21:43:06.5406 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.5571 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:43:06.5571 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.5571 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:43:06.5742 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:43:06.5742 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:43:06.5742 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.5930 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:43:06.5930 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.6034 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:43:06.6034 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-02 21:43:06.6034 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-02 21:43:06.6228 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-02 21:43:06.6228 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-02 21:43:06.6368 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-02 21:43:06.6368 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-02 21:43:06.6515 Trace Initializing Layout Renderer: ${message}
+2021-03-02 21:43:06.6515 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:43:06.6515 Trace Initializing Layout Renderer: ${level}
+2021-03-02 21:43:06.6681 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-02 21:43:06.6681 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.6822 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:43:06.6822 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.6822 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:43:06.7017 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-02 21:43:06.7017 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:43:06.7127 Trace Initializing Layout Renderer: ${longdate}
+2021-03-02 21:43:06.7127 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-02 21:43:06.7127 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.7322 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-02 21:43:06.7322 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.7462 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:43:06.7462 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.7462 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:43:06.7627 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:43:06.7627 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:43:06.7746 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.7746 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:43:06.7746 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.7961 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:43:06.7961 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:43:06.8139 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-02 21:43:06.8232 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:43:06.8232 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-02 21:43:06.8232 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:43:06.8416 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-02 21:43:06.8416 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:43:06.8416 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.8574 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-02 21:43:06.8574 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:43:06.8709 Trace Initializing File Target[logfile]
+2021-03-02 21:43:06.8709 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-02 21:43:06.8709 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-02 21:43:06.8904 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-02 21:43:06.8904 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-02 21:43:06.9029 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-02 21:43:06.9029 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-02 21:43:06.9156 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-02 21:43:06.9156 Trace File Target[logfile] has 2 layouts
+2021-03-02 21:43:06.9156 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-02 21:50:18.2472 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-02 21:50:18.3588 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-02 21:50:18.3727 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-02 21:50:18.4576 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-02 21:50:18.4636 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-02 21:50:18.4636 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-02 21:50:18.4786 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-02 21:50:18.4786 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-02 21:50:18.4786 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-02 21:50:18.4981 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-02 21:50:18.4981 Debug Auto loading done
+2021-03-02 21:50:18.4981 Info Message Template Auto Format enabled
+2021-03-02 21:50:18.5286 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.5286 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:50:18.5476 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-02 21:50:18.5476 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-02 21:50:18.5632 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.5727 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:50:18.5727 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.5897 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:50:18.5897 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:50:18.6110 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:50:18.6201 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:18.6201 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:50:18.6395 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.6395 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-02 21:50:18.6572 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.6572 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:50:18.6761 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-02 21:50:18.6852 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-02 21:50:18.6852 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.7082 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-02 21:50:18.7148 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-02 21:50:18.7148 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.7303 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:50:18.7303 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-02 21:50:18.7498 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-02 21:50:18.7604 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.7604 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:50:18.7767 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.7767 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:50:18.7767 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:50:18.7962 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:50:18.7962 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:18.8104 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:50:18.8104 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:18.8237 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:50:18.8237 Info Adding target FileTarget(Name=logfile)
+2021-03-02 21:50:18.8388 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-02 21:50:18.8388 Trace ParseRulesElement
+2021-03-02 21:50:18.8875 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-02 21:50:18.8875 Debug --- NLog configuration dump ---
+2021-03-02 21:50:18.9004 Debug Targets:
+2021-03-02 21:50:18.9004 Debug File Target[logfile]
+2021-03-02 21:50:18.9004 Debug Rules:
+2021-03-02 21:50:18.9270 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-02 21:50:18.9335 Debug --- End of NLog configuration dump ---
+2021-03-02 21:50:18.9335 Trace FindReachableObject<System.Object>:
+2021-03-02 21:50:18.9468 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-02 21:50:18.9468 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-02 21:50:18.9468 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-02 21:50:18.9641 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-02 21:50:18.9641 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-02 21:50:18.9641 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:18.9803 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:18.9803 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-02 21:50:18.9803 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:18.9964 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-02 21:50:18.9964 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-02 21:50:18.9964 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:19.0121 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:50:19.0121 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:19.0121 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:50:19.0281 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:50:19.0281 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:50:19.0281 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:19.0440 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:50:19.0440 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:19.0440 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:50:19.0627 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-02 21:50:19.0627 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-02 21:50:19.0742 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-02 21:50:19.0742 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-02 21:50:19.0928 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-02 21:50:19.1035 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-02 21:50:19.1035 Trace Initializing Layout Renderer: ${message}
+2021-03-02 21:50:19.1035 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:50:19.1241 Trace Initializing Layout Renderer: ${level}
+2021-03-02 21:50:19.1241 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-02 21:50:19.1414 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:19.1414 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:50:19.1532 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:19.1532 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:50:19.1689 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-02 21:50:19.1689 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:50:19.1829 Trace Initializing Layout Renderer: ${longdate}
+2021-03-02 21:50:19.1829 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-02 21:50:19.1829 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:19.2022 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-02 21:50:19.2022 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:19.2130 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-02 21:50:19.2130 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:19.2130 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-02 21:50:19.2299 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-02 21:50:19.2299 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-02 21:50:19.2299 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:19.2461 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-02 21:50:19.2461 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:19.2461 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-02 21:50:19.2643 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:50:19.2643 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-02 21:50:19.2763 Trace Initializing Layout Renderer: ${literal}
+2021-03-02 21:50:19.2763 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-02 21:50:19.2927 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-02 21:50:19.2927 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-02 21:50:19.3125 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-02 21:50:19.3125 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:19.3308 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-02 21:50:19.3417 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-02 21:50:19.3417 Trace Initializing File Target[logfile]
+2021-03-02 21:50:19.3622 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-02 21:50:19.3722 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-02 21:50:19.3722 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-02 21:50:19.3899 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-02 21:50:19.3899 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-02 21:50:19.4106 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-02 21:50:19.4284 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-02 21:50:19.4435 Trace File Target[logfile] has 2 layouts
+2021-03-02 21:50:19.4573 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-03 11:54:30.5274 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-03 11:54:30.5653 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-03 11:54:30.5846 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-03 11:54:30.6872 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-03 11:54:30.6872 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-03 11:54:30.7120 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-03 11:54:30.7120 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-03 11:54:30.7279 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-03 11:54:30.7279 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-03 11:54:30.7473 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-03 11:54:30.7473 Debug Auto loading done
+2021-03-03 11:54:30.7634 Info Message Template Auto Format enabled
+2021-03-03 11:54:30.7917 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:30.7917 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-03 11:54:30.8157 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-03 11:54:30.8255 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-03 11:54:30.8255 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:30.8391 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-03 11:54:30.8391 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:30.8391 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-03 11:54:30.8608 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-03 11:54:31.0422 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-03 11:54:31.0422 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.0585 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-03 11:54:31.0585 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.0775 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-03 11:54:31.0877 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.0877 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-03 11:54:31.1140 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-03 11:54:31.1216 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-03 11:54:31.1216 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.1344 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-03 11:54:31.1344 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-03 11:54:31.1506 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.1506 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-03 11:54:31.1506 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-03 11:54:31.1696 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-03 11:54:31.1696 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.1808 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-03 11:54:31.1808 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.1808 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-03 11:54:31.1974 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-03 11:54:31.1974 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-03 11:54:31.1974 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.2135 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-03 11:54:31.2135 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.2135 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-03 11:54:31.2296 Info Adding target FileTarget(Name=logfile)
+2021-03-03 11:54:31.2296 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-03 11:54:31.2296 Trace ParseRulesElement
+2021-03-03 11:54:31.2620 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-03 11:54:31.2620 Debug --- NLog configuration dump ---
+2021-03-03 11:54:31.2620 Debug Targets:
+2021-03-03 11:54:31.2790 Debug File Target[logfile]
+2021-03-03 11:54:31.2790 Debug Rules:
+2021-03-03 11:54:31.2911 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-03 11:54:31.2911 Debug --- End of NLog configuration dump ---
+2021-03-03 11:54:31.2911 Trace FindReachableObject<System.Object>:
+2021-03-03 11:54:31.3107 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-03 11:54:31.3107 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-03 11:54:31.3233 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-03 11:54:31.3233 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-03 11:54:31.3233 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-03 11:54:31.3429 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.3429 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.3542 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-03 11:54:31.3542 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.3542 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-03 11:54:31.3711 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-03 11:54:31.3711 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.3711 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-03 11:54:31.3874 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.3874 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-03 11:54:31.3874 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-03 11:54:31.4038 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-03 11:54:31.4038 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.4153 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-03 11:54:31.4153 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.4153 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-03 11:54:31.4356 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-03 11:54:31.4356 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-03 11:54:31.4493 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-03 11:54:31.4493 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-03 11:54:31.4667 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-03 11:54:31.4787 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-03 11:54:31.4787 Trace Initializing Layout Renderer: ${message}
+2021-03-03 11:54:31.4950 Trace Initializing Layout Renderer: ${literal}
+2021-03-03 11:54:31.4950 Trace Initializing Layout Renderer: ${level}
+2021-03-03 11:54:31.5100 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-03 11:54:31.5100 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.5288 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-03 11:54:31.5288 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.5419 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-03 11:54:31.5419 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-03 11:54:31.5601 Trace Initializing Layout Renderer: ${literal}
+2021-03-03 11:54:31.5601 Trace Initializing Layout Renderer: ${longdate}
+2021-03-03 11:54:31.5757 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-03 11:54:31.5757 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.5875 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-03 11:54:31.5875 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.5875 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-03 11:54:31.6056 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.6056 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-03 11:54:31.6056 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-03 11:54:31.6220 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-03 11:54:31.6220 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.6356 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-03 11:54:31.6356 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.6356 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-03 11:54:31.6559 Trace Initializing Layout Renderer: ${literal}
+2021-03-03 11:54:31.6559 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-03 11:54:31.6678 Trace Initializing Layout Renderer: ${literal}
+2021-03-03 11:54:31.6678 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-03 11:54:31.6678 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-03 11:54:31.6854 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-03 11:54:31.6854 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-03 11:54:31.6854 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.7030 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-03 11:54:31.7030 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-03 11:54:31.7141 Trace Initializing File Target[logfile]
+2021-03-03 11:54:31.7141 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-03 11:54:31.7280 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-03 11:54:31.7280 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-03 11:54:31.7280 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-03 11:54:31.7446 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-03 11:54:31.7446 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-03 11:54:31.7446 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-03 11:54:31.7613 Trace File Target[logfile] has 2 layouts
+2021-03-03 11:54:31.7613 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-07 14:56:28.8603 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-07 14:56:28.8977 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-07 14:56:28.9169 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-07 14:56:29.0151 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-07 14:56:29.0151 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-07 14:56:29.0325 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-07 14:56:29.0325 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-07 14:56:29.0325 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-07 14:56:29.0521 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-07 14:56:29.0521 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-07 14:56:29.0650 Debug Auto loading done
+2021-03-07 14:56:29.0650 Info Message Template Auto Format enabled
+2021-03-07 14:56:29.0903 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.0985 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-07 14:56:29.1091 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-07 14:56:29.1091 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-07 14:56:29.1237 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.1237 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-07 14:56:29.1237 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.1440 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-07 14:56:29.1440 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-07 14:56:29.1583 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-07 14:56:29.1583 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.1749 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-07 14:56:29.1749 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.1865 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-07 14:56:29.1865 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.1865 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-07 14:56:29.2088 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-07 14:56:29.2088 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-07 14:56:29.2202 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.2202 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-07 14:56:29.2202 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-07 14:56:29.2374 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.2374 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-07 14:56:29.2483 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-07 14:56:29.2483 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-07 14:56:29.2483 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.2642 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-07 14:56:29.2642 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.2642 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-07 14:56:29.2805 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-07 14:56:29.2805 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-07 14:56:29.2805 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.2965 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-07 14:56:29.2965 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.2965 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-07 14:56:29.3124 Info Adding target FileTarget(Name=logfile)
+2021-03-07 14:56:29.3124 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-07 14:56:29.3124 Trace ParseRulesElement
+2021-03-07 14:56:29.3452 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-07 14:56:29.3452 Debug --- NLog configuration dump ---
+2021-03-07 14:56:29.3579 Debug Targets:
+2021-03-07 14:56:29.3579 Debug File Target[logfile]
+2021-03-07 14:56:29.3579 Debug Rules:
+2021-03-07 14:56:29.3756 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-07 14:56:29.3756 Debug --- End of NLog configuration dump ---
+2021-03-07 14:56:29.3887 Trace FindReachableObject<System.Object>:
+2021-03-07 14:56:29.3887 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-07 14:56:29.3887 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-07 14:56:29.4049 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-07 14:56:29.4049 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-07 14:56:29.4049 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-07 14:56:29.4214 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.4214 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.4214 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-07 14:56:29.4376 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.4376 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-07 14:56:29.4376 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-07 14:56:29.4540 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.4540 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-07 14:56:29.4540 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.4697 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-07 14:56:29.4697 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-07 14:56:29.4697 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-07 14:56:29.4857 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.4857 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-07 14:56:29.4857 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.5018 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-07 14:56:29.5018 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-07 14:56:29.5018 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-07 14:56:29.5187 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-07 14:56:29.5187 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-07 14:56:29.5341 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-07 14:56:29.5341 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-07 14:56:29.5503 Trace Initializing Layout Renderer: ${message}
+2021-03-07 14:56:29.5503 Trace Initializing Layout Renderer: ${literal}
+2021-03-07 14:56:29.5640 Trace Initializing Layout Renderer: ${level}
+2021-03-07 14:56:29.5640 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-07 14:56:29.5798 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.5798 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-07 14:56:29.5798 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.5957 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-07 14:56:29.5957 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-07 14:56:29.6091 Trace Initializing Layout Renderer: ${literal}
+2021-03-07 14:56:29.6091 Trace Initializing Layout Renderer: ${longdate}
+2021-03-07 14:56:29.6091 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-07 14:56:29.6249 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.6249 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-07 14:56:29.6249 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.6405 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-07 14:56:29.6405 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.6405 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-07 14:56:29.6563 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-07 14:56:29.6563 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-07 14:56:29.6563 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.6721 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-07 14:56:29.6721 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.6721 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-07 14:56:29.6887 Trace Initializing Layout Renderer: ${literal}
+2021-03-07 14:56:29.6887 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-07 14:56:29.6887 Trace Initializing Layout Renderer: ${literal}
+2021-03-07 14:56:29.7053 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-07 14:56:29.7053 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-07 14:56:29.7175 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-07 14:56:29.7175 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-07 14:56:29.7175 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.7387 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-07 14:56:29.7387 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-07 14:56:29.7504 Trace Initializing File Target[logfile]
+2021-03-07 14:56:29.7504 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-07 14:56:29.7653 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-07 14:56:29.7653 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-07 14:56:29.7653 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-07 14:56:29.7823 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-07 14:56:29.7823 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-07 14:56:29.7823 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-07 14:56:29.7983 Trace File Target[logfile] has 2 layouts
+2021-03-07 14:56:29.7983 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-11 19:55:07.2922 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-11 19:55:07.3298 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-11 19:55:07.3485 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-11 19:55:07.4434 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-11 19:55:07.4508 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 19:55:07.4508 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-11 19:55:07.4677 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 19:55:07.4677 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 19:55:07.4829 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 19:55:07.4829 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 19:55:07.4952 Debug Auto loading done
+2021-03-11 19:55:07.4952 Info Message Template Auto Format enabled
+2021-03-11 19:55:07.5235 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.5317 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 19:55:07.5432 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 19:55:07.5432 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 19:55:07.5432 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.5622 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 19:55:07.5622 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.5758 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 19:55:07.5758 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 19:55:07.5913 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 19:55:07.5913 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:07.6072 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 19:55:07.6072 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.6236 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-11 19:55:07.6236 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.6362 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 19:55:07.6362 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-11 19:55:07.6565 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 19:55:07.6565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.6721 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 19:55:07.6825 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 19:55:07.6825 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.6825 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 19:55:07.7055 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 19:55:07.7055 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 19:55:07.7208 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.7208 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 19:55:07.7371 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.7371 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 19:55:07.7516 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 19:55:07.7516 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 19:55:07.7695 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:07.7758 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 19:55:07.7758 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:07.7758 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 19:55:07.7972 Info Adding target FileTarget(Name=logfile)
+2021-03-11 19:55:07.7972 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-11 19:55:07.8149 Trace ParseRulesElement
+2021-03-11 19:55:07.8431 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-11 19:55:07.8431 Debug --- NLog configuration dump ---
+2021-03-11 19:55:07.8574 Debug Targets:
+2021-03-11 19:55:07.8574 Debug File Target[logfile]
+2021-03-11 19:55:07.8706 Debug Rules:
+2021-03-11 19:55:07.8706 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-11 19:55:07.8706 Debug --- End of NLog configuration dump ---
+2021-03-11 19:55:07.8937 Trace FindReachableObject<System.Object>:
+2021-03-11 19:55:07.9007 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-11 19:55:07.9007 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-11 19:55:07.9007 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-11 19:55:07.9207 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 19:55:07.9207 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 19:55:07.9353 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:07.9353 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:07.9480 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 19:55:07.9480 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:07.9480 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 19:55:07.9725 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 19:55:07.9788 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:07.9788 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 19:55:07.9788 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:07.9990 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 19:55:07.9990 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 19:55:08.0119 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 19:55:08.0119 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:08.0256 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 19:55:08.0256 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:08.0256 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 19:55:08.0468 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 19:55:08.0468 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-11 19:55:08.0608 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-11 19:55:08.0608 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-11 19:55:08.0763 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-11 19:55:08.0763 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-11 19:55:08.0931 Trace Initializing Layout Renderer: ${message}
+2021-03-11 19:55:08.0931 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 19:55:08.1076 Trace Initializing Layout Renderer: ${level}
+2021-03-11 19:55:08.1076 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-11 19:55:08.1227 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:08.1227 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 19:55:08.1227 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:08.1408 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 19:55:08.1408 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-11 19:55:08.1557 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 19:55:08.1557 Trace Initializing Layout Renderer: ${longdate}
+2021-03-11 19:55:08.1716 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 19:55:08.1716 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:08.1843 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 19:55:08.1843 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:08.1843 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 19:55:08.2033 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:08.2033 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 19:55:08.2158 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 19:55:08.2158 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 19:55:08.2288 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:08.2288 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 19:55:08.2288 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:08.2518 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 19:55:08.2518 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 19:55:08.2666 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-11 19:55:08.2666 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 19:55:08.2796 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 19:55:08.2920 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 19:55:08.3134 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 19:55:08.3282 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 19:55:08.3405 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:08.3405 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 19:55:08.3632 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 19:55:08.3757 Trace Initializing File Target[logfile]
+2021-03-11 19:55:08.3947 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-11 19:55:08.4127 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-11 19:55:08.4281 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 19:55:08.4407 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 19:55:08.4545 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 19:55:08.4657 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 19:55:08.4657 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 19:55:08.4889 Trace File Target[logfile] has 2 layouts
+2021-03-11 19:55:08.5292 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-11 20:00:20.4769 Debug Targets for Plush.ApplicationLogger.LoggerService by level:
+2021-03-11 20:00:20.4901 Debug Trace =>
+2021-03-11 20:00:20.5002 Debug Debug => logfile
+2021-03-11 20:00:20.5148 Debug Info => logfile
+2021-03-11 20:00:20.5148 Debug Warn => logfile
+2021-03-11 20:00:20.5364 Debug Error => logfile
+2021-03-11 20:00:20.5481 Debug Fatal => logfile
+2021-03-11 20:00:20.6019 Debug FileTarget(Name=logfile): Preparing for new file 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\2021-03-11_logfile.txt'
+2021-03-11 20:00:20.6272 Debug Creating file appender: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\2021-03-11_logfile.txt
+2021-03-11 20:00:20.6388 Trace Opening C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\2021-03-11_logfile.txt with allowFileSharedWriting=False
+2021-03-11 20:17:04.9906 Trace Opening C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\2021-03-11_logfile.txt with allowFileSharedWriting=False
+2021-03-11 20:22:35.2021 Trace Opening C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\2021-03-11_logfile.txt with allowFileSharedWriting=False
+2021-03-11 20:41:02.2964 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-11 20:41:02.3426 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-11 20:41:02.3631 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-11 20:41:02.4757 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-11 20:41:02.4849 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 20:41:02.5017 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-11 20:41:02.5017 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 20:41:02.5167 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 20:41:02.5292 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 20:41:02.5292 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 20:41:02.5464 Debug Auto loading done
+2021-03-11 20:41:02.5464 Info Message Template Auto Format enabled
+2021-03-11 20:41:02.5799 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.5916 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:41:02.5916 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 20:41:02.6127 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 20:41:02.6127 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.6260 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:41:02.6260 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.6420 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:41:02.6522 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:41:02.6522 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:41:02.6700 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:02.6700 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:41:02.6861 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.6861 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-11 20:41:02.7000 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.7000 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:41:02.7181 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-11 20:41:02.7181 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 20:41:02.7316 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.7316 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 20:41:02.7459 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 20:41:02.7459 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.7459 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:41:02.7653 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 20:41:02.7653 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 20:41:02.7796 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.7796 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:41:02.7972 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.7972 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:41:02.8156 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:41:02.8248 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:41:02.8248 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:02.8411 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:41:02.8411 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:02.8537 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:41:02.8537 Info Adding target FileTarget(Name=logfile)
+2021-03-11 20:41:02.8743 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-11 20:41:02.8743 Trace ParseRulesElement
+2021-03-11 20:41:02.9137 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-11 20:41:02.9237 Debug --- NLog configuration dump ---
+2021-03-11 20:41:02.9237 Debug Targets:
+2021-03-11 20:41:02.9364 Debug File Target[logfile]
+2021-03-11 20:41:02.9364 Debug Rules:
+2021-03-11 20:41:02.9529 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-11 20:41:02.9529 Debug --- End of NLog configuration dump ---
+2021-03-11 20:41:02.9716 Trace FindReachableObject<System.Object>:
+2021-03-11 20:41:02.9798 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-11 20:41:02.9798 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-11 20:41:02.9798 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-11 20:41:02.9986 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 20:41:02.9986 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 20:41:03.0109 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:03.0109 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.0109 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 20:41:03.0295 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.0295 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 20:41:03.0429 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 20:41:03.0429 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:03.0429 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:41:03.0638 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.0638 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:41:03.0787 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:41:03.0787 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:41:03.0924 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:03.0924 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:41:03.1044 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.1044 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:41:03.1215 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 20:41:03.1215 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-11 20:41:03.1361 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-11 20:41:03.1361 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-11 20:41:03.1612 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-11 20:41:03.1862 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-11 20:41:03.1862 Trace Initializing Layout Renderer: ${message}
+2021-03-11 20:41:03.2061 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:41:03.2137 Trace Initializing Layout Renderer: ${level}
+2021-03-11 20:41:03.2137 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-11 20:41:03.2316 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:03.2316 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:41:03.2460 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:03.2460 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:41:03.2650 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-11 20:41:03.2650 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:41:03.2804 Trace Initializing Layout Renderer: ${longdate}
+2021-03-11 20:41:03.2804 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 20:41:03.2982 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:03.2982 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 20:41:03.3126 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:03.3126 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:41:03.3283 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.3283 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:41:03.3425 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:41:03.3425 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:41:03.3547 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:03.3547 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:41:03.3708 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.3708 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:41:03.3920 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:41:03.4023 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-11 20:41:03.4023 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:41:03.4221 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 20:41:03.4322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:41:03.4322 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 20:41:03.4490 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:41:03.4490 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.4672 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 20:41:03.4672 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:41:03.4856 Trace Initializing File Target[logfile]
+2021-03-11 20:41:03.4970 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-11 20:41:03.4970 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-11 20:41:03.5133 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 20:41:03.5133 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 20:41:03.5320 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 20:41:03.5444 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 20:41:03.5444 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 20:41:03.5619 Trace File Target[logfile] has 2 layouts
+2021-03-11 20:41:03.5761 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-11 20:44:44.8989 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-11 20:44:44.9252 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-11 20:44:44.9377 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-11 20:44:45.0036 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-11 20:44:45.0118 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 20:44:45.0118 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-11 20:44:45.0276 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 20:44:45.0276 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 20:44:45.0276 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 20:44:45.0478 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 20:44:45.0478 Debug Auto loading done
+2021-03-11 20:44:45.0634 Info Message Template Auto Format enabled
+2021-03-11 20:44:45.0874 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.0977 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:44:45.1088 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 20:44:45.1088 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 20:44:45.1214 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.1214 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:44:45.1214 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.1394 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:44:45.1394 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:44:45.1535 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:44:45.1535 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.1669 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:44:45.1669 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.1669 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-11 20:44:45.1871 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.1871 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:44:45.2034 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-11 20:44:45.2034 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 20:44:45.2155 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.2155 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 20:44:45.2155 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 20:44:45.2331 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.2331 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:44:45.2458 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 20:44:45.2458 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 20:44:45.2458 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.2667 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:44:45.2667 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.2785 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:44:45.2785 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:44:45.2925 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:44:45.2925 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.3087 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:44:45.3087 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.3087 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:44:45.3262 Info Adding target FileTarget(Name=logfile)
+2021-03-11 20:44:45.3262 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-11 20:44:45.3388 Trace ParseRulesElement
+2021-03-11 20:44:45.3582 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-11 20:44:45.3582 Debug --- NLog configuration dump ---
+2021-03-11 20:44:45.3700 Debug Targets:
+2021-03-11 20:44:45.3700 Debug File Target[logfile]
+2021-03-11 20:44:45.3700 Debug Rules:
+2021-03-11 20:44:45.3891 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-11 20:44:45.3891 Debug --- End of NLog configuration dump ---
+2021-03-11 20:44:45.4035 Trace FindReachableObject<System.Object>:
+2021-03-11 20:44:45.4035 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-11 20:44:45.4035 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-11 20:44:45.4222 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-11 20:44:45.4222 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 20:44:45.4335 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 20:44:45.4335 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.4335 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.4500 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 20:44:45.4500 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.4500 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 20:44:45.4680 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 20:44:45.4680 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.4805 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:44:45.4805 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.4805 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:44:45.4980 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:44:45.4980 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:44:45.5102 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.5102 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:44:45.5102 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.5281 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:44:45.5281 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 20:44:45.5281 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-11 20:44:45.5458 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-11 20:44:45.5458 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-11 20:44:45.5599 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-11 20:44:45.5599 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-11 20:44:45.5758 Trace Initializing Layout Renderer: ${message}
+2021-03-11 20:44:45.5758 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:44:45.5758 Trace Initializing Layout Renderer: ${level}
+2021-03-11 20:44:45.5929 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-11 20:44:45.5929 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.6066 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:44:45.6066 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.6066 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:44:45.6266 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-11 20:44:45.6266 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:44:45.6380 Trace Initializing Layout Renderer: ${longdate}
+2021-03-11 20:44:45.6380 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 20:44:45.6380 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.6550 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 20:44:45.6550 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.6550 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 20:44:45.6713 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.6713 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 20:44:45.6713 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 20:44:45.6884 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 20:44:45.6884 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.6994 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 20:44:45.6994 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.6994 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 20:44:45.7182 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:44:45.7182 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-11 20:44:45.7182 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 20:44:45.7344 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 20:44:45.7344 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 20:44:45.7456 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 20:44:45.7456 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 20:44:45.7456 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.7629 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 20:44:45.7629 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 20:44:45.7629 Trace Initializing File Target[logfile]
+2021-03-11 20:44:45.7815 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-11 20:44:45.7815 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-11 20:44:45.7927 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 20:44:45.7927 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 20:44:45.7927 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 20:44:45.8092 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 20:44:45.8092 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 20:44:45.8092 Trace File Target[logfile] has 2 layouts
+2021-03-11 20:44:45.8266 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-11 21:27:47.6823 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-11 21:27:47.7316 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-11 21:27:47.7485 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-11 21:27:47.8480 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-11 21:27:47.8551 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:27:47.8551 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-11 21:27:47.8722 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:27:47.8722 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:27:47.8881 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 21:27:47.8881 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 21:27:47.9017 Debug Auto loading done
+2021-03-11 21:27:47.9017 Info Message Template Auto Format enabled
+2021-03-11 21:27:47.9307 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:47.9402 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:27:47.9517 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 21:27:47.9517 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 21:27:47.9647 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:47.9647 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:27:47.9647 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:47.9838 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:27:47.9838 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:27:48.0029 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:27:48.0029 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.0174 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:27:48.0174 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.0292 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-11 21:27:48.0292 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.0418 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:27:48.0418 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-11 21:27:48.0580 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 21:27:48.0580 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.0580 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:27:48.0766 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 21:27:48.0766 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.0891 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:27:48.0891 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 21:27:48.0891 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 21:27:48.1066 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.1066 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:27:48.1202 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.1202 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:27:48.1367 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:27:48.1367 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:27:48.1367 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.1536 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:27:48.1536 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.1536 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:27:48.1709 Info Adding target FileTarget(Name=logfile)
+2021-03-11 21:27:48.1709 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-11 21:27:48.1833 Trace ParseRulesElement
+2021-03-11 21:27:48.2034 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-11 21:27:48.2034 Debug --- NLog configuration dump ---
+2021-03-11 21:27:48.2153 Debug Targets:
+2021-03-11 21:27:48.2153 Debug File Target[logfile]
+2021-03-11 21:27:48.2153 Debug Rules:
+2021-03-11 21:27:48.2357 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-11 21:27:48.2357 Debug --- End of NLog configuration dump ---
+2021-03-11 21:27:48.2483 Trace FindReachableObject<System.Object>:
+2021-03-11 21:27:48.2483 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-11 21:27:48.2483 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-11 21:27:48.2646 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-11 21:27:48.2646 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 21:27:48.2646 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:27:48.2801 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.2801 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.2910 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:27:48.2910 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.2910 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 21:27:48.2910 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:27:48.3122 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.3122 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:27:48.3122 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.3283 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:27:48.3283 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:27:48.3388 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:27:48.3388 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.3388 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:27:48.3548 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.3548 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:27:48.3548 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 21:27:48.3709 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-11 21:27:48.3709 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-11 21:27:48.3709 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-11 21:27:48.3908 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-11 21:27:48.3908 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-11 21:27:48.4055 Trace Initializing Layout Renderer: ${message}
+2021-03-11 21:27:48.4055 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:27:48.4055 Trace Initializing Layout Renderer: ${level}
+2021-03-11 21:27:48.4224 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-11 21:27:48.4224 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.4370 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:27:48.4370 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.4480 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:27:48.4480 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-11 21:27:48.4480 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:27:48.4667 Trace Initializing Layout Renderer: ${longdate}
+2021-03-11 21:27:48.4667 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 21:27:48.4667 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.4820 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:27:48.4820 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.4820 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:27:48.4976 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.4976 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:27:48.4976 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:27:48.5133 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:27:48.5133 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.5133 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:27:48.5304 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.5304 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:27:48.5412 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:27:48.5412 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-11 21:27:48.5412 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:27:48.5412 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 21:27:48.5616 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:27:48.5616 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:27:48.5616 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:27:48.5771 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.5771 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:27:48.5771 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:27:48.5930 Trace Initializing File Target[logfile]
+2021-03-11 21:27:48.5930 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-11 21:27:48.6048 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-11 21:27:48.6048 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 21:27:48.6048 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:27:48.6201 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 21:27:48.6201 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:27:48.6201 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 21:27:48.6367 Trace File Target[logfile] has 2 layouts
+2021-03-11 21:27:48.6367 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-11 21:30:34.2506 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-11 21:30:34.2906 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-11 21:30:34.3135 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-11 21:30:34.4275 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-11 21:30:34.4364 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:30:34.4483 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-11 21:30:34.4483 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:30:34.4633 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:30:34.4633 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 21:30:34.4836 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 21:30:34.4836 Debug Auto loading done
+2021-03-11 21:30:34.5001 Info Message Template Auto Format enabled
+2021-03-11 21:30:34.5292 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.5292 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:30:34.5550 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 21:30:34.5644 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 21:30:34.5728 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.5728 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:30:34.5904 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.5904 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:30:34.6099 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:30:34.6099 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:30:34.6257 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:34.6257 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:30:34.6440 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.6515 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-11 21:30:34.6515 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.6689 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:30:34.6859 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-11 21:30:34.6859 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 21:30:34.7017 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.7017 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:30:34.7171 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 21:30:34.7171 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.7310 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:30:34.7310 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 21:30:34.7488 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 21:30:34.7488 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.7622 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:30:34.7622 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.7759 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:30:34.7759 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:30:34.7759 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:30:34.7965 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:34.7965 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:30:34.8110 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:34.8110 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:30:34.8269 Info Adding target FileTarget(Name=logfile)
+2021-03-11 21:30:34.8269 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-11 21:30:34.8439 Trace ParseRulesElement
+2021-03-11 21:30:34.8728 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-11 21:30:34.8849 Debug --- NLog configuration dump ---
+2021-03-11 21:30:34.8849 Debug Targets:
+2021-03-11 21:30:34.9053 Debug File Target[logfile]
+2021-03-11 21:30:34.9053 Debug Rules:
+2021-03-11 21:30:34.9248 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-11 21:30:34.9330 Debug --- End of NLog configuration dump ---
+2021-03-11 21:30:34.9480 Trace FindReachableObject<System.Object>:
+2021-03-11 21:30:34.9480 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-11 21:30:34.9696 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-11 21:30:34.9814 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-11 21:30:34.9814 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 21:30:35.0037 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:30:35.0142 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:35.0254 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.0254 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:30:35.0467 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.0467 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 21:30:35.0691 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:30:35.0822 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:35.0925 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:30:35.0925 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.1102 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:30:35.1102 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:30:35.1256 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:30:35.1256 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:35.1407 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:30:35.1407 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.1555 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:30:35.1555 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 21:30:35.1754 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-11 21:30:35.1846 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-11 21:30:35.1846 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-11 21:30:35.2046 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-11 21:30:35.2173 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-11 21:30:35.2173 Trace Initializing Layout Renderer: ${message}
+2021-03-11 21:30:35.2329 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:30:35.2329 Trace Initializing Layout Renderer: ${level}
+2021-03-11 21:30:35.2495 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-11 21:30:35.2638 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:35.2638 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:30:35.2794 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:35.2794 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:30:35.3001 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-11 21:30:35.3076 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:30:35.3076 Trace Initializing Layout Renderer: ${longdate}
+2021-03-11 21:30:35.3076 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 21:30:35.3295 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:35.3295 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:30:35.3446 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:35.3446 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:30:35.3614 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.3698 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:30:35.3698 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:30:35.3896 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:30:35.3896 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:35.4068 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:30:35.4068 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.4246 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:30:35.4334 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:30:35.4334 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-11 21:30:35.4505 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:30:35.4505 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 21:30:35.4662 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:30:35.4662 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:30:35.4877 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:30:35.4964 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.4964 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:30:35.5164 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:30:35.5276 Trace Initializing File Target[logfile]
+2021-03-11 21:30:35.5418 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-11 21:30:35.5418 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-11 21:30:35.5608 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 21:30:35.5608 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:30:35.5804 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 21:30:35.5877 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:30:35.5877 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 21:30:35.6036 Trace File Target[logfile] has 2 layouts
+2021-03-11 21:30:35.6036 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-11 21:44:56.0022 Debug Skipping unknown 'NLog' property xmlns=http://www.nlog-project.org/schemas/NLog.xsd
+2021-03-11 21:44:56.0361 Debug Skipping unknown 'NLog' property xsi=http://www.w3.org/2001/XMLSchema-instance
+2021-03-11 21:44:56.0497 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-11 21:44:56.1323 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-03-11 21:44:56.1387 Debug Search for auto loading files in location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:44:56.1387 Debug Found assembly location directory: 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1' (Plush, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-03-11 21:44:56.1543 Debug Auto loading based on AppDomain-BaseDirectory found location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:44:56.1543 Debug Start auto loading, location: C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush\bin\Debug\netcoreapp3.1
+2021-03-11 21:44:56.1679 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 21:44:56.1679 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-03-11 21:44:56.1679 Debug Auto loading done
+2021-03-11 21:44:56.1853 Info Message Template Auto Format enabled
+2021-03-11 21:44:56.2056 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.2140 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:44:56.2140 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 21:44:56.2303 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 21:44:56.2303 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.2303 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:44:56.2474 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.2474 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:44:56.2601 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:44:56.2601 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:44:56.2601 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.2780 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:44:56.2780 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.2780 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-11 21:44:56.2949 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.2949 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:44:56.3104 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-11 21:44:56.3104 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 21:44:56.3104 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.3297 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:44:56.3297 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 21:44:56.3425 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.3425 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:44:56.3534 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-11 21:44:56.3534 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-11 21:44:56.3534 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.3534 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:44:56.3742 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.3742 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:44:56.3855 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:44:56.3855 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:44:56.3855 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.4008 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:44:56.4008 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.4008 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:44:56.4168 Info Adding target FileTarget(Name=logfile)
+2021-03-11 21:44:56.4168 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-11 21:44:56.4168 Trace ParseRulesElement
+2021-03-11 21:44:56.4534 Debug Watching path 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush' filter 'nlog.config' for changes.
+2021-03-11 21:44:56.4534 Debug --- NLog configuration dump ---
+2021-03-11 21:44:56.4682 Debug Targets:
+2021-03-11 21:44:56.4682 Debug File Target[logfile]
+2021-03-11 21:44:56.4830 Debug Rules:
+2021-03-11 21:44:56.4830 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-11 21:44:56.4962 Debug --- End of NLog configuration dump ---
+2021-03-11 21:44:56.4962 Trace FindReachableObject<System.Object>:
+2021-03-11 21:44:56.4962 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-11 21:44:56.5159 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-11 21:44:56.5159 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-11 21:44:56.5284 Trace   Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 21:44:56.5284 Trace   Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:44:56.5426 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.5426 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.5575 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:44:56.5575 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.5575 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 21:44:56.5769 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:44:56.5769 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.5895 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:44:56.5895 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.5895 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:44:56.6073 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:44:56.6073 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:44:56.6073 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.6246 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:44:56.6246 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.6372 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:44:56.6372 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 21:44:56.6372 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-11 21:44:56.6544 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-11 21:44:56.6544 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Plush/nlog.config
+2021-03-11 21:44:56.6684 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-11 21:44:56.6684 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-11 21:44:56.6834 Trace Initializing Layout Renderer: ${message}
+2021-03-11 21:44:56.6834 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:44:56.6834 Trace Initializing Layout Renderer: ${level}
+2021-03-11 21:44:56.6996 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-11 21:44:56.6996 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.6996 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:44:56.7179 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.7179 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:44:56.7313 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-11 21:44:56.7313 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:44:56.7313 Trace Initializing Layout Renderer: ${longdate}
+2021-03-11 21:44:56.7532 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-11 21:44:56.7611 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.7611 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:44:56.7765 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.7765 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-11 21:44:56.7765 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.7944 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-11 21:44:56.7944 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-11 21:44:56.7944 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-11 21:44:56.8109 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.8109 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-11 21:44:56.8109 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.8285 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-11 21:44:56.8285 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:44:56.8406 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-11 21:44:56.8406 Trace Initializing Layout Renderer: ${literal}
+2021-03-11 21:44:56.8406 Trace Initializing 'C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'
+2021-03-11 21:44:56.8560 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-11 21:44:56.8560 Trace Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:44:56.8560 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-11 21:44:56.8713 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.8713 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-11 21:44:56.8713 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-11 21:44:56.8909 Trace Initializing File Target[logfile]
+2021-03-11 21:44:56.8909 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-11 21:44:56.9043 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-11 21:44:56.9043 Trace  Scanning Property FileName ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-03-11 21:44:56.9043 Trace  Scanning SimpleLayout ''C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Logger\logs\${shortdate}_logfile.txt''
+2021-03-11 21:44:56.9206 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-11 21:44:56.9206 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-11 21:44:56.9206 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-11 21:44:56.9376 Trace File Target[logfile] has 2 layouts
+2021-03-11 21:44:56.9376 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory

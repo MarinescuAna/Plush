@@ -13,7 +13,6 @@ namespace Plush.DataAccessLayer.Domain.Models
         public float Price { get; set; }
         public int Stock { get; set; }
         public string CategoryName { get; set; }
-        public string CategorySpecification { get; set; }
         public string ProviderName { get; set; }
         public string ProviderSpecification { get; set; }
         public string Datetime { get; set; }

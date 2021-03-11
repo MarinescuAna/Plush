@@ -14,7 +14,7 @@ import { ProviderDeliveryService } from 'src/app/services/provider-delivery-serv
   styleUrls: ['./insert-product.component.css']
 })
 export class InsertProductComponent implements OnInit {
-
+  fileToUpload: File = null;
   formProduct = new FormGroup({
     name: new FormControl('',[Validators.required]),
     description: new FormControl('',[Validators.required]),
@@ -81,6 +81,26 @@ export class InsertProductComponent implements OnInit {
           };
       }else{
         this.injector.get(AlertService).showError('Invalid file! You can only send jpg, png and jpeg files!');
+      }
+    }
+  }
+  onDocChange(event): void {
+    const reader = new FileReader();
+    let path;
+    if (event.target.files && event.target.files.length) {
+      this.fileName = event.target.files[0].name;
+      path=event.target.result;
+      if (this.fileName.split('.')[1] === 'docx') {
+        const [file] = event.target.files;
+      
+          reader.onload = (event2: any) => {
+            debugger
+            path =  event2.target.result;
+          };
+          
+          reader.readAsDataURL(event.target.files[0]);
+      }else{
+        this.injector.get(AlertService).showError('Invalid file! You can only send docx file!');
       }
     }
   }

@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   ]
 })
 
-export class CategoryModule {
-  categoryID:string;
-    name: string;
+export class QuantityModule {
+    id: string;
+    number: number;
 }
