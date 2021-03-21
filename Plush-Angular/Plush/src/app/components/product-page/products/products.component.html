@@ -1,39 +1,67 @@
-<div fxLayout="row wrap">
-    <div fxLayoutAlign="center center">
-        <mat-card class="card-size">
-            <form [formGroup]="formProvider">
-                <div fxLayout="column" fxLayoutAlign="center center">
-                    <mat-form-field class="input-medi-style">
-                        <mat-label>Providers</mat-label>
-                        <mat-select formControlName='providerId'>
-                            <mat-option *ngFor="let prov of providers" [value]="prov.providerID">
-                                {{prov.name}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field class="input-medi-style">
-                        <mat-label>Categories</mat-label>
-                        <mat-select formControlName='categoryId'>
-                            <mat-option *ngFor="let category of categories" [value]="category.categoryID">
-                                {{category.name}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div fxLayout="row" fxLayoutAlign="center center">
-                    <mat-form-field class="input-min-style">
-                        <input type="number" matInput formControlName='priceMin' placeholder=" Price Min">
-                    </mat-form-field>
-                    <strong>-</strong>
-                    <mat-form-field class="input-min-style">
-                        <input type="number" matInput formControlName='priceMax' placeholder="Price Max">
-                    </mat-form-field>
-                </div>
-            </form>
-            <div fxLayoutAlign="center center">
-                <button mat-raised-button class="btn-size" (click)="onSubmit()" color="accent">Search</button>
+<div style="margin-top: 20%;margin-left: -10%;">
+    <div fxLayout="row wrap" style="margin:-10%">
+        <div><button mat-raised-button style="margin-top: 4%;width: 100px; margin: 4px" (click)="onSearch()"
+                color="accent">Search</button></div>
+        <form [formGroup]="formSearch">
+            <div><input type="text" autocomplete="off" placeholder="Search" formControlName='searchKeyWord' matInput
+                    style="background-color:#f885ab94;height: 47px;border-radius: 23%;width: 300px;">
             </div>
-        </mat-card>
+        </form>
+        <div>
+            <form [formGroup]="formSearchPred">
+                <input type="text" matInput placeholder="Predictive Search" formControlName="searchKeyWordPred"
+                [matAutocomplete] ="auto" style="background-color:#f885ab94;height: 47px;border-radius: 23%;width: 300px; margin-left: 3%;">
+                <mat-autocomplete #auto = "matAutocomplete" [displayWith]="displayFn">
+                    <mat-option *ngFor = "let state of filterProductsPred" [value] = "state.name">
+                       {{state.name}}
+                    </mat-option>
+                 </mat-autocomplete>
+            </form>
+        </div>
+        <div><button mat-raised-button style="margin-top: 4%;width: 100px;margin: 4px" (click)="onSearchPred()"
+            color="accent">Search</button></div>
+    </div>
+</div>
+
+<div fxLayout="row wrap">
+    <div fxLayout="column">
+        <div fxLayoutAlign="center center">
+            <mat-card class="card-size">
+                <form [formGroup]="formProvider">
+                    <div fxLayout="column" fxLayoutAlign="center center">
+                        <mat-form-field class="input-medi-style">
+                            <mat-label>Providers</mat-label>
+                            <mat-select formControlName='providerId'>
+                                <mat-option *ngFor="let prov of providers" [value]="prov.providerID">
+                                    {{prov.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="input-medi-style">
+                            <mat-label>Categories</mat-label>
+                            <mat-select formControlName='categoryId'>
+                                <mat-option *ngFor="let category of categories" [value]="category.categoryID">
+                                    {{category.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <mat-form-field class="input-min-style">
+                            <input type="number" matInput formControlName='priceMin' placeholder=" Price Min">
+                        </mat-form-field>
+                        <strong>-</strong>
+                        <mat-form-field class="input-min-style">
+                            <input type="number" matInput formControlName='priceMax' placeholder="Price Max">
+                        </mat-form-field>
+                    </div>
+                </form>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button class="btn-size" (click)="onSubmit()" color="accent">Search</button>
+                </div>
+            </mat-card>
+
+        </div>
     </div>
     <div fxLayoutAlign="center center" fxLayout="row wrap" class="size-position">
         <div *ngFor="let product of filterProducts">
@@ -42,6 +70,6 @@
     </div>
 </div>
 
-<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#c11ac7" type = "square-jelly-box" [fullScreen] = "true">
-    <p style="color: white" > Loading... </p>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#c11ac7" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
 </ngx-spinner>

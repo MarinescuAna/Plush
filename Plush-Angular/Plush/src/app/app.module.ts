@@ -23,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { CategoryModule } from 'src/app/modules/category.module';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
@@ -125,7 +126,8 @@ export function tokenGetter() {
     MatDialogModule,
     MatProgressBarModule,
     NgxSpinnerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatAutocompleteModule
   ],
   providers: [
     AppErrorHandler,
