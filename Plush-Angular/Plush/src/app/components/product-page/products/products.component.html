@@ -11,16 +11,30 @@
             <form [formGroup]="formSearchPred">
                 <input type="text" matInput placeholder="Predictive Search" formControlName="searchKeyWordPred"
                 [matAutocomplete] ="auto" style="background-color:#f885ab94;height: 47px;border-radius: 23%;width: 300px; margin-left: 3%;">
-                <mat-autocomplete #auto = "matAutocomplete" [displayWith]="displayFn">
-                    <mat-option *ngFor = "let state of filterProductsPred" [value] = "state.name">
-                       {{state.name}}
-                    </mat-option>
-                 </mat-autocomplete>
             </form>
         </div>
         <div><button mat-raised-button style="margin-top: 4%;width: 100px;margin: 4px" (click)="onSearchPred()"
             color="accent">Search</button></div>
     </div>
+    <div class="ng-autocomplete">
+        <ng-autocomplete 
+          [data]="data"
+          [searchKeyword]="keyword"
+          (selected)='selectEvent($event)'
+          (inputChanged)='onChangeSearch($event)'
+          (inputFocused)='onFocused($event)'
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate">                                 
+        </ng-autocomplete>
+        
+        <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.name"></a>
+        </ng-template>
+        
+        <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+        </ng-template>
+        </div>
 </div>
 
 <div fxLayout="row wrap">

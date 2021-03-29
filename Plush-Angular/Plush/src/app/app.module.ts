@@ -23,7 +23,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { CategoryModule } from 'src/app/modules/category.module';
 import { CategoryViewModule } from 'src/app/modules/category-view.module';
@@ -59,6 +58,7 @@ import { OrdersHistoryComponent } from './components/shopping/orders-history/ord
 import { OrderHistoryComponent } from './components/shopping/order-history/order-history.component';
 import { OrderDetailsComponent } from './components/shopping/order-details/order-details.component';
 import { OrdersAdminComponent } from './components/shopping/orders-admin/orders-admin.component'; 
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -127,7 +127,7 @@ export function tokenGetter() {
     MatProgressBarModule,
     NgxSpinnerModule,
     MatRadioModule,
-    MatAutocompleteModule
+    AutocompleteLibModule
   ],
   providers: [
     AppErrorHandler,

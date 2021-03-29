@@ -17,15 +17,15 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  formSearchPred=new FormGroup({
-    searchKeyWordPred:new FormControl('')
-    });
-
-  formSearch=new FormGroup({
-  searchKeyWord:new FormControl('')
+  formSearchPred = new FormGroup({
+    searchKeyWordPred: new FormControl('')
   });
 
-  isChecked:boolean;
+  formSearch = new FormGroup({
+    searchKeyWord: new FormControl('')
+  });
+
+  isChecked: boolean;
   formProvider = new FormGroup({
     categoryId: new FormControl(''),
     providerId: new FormControl(''),
@@ -69,38 +69,34 @@ export class ProductsComponent implements OnInit {
       );
     }
   }
-  changeStatus(){
-    if(this.isChecked==false){
+  changeStatus() {
+    if (this.isChecked == false) {
       this.filterProducts = this.products;
-    if (this.formProvider.value.providerId != "") {
-      this.filterProducts = this.filterProducts.filter(element => element.providerID === this.formProvider.value.providerId)
+      if (this.formProvider.value.providerId != "") {
+        this.filterProducts = this.filterProducts.filter(element => element.providerID === this.formProvider.value.providerId)
+      }
+      if (this.formProvider.value.categoryId != "") {
+        this.filterProducts = this.filterProducts.filter(element => element.categoryID === this.formProvider.value.categoryId)
+      }
+      if (this.formProvider.value.priceMax != "") {
+        this.filterProducts = this.filterProducts.filter(element => parseFloat(element.price) <= parseFloat(this.formProvider.value.priceMax))
+      }
+      if (this.formProvider.value.priceMin != "") {
+        this.filterProducts = this.filterProducts.filter(element => parseFloat(element.price) >= parseFloat(this.formProvider.value.priceMin))
+      }
     }
-    if (this.formProvider.value.categoryId != "") {
-      this.filterProducts = this.filterProducts.filter(element => element.categoryID === this.formProvider.value.categoryId)
-    }
-    if (this.formProvider.value.priceMax != "") {
-      this.filterProducts = this.filterProducts.filter(element => parseFloat(element.price) <= parseFloat(this.formProvider.value.priceMax))
-    }
-    if (this.formProvider.value.priceMin != "") {
-      this.filterProducts = this.filterProducts.filter(element => parseFloat(element.price) >= parseFloat(this.formProvider.value.priceMin))
-    }
-    }
-  }
-  displayFn(prod: ProductViewModule): void {
-    this.filterProductsPred = this.products;
-    this.filterProductsPred = this.filterProducts.filter(element => element.name.includes(this.formSearchPred.value.searchKeyWordPred.toUpperCase()) );
-  
-  }
-  onSearch():void{
-    debugger
-    this.filterProducts = this.products;
-    this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearch.value.searchKeyWord.toUpperCase()) );
   }
   
-  onSearchPred():void{
+  onSearch(): void {
     debugger
     this.filterProducts = this.products;
-    this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearchPred.value.searchKeyWordPred.toUpperCase()) );
+    this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearch.value.searchKeyWord.toUpperCase()));
+  }
+
+  onSearchPred(): void {
+    debugger
+    this.filterProducts = this.products;
+    this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearchPred.value.searchKeyWordPred.toUpperCase()));
   }
   onSubmit(): void {
     this.filterProducts = this.products;
@@ -117,5 +113,30 @@ export class ProductsComponent implements OnInit {
       this.filterProducts = this.filterProducts.filter(element => parseFloat(element.price) >= parseFloat(this.formProvider.value.priceMin))
     }
   }
+  keyword = 'name';
+  data = [
+    {
+      id: 1,
+      name: 'Usa'
+    },
+    {
+      id: 2,
+      name: 'England'
+    }
+  ];
 
+
+  selectEvent(item) {
+    // do something with selected item
+  }
+
+  onChangeSearch(val: string) {
+    // fetch remote data from here
+    // And reassign the 'data' which is binded to 'data' property.
+  }
+
+  onFocused(e) {
+    // do something when input is focused
+  }
 }
+
