@@ -9,32 +9,29 @@
         </form>
         <div>
             <form [formGroup]="formSearchPred">
-                <input type="text" matInput placeholder="Predictive Search" formControlName="searchKeyWordPred"
-                [matAutocomplete] ="auto" style="background-color:#f885ab94;height: 47px;border-radius: 23%;width: 300px; margin-left: 3%;">
+                <div class="ng-autocomplete">
+                    <ng-autocomplete [data]="products" [searchKeyword]="keyword" (selected)='selectEvent($event)'
+                        (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)'
+                        [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+                        formControlName="searchKeyWordPred" style="width: 300px; margin-left: 3%;"
+                        placeholder="Predictive Search">
+                    </ng-autocomplete>
+
+                    <ng-template #itemTemplate let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplate let-notFound>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                </div>
             </form>
         </div>
-        <div><button mat-raised-button style="margin-top: 4%;width: 100px;margin: 4px" (click)="onSearchPred()"
-            color="accent">Search</button></div>
+        <div><button mat-raised-button style="    margin-top: 2%;
+            width: 100px;
+            margin-left: 17px;" (click)=" onSearchPred()" color="accent">Search</button></div>
     </div>
-    <div class="ng-autocomplete">
-        <ng-autocomplete 
-          [data]="data"
-          [searchKeyword]="keyword"
-          (selected)='selectEvent($event)'
-          (inputChanged)='onChangeSearch($event)'
-          (inputFocused)='onFocused($event)'
-          [itemTemplate]="itemTemplate"
-          [notFoundTemplate]="notFoundTemplate">                                 
-        </ng-autocomplete>
-        
-        <ng-template #itemTemplate let-item>
-        <a [innerHTML]="item.name"></a>
-        </ng-template>
-        
-        <ng-template #notFoundTemplate let-notFound>
-        <div [innerHTML]="notFound"></div>
-        </ng-template>
-        </div>
+
 </div>
 
 <div fxLayout="row wrap">

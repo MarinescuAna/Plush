@@ -8,8 +8,6 @@ import { ProductService } from 'src/app/services/product.service';
 import { ProviderDeliveryService } from 'src/app/services/provider-delivery-service';
 import { AuthService } from 'src/app/shared/auth.service';
 import { NgxSpinnerService } from "ngx-spinner";
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
@@ -36,7 +34,6 @@ export class ProductsComponent implements OnInit {
   providers: ProviderDDLModule[];
   products: ProductViewModule[];
   filterProducts: ProductViewModule[];
-  filterProductsPred: ProductViewModule[];
 
   constructor(private service: ProductService,
     private user: AuthService,
@@ -51,7 +48,6 @@ export class ProductsComponent implements OnInit {
     this.service.getPublicProducts().subscribe(cr => {
       this.products = cr as ProductViewModule[];
       this.filterProducts = this.products;
-      this.filterProductsPred = this.products;
       this.SpinnerService.hide();
     });
 
@@ -86,9 +82,8 @@ export class ProductsComponent implements OnInit {
       }
     }
   }
-  
+
   onSearch(): void {
-    debugger
     this.filterProducts = this.products;
     this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearch.value.searchKeyWord.toUpperCase()));
   }
@@ -96,7 +91,12 @@ export class ProductsComponent implements OnInit {
   onSearchPred(): void {
     debugger
     this.filterProducts = this.products;
-    this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearchPred.value.searchKeyWordPred.toUpperCase()));
+    if (this.formSearchPred.value.searchKeyWordPred.name == null) {
+      this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearchPred.value.searchKeyWordPred.toUpperCase()));
+    } else {
+      this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearchPred.value.searchKeyWordPred.name.toUpperCase()));
+    }
+
   }
   onSubmit(): void {
     this.filterProducts = this.products;
