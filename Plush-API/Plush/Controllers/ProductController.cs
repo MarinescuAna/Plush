@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Plush.ApplicationLogger;
 using Plush.BusinessLogicLayer.Service.Interface;
 using Plush.DataAccessLayer.Domain.Domain;
 using Plush.DataAccessLayer.Domain.Models;
@@ -19,11 +20,14 @@ namespace Plush.Controllers
     {
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
+        private readonly ILoggerService loggService;
         public ProductController(IProductService service,
             ICategoryService category,
             IConfiguration configuration, 
-            IHttpContextAccessor httpContextAccessor) :base(configuration,httpContextAccessor)
+            IHttpContextAccessor httpContextAccessor,
+            ILoggerService loggerService) :base(configuration,httpContextAccessor)
         {
+            loggService = loggerService;
             productService = service;
             categoryService = category;
         }
@@ -40,8 +44,6 @@ namespace Plush.Controllers
 
             var request = new Product
             {
-                Description = product.Description,
-                Specification = product.Specification,
                 Stock = Int32.Parse(product.Stock),
                 Price =  float.Parse(product.Price),
                 Name = product.Name,
@@ -81,21 +83,20 @@ namespace Plush.Controllers
                 prods.Add(new ProductView
                 {
                     CategoryName = prduct.Category?.Name,
-                    Description = prduct.Description,
                     Name = prduct.Name.ToUpper(),
                     Price = prduct.Price,
                     ProviderName = prduct.Provider?.Name,
                     ProviderSpecification = prduct.Provider?.ContactData,
-                    Specification = prduct.Specification,
                     ProductID = prduct.ProductID.ToString(),
                     Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0],
-                    Document=prduct.Image?.Document,
-                    Extension=prduct.Image?.Extension,
-                    FileName=prduct.Image?.FileName,
-                    ImageID=prduct.Image?.ImageID.ToString(),
-                    ProviderID=prduct.ProviderID.ToString(),
-                    CategoryID=prduct.CategoryID.ToString(),
-                    Display=true
+                    Document = prduct.Image?.Document,
+                    Extension = prduct.Image?.Extension,
+                    FileName = prduct.Image?.FileName,
+                    ImageID = prduct.Image?.ImageID.ToString(),
+                    ProviderID = prduct.ProviderID.ToString(),
+                    CategoryID = prduct.CategoryID.ToString(),
+                    Display = true,
+                    Specifications = System.IO.File.ReadAllText(@$"{ConstantString.pathInput}\{prduct.Name}.txt")
                 });
             }
 
@@ -117,12 +118,10 @@ namespace Plush.Controllers
                 prods.Add(new ProductViewAdmin
                 {
                     CategoryName = prduct.Category?.Name,
-                    Description = prduct.Description,
                     Name = prduct.Name.ToUpper(),
                     Price = prduct.Price,
                     ProviderName = prduct.Provider?.Name,
                     ProviderSpecification = prduct.Provider?.ContactData,
-                    Specification = prduct.Specification,
                     Stock = prduct.Stock,
                     ProductID = prduct.ProductID.ToString(),
                     Datetime = ((DateTime)prduct.PostDatetime).ToString().Split('T')[0],
@@ -193,12 +192,10 @@ namespace Plush.Controllers
             var request = new Product
             {
                ProductID= Guid.Parse(product.ProductID),
-                Description = product.Description,
-                Specification = product.Specification,
+
                 Stock = !string.IsNullOrEmpty(product.Stock)?Int32.Parse(product.Stock):0,
                 Price = !string.IsNullOrEmpty(product.Price)?float.Parse(product.Price):0,
                 Name = product.Name,
-                //Provider = !string.IsNullOrEmpty(product.ProviderName) ? await providerDeliveryService.GetProviderByNameAsync(product.ProviderName) : null,
                 Category = !string.IsNullOrEmpty(product.CategoryName) ? await categoryService.GetCategoryByNameAsync(new Category { Name = product.CategoryName }): null,
                 Image=new Image
                 {
@@ -215,6 +212,47 @@ namespace Plush.Controllers
             }
 
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("Search")]
+        public async Task<IActionResult> Search(string token)
+        {
+            if(string.IsNullOrEmpty(token))
+            {
+                return Ok();
+            }
+
+            var products = await productService.GetPublicProductsAsync();
+            var lucene = new LuceneSearch(loggService,products.ToList());
+            var matches = lucene.Search(token.ToUpper());
+            var matchesProducts = new List<ProductView>();
+
+            foreach (var product in products)
+            {
+                if (matches.Any(u => u == product.ProductID))
+                {
+                    matchesProducts.Add(new ProductView
+                    {
+                        CategoryName = product.Category?.Name,
+                        Name = product.Name.ToUpper(),
+                        Price = product.Price,
+                        ProviderName = product.Provider?.Name,
+                        ProviderSpecification = product.Provider?.ContactData,
+                        ProductID = product.ProductID.ToString(),
+                        Datetime = ((DateTime)product.PostDatetime).ToString().Split('T')[0],
+                        Document = product.Image?.Document,
+                        Extension = product.Image?.Extension,
+                        FileName = product.Image?.FileName,
+                        ImageID = product.Image?.ImageID.ToString(),
+                        ProviderID = product.ProviderID.ToString(),
+                        CategoryID = product.CategoryID.ToString(),
+                        Display = true,
+                        Specifications = System.IO.File.ReadAllText(@$"{ConstantString.pathInput}\{product.Name}.txt")
+                    }) ;
+                }
+            }
+            return  Ok(matchesProducts); 
         }
     }
 }

@@ -13,8 +13,6 @@ import { CommonModule } from '@angular/common';
 export class ProductViewAdminModule {
     productID: string;
     name: string;
-    description: string;
-    specification: string;
     price: string;
     stock: string;
     categoryName: string;

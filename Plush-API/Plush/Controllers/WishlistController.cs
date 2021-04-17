@@ -85,7 +85,6 @@ namespace Plush.Controllers
                     CategoryName = wish.Product?.Category?.Name,
                     Name = wish.Product?.Name,
                     Datetime = wish.Product?.PostDatetime.ToString(),
-                    Description = wish.Product?.Description,
                     Document = wish.Product?.Image?.Document,
                     Extension = wish.Product?.Image?.Extension,
                     FileName = wish.Product?.Image?.FileName,
@@ -94,7 +93,6 @@ namespace Plush.Controllers
                     ProductID = wish.ProductID.ToString(),
                     ProviderName = wish.Product?.Provider?.Name,
                     ProviderSpecification = wish.Product?.Provider?.ContactData,
-                    Specification = wish.Product?.Specification,
                     Wishlist = true
                 }) ;
             }

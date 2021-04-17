@@ -7,6 +7,7 @@ namespace Plush.Utils
 {
     public static class ConstantString
     {
+        public static readonly string pathInput = @"C:\Users\marin\OneDrive\Documente\GitHub\PlushProject\Plush-API\Documents";
         public static readonly string DefaultConnection = "DefaultConnection";
         public static readonly string CoreApi = "Core API";
         public static readonly string SwaggerCoreApi = "Swagger Core API";

@@ -25,7 +25,9 @@ export class ProductService extends DataService {
   getPublicProducts(): Observable<ProductViewModule[]>{
     return super.getMany<ProductViewModule>('GetPublicProducts');
   }
-
+  SearchLucene(text:string): Observable<ProductViewModule[]>{
+    return super.getMany<ProductViewModule>('Search?token='+text);
+  }
   getProducts(): Observable<ProductViewAdminModule[]>{
     return super.getMany<ProductViewAdminModule>('GetProducts');
   }

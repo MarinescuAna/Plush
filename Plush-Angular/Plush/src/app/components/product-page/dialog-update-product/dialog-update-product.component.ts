@@ -39,12 +39,10 @@ export class DialogUpdateProductComponent implements OnInit {
     this.product = data.product;
     this.formProduct = new FormGroup({
       name: new FormControl(this.product.name),
-      description: new FormControl(this.product.description),
       price: new FormControl(this.product.price),
       stock: new FormControl(this.product.stock),
       category: new FormControl(''),
-      provider: new FormControl(''),
-      specifications: new FormControl(this.product.specification)
+      provider: new FormControl('')
     });
   }
 
@@ -59,14 +57,6 @@ export class DialogUpdateProductComponent implements OnInit {
     if (this.formProduct.value.name != "" && this.formProduct.value.name != this.product.name) {
       changes++;
       this.newProduct.name = this.formProduct.value.name;
-    }
-    if (this.formProduct.value.description != "" && this.formProduct.value.description != this.product.description) {
-      changes++;
-      this.newProduct.description = this.formProduct.value.description;
-    }
-    if (this.formProduct.value.specifications != "" && this.formProduct.value.specifications != this.product.specification) {
-      changes++;
-      this.newProduct.specification = this.formProduct.value.specifications;
     }
     if (this.formProduct.value.price != "" && this.formProduct.value.price != this.product.price) {
       changes++;

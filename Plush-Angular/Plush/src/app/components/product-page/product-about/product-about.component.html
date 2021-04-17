@@ -6,12 +6,6 @@
             <mat-card-title><strong>{{product.name}}</strong> </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <p *ngIf='product.description!=null'>
-                <strong>Description: </strong>{{product.description}} 
-            </p>
-            <p *ngIf='product.specification!=null'>
-                <strong>Specification: </strong>{{product.specification}} 
-            </p>
             <p>
                 <strong>Price: {{product.price}} RON</strong>
             </p>
@@ -22,4 +16,7 @@
                 <strong>Provider: </strong> {{product.providerName}}
             </p>
         </mat-card-content>
+        <mat-card-actions *ngIf='product.specifications!=null'>
+            <button mat-button (click)="openDialogDetails()" >Specifications</button>   
+            </mat-card-actions>
 </mat-dialog-content>

@@ -59,6 +59,7 @@ import { OrderHistoryComponent } from './components/shopping/order-history/order
 import { OrderDetailsComponent } from './components/shopping/order-details/order-details.component';
 import { OrdersAdminComponent } from './components/shopping/orders-admin/orders-admin.component'; 
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { ProductSpecificationsComponent } from './components/product-page/product-specifications/product-specifications.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -96,7 +97,8 @@ export function tokenGetter() {
     OrdersHistoryComponent,
     OrderHistoryComponent,
     OrderDetailsComponent,
-    OrdersAdminComponent
+    OrdersAdminComponent,
+    ProductSpecificationsComponent
   ],
   imports: [
 

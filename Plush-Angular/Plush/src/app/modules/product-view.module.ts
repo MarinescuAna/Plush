@@ -13,8 +13,6 @@ import { CommonModule } from '@angular/common';
 export class ProductViewModule {
     productID: string;
     name: string;
-    description: string;
-    specification: string;
     price: string;
     categoryName: string;
     providerName: string;
@@ -28,4 +26,5 @@ export class ProductViewModule {
     categoryID:string;
     providerID:string;
     display:boolean;
+    specifications:string;
 }

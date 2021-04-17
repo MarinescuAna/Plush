@@ -12,8 +12,6 @@ import { CommonModule } from '@angular/common';
 
 export class ProductInsertModule {
     name: string;
-    description: string;
-    specification: string;
     price: string;
     stock: string;
     categoryID: string;

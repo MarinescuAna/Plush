@@ -14,16 +14,6 @@
                     <mat-icon matSuffix class="color-text">create</mat-icon>
                 </mat-form-field>
                 <mat-form-field class="input-style">
-                    <mat-label>Description</mat-label>
-                    <textarea matInput rows="5" formControlName='description'></textarea>
-                    <mat-icon matSuffix class="color-text">description</mat-icon>
-                </mat-form-field>
-                <mat-form-field class="input-style">
-                    <mat-label>Specification</mat-label>
-                    <textarea rows="5" matInput formControlName='specifications'></textarea>
-                    <mat-icon matSuffix class="color-text">list</mat-icon>
-                </mat-form-field>
-                <mat-form-field class="input-style">
                     <mat-label>Providers(Current: {{product.providerName}})</mat-label>
                     <mat-select formControlName='provider'>
                         <mat-option *ngFor="let prov of providers" [value]="prov.name">

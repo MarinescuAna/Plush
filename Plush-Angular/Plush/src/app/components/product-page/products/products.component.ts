@@ -84,8 +84,11 @@ export class ProductsComponent implements OnInit {
   }
 
   onSearch(): void {
-    this.filterProducts = this.products;
-    this.filterProducts = this.filterProducts.filter(element => element.name.includes(this.formSearch.value.searchKeyWord.toUpperCase()));
+    this.service.SearchLucene(this.formSearch.value.searchKeyWord).subscribe(
+      cr => {
+        this.filterProducts = cr as ProductViewModule[];
+      }
+    );
   }
 
   onSearchPred(): void {
@@ -114,17 +117,6 @@ export class ProductsComponent implements OnInit {
     }
   }
   keyword = 'name';
-  data = [
-    {
-      id: 1,
-      name: 'Usa'
-    },
-    {
-      id: 2,
-      name: 'England'
-    }
-  ];
-
 
   selectEvent(item) {
     // do something with selected item

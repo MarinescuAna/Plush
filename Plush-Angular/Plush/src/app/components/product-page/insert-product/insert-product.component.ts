@@ -17,13 +17,11 @@ export class InsertProductComponent implements OnInit {
   fileToUpload: File = null;
   formProduct = new FormGroup({
     name: new FormControl('',[Validators.required]),
-    description: new FormControl('',[Validators.required]),
     price: new FormControl('',[Validators.required]),
     stock: new FormControl('',[Validators.required]),
     category: new FormControl('',[Validators.required]),
     provider: new FormControl('',[Validators.required]),
-    status: new FormControl(''),
-    specifications: new FormControl('',[Validators.required])
+    status: new FormControl('')
   });
   newRecord=new ProductInsertModule();
   fileName:string;
@@ -45,10 +43,8 @@ export class InsertProductComponent implements OnInit {
   }
 
   onSubmit():void{
-    this.newRecord.specification=this.formProduct.value.specifications;
     this.newRecord.name=this.formProduct.value.name;
     this.newRecord.categoryID=this.formProduct.value.category;
-    this.newRecord.description=this.formProduct.value.description;
     this.newRecord.price=this.formProduct.value.price+'';
     this.newRecord.stock=this.formProduct.value.stock+'';
     this.newRecord.status=this.isChecked==true? '0':'1';
@@ -85,8 +81,9 @@ export class InsertProductComponent implements OnInit {
     }
   }
   onDocChange(event): void {
+    debugger
     const reader = new FileReader();
-    let path;
+    let path=event.target.value;
     if (event.target.files && event.target.files.length) {
       this.fileName = event.target.files[0].name;
       path=event.target.result;

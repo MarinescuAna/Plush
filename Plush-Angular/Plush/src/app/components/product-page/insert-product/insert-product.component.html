@@ -8,7 +8,7 @@
       <br><br>
       <span style="color:crimson ;"><mat-icon>insert_photo</mat-icon> Upload Image</span>  <input type="file" (change)="onFileChange($event)">
     <br>
-     <span style="color:crimson ;"><mat-icon>attach_file</mat-icon> Upload Specification</span><input type="file"  (change)="onDocChange($event)">
+     <span style="color:crimson ;">Upload your file specification into the project folder. </span>
     </div>
     <mat-card-content>
       <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
@@ -19,22 +19,6 @@
             <mat-icon matSuffix class="color-text">create</mat-icon>
             <mat-error *ngIf="formProduct.controls['name'].hasError('required')">
               Name is <strong>required</strong>!
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field class="input-style">
-            <mat-label>Description</mat-label>
-            <textarea matInput rows="5" formControlName='description' required></textarea>
-            <mat-icon matSuffix class="color-text">description</mat-icon>
-            <mat-error *ngIf="formProduct.controls['description'].hasError('required')">
-              Description is <strong>required</strong>!
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field class="input-style">
-            <mat-label>Specification</mat-label>
-            <textarea rows="5" matInput formControlName='specifications' required></textarea>
-            <mat-icon matSuffix class="color-text">list</mat-icon>
-            <mat-error *ngIf="formProduct.controls['specifications'].hasError('required')">
-              Specification is <strong>required</strong>!
             </mat-error>
           </mat-form-field>
         </div>
@@ -84,9 +68,8 @@
       </form>
       <div fxLayoutAlign="center center">
         <button class="btn-size" mat-raised-button color="accent" (click)="onSubmit()" 
-        [disabled]="formProduct.controls['specifications'].hasError('required') || 
-              formProduct.controls['name'].hasError('required')|| 
-              formProduct.controls['description'].hasError('required')|| 
+        [disabled]="
+              formProduct.controls['name'].hasError('required')||  
               formProduct.controls['price'].hasError('required')|| 
               formProduct.controls['stock'].hasError('required')|| 
               formProduct.controls['category'].hasError('required')|| 

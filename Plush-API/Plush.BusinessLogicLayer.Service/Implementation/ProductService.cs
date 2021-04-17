@@ -74,16 +74,6 @@ namespace Plush.BusinessLogicLayer.Service.Implementation
                 product.Name = productNew.Name;
             }
 
-            if (!string.IsNullOrEmpty(productNew.Description))
-            {
-                product.Description = productNew.Description;
-            }
-
-            if (!string.IsNullOrEmpty(productNew.Specification))
-            {
-                product.Specification = productNew.Specification;
-            }
-
             if (productNew.Stock!= product.Stock && productNew.Stock!=0)
             {
                 product.Stock = productNew.Stock;

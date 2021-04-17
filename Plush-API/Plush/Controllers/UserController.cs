@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Plush.ApplicationLogger;
 using Plush.BusinessLogicLayer.Service.Implementation;
 using Plush.BusinessLogicLayer.Service.Interface;
 using Plush.DataAccessLayer.Domain.Domain;
@@ -18,7 +19,7 @@ namespace Plush.Controllers
         private readonly IUserService _userService;
         public UserController(IConfiguration configuration, IHttpContextAccessor httpContextAccessor, IUserService user):base(configuration,httpContextAccessor)
         {
-            _userService = user;
+           _userService = user;
         }
 
         [HttpPost]
@@ -131,6 +132,8 @@ namespace Plush.Controllers
                 
             });
         }
+
+       
     }
 
  

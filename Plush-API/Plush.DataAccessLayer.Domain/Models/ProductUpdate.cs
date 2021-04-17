@@ -8,8 +8,6 @@ namespace Plush.DataAccessLayer.Domain.Models
     {
         public string ProductID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public string Specification { get; set; }
         public string Price { get; set; }
         public string Stock { get; set; }
         public string CategoryName { get; set; }
